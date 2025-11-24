@@ -1,12 +1,12 @@
 import express from "express";
 import cors from "cors";
-import { drinks } from "./data/dinks";
+import { drinks } from "./data/drinks.js";
 
 const app = express();
 app.use(cors());
 
 app.get('/drinks', (req, res)=> {
-    res.json(drinks)
+  res.json(drinks)
 })
 
 const puerto = process.env.PORT || 3000;
