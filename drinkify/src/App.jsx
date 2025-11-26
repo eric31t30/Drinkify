@@ -1,29 +1,24 @@
-import { useState } from 'react'
+
 import './App.css'
-import { useEffect } from 'react';
+
+import Hero from './components/Hero';
 
 function App() {
 
-  const [drinks, setDrinks] = useState([])
+  // const [drinks, setDrinks] = useState([])
 
-  useEffect(() => {
-    fetch("http://localhost:3000/drinks")
-      .then((res) => res.json())
-      .then((data) => setDrinks(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/drinks")
+  //     .then((res) => res.json())
+  //     .then((data) => setDrinks(data));
+  // }, []);
 
   return (
-    <div>
-      <h1>Drinkify 🍹</h1>
+    <section className='app'>
+      
+      <Hero />
 
-      <div>
-
-      {drinks.map(data => (
-        <div key={data.id}>{data.name}</div>
-      ))}
-
-      </div>
-    </div>
+    </section>
   );
 }
 
