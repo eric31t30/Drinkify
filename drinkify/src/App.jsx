@@ -1,22 +1,16 @@
 
 import './App.css'
+import DrinkList from './components/DrinkList';
 
 import Hero from './components/Hero';
 
 function App() {
 
-  // const [drinks, setDrinks] = useState([])
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/drinks")
-  //     .then((res) => res.json())
-  //     .then((data) => setDrinks(data));
-  // }, []);
-
   return (
-    <section className='app'>
-      
+    <section className="app">
+
       <Hero />
+      <DrinkList />
 
     </section>
   );

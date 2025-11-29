@@ -2,12 +2,12 @@ export const drinks = [
   {
     id: 1,
     name: "Margarita",
-    color: "#F7D358",
-    category: "Cocktail",
+    color: "#D4B244",
+    category: "Cóctel",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 13,
-      level: "Medium",
+      level: "Medio",
     },
     description: "Clásico ácido y refrescante con un toque cítrico.",
     ingredients: [
@@ -17,7 +17,7 @@ export const drinks = [
       { name: "Sal", amount: "Al gusto" },
     ],
     preparation:
-      "Agitar todos los ingredientes con hielo y servir en vaso escarchado con sal.",
+      "Agitar todos los ingredientes con hielo y servir en un vaso escarchado con sal.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764340852/margarita_aqsoqk.webp",
       png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764340852/margarita-png_vpvn5k.png",
@@ -29,12 +29,12 @@ export const drinks = [
   {
     id: 2,
     name: "Mojito",
-    color: "#A8E6A3",
-    category: "Cocktail",
+    color: "#7FCC77",
+    category: "Cóctel",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 10,
-      level: "Low",
+      level: "Bajo",
     },
     description: "Refrescante mezcla de menta, limón y ron.",
     ingredients: [
@@ -56,12 +56,12 @@ export const drinks = [
   {
     id: 3,
     name: "Piña Colada",
-    color: "#F6E5A6",
-    category: "Cocktail",
+    color: "#C6BE36",
+    category: "Cóctel",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 8,
-      level: "Low",
+      level: "Bajo",
     },
     description: "Dulce, cremosa y tropical.",
     ingredients: [
@@ -80,12 +80,12 @@ export const drinks = [
   {
     id: 4,
     name: "Old Fashioned",
-    color: "#D18B47",
-    category: "Cocktail",
+    color: "#B4783D",
+    category: "Cóctel",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 32,
-      level: "High",
+      level: "Alto",
     },
     description: "Clásico fuerte con notas de whisky y naranja.",
     ingredients: [
@@ -93,7 +93,7 @@ export const drinks = [
       { name: "Bitter", amount: "2 dash" },
       { name: "Azúcar", amount: "1 terrón" },
     ],
-    preparation: "Disolver azúcar con bitter, luego agregar whisky y hielo.",
+    preparation: "Disolver el azúcar con bitter, luego agregar whisky y hielo.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345097/old-fashioned_gxq8rx.jpg",
       png: "Studio isolated Old Fashioned with large clear ice cube, sharp 8k cut-out.",
@@ -104,12 +104,12 @@ export const drinks = [
   {
     id: 5,
     name: "Cosmopolitan",
-    color: "#FF7E9E",
-    category: "Cocktail",
+    color: "#D96480",
+    category: "Cóctel",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 20,
-      level: "Medium",
+      level: "Medio",
     },
     description: "Dulce, cítrico y elegante.",
     ingredients: [
@@ -117,7 +117,7 @@ export const drinks = [
       { name: "Triple Sec", amount: "15ml" },
       { name: "Jugo de arándanos", amount: "30ml" },
     ],
-    preparation: "Agitar con hielo y servir en copa Martini.",
+    preparation: "Agitar con hielo y servir en una copa Martini.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345487/cosmopolitan_b1nkzd.jpg",
       png: "Isolated cosmopolitan martini glass, clean transparent background, 8k.",
@@ -128,12 +128,12 @@ export const drinks = [
   {
     id: 6,
     name: "Daiquiri",
-    color: "#E4F2F7",
-    category: "Cocktail",
+    color: "#D06A60",
+    category: "Cóctel",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 17,
-      level: "Medium",
+      level: "Medio",
     },
     description: "Equilibrio perfecto entre dulce y ácido.",
     ingredients: [
@@ -141,7 +141,7 @@ export const drinks = [
       { name: "Jugo de limón", amount: "25ml" },
       { name: "Jarabe simple", amount: "20ml" },
     ],
-    preparation: "Agitar con hielo y colar en copa fría.",
+    preparation: "Agitar con hielo y colar en una copa fría.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345803/daiquiri_l5psis.jpg",
       png: "Isolated daiquiri coupe glass, clean studio shot, 8k.",
@@ -152,12 +152,12 @@ export const drinks = [
   {
     id: 7,
     name: "Sangría",
-    color: "#B53A52",
-    category: "Wine Cocktail",
+    color: "#952F43",
+    category: "Vino preparado",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 7,
-      level: "Low",
+      level: "Bajo",
     },
     description: "Fresca mezcla de vino y frutas.",
     ingredients: [
@@ -165,7 +165,7 @@ export const drinks = [
       { name: "Frutas mixtas", amount: "Al gusto" },
       { name: "Refresco de naranja", amount: "50ml" },
     ],
-    preparation: "Mezclar todo y dejar reposar mínimo 1 hora.",
+    preparation: "Mezclar todo y dejar reposar al menos 1 hora.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764353820/sangria_udkpsl.jpg",
       png: "Studio isolated glass of sangria with fruit pieces, transparent background.",
@@ -176,12 +176,12 @@ export const drinks = [
   {
     id: 8,
     name: "Aperol Spritz",
-    color: "#FCA94C",
+    color: "#D9873A",
     category: "Spritz",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 11,
-      level: "Low",
+      level: "Bajo",
     },
     description: "Ligero, burbujeante y con sabor amargo dulce.",
     ingredients: [
@@ -189,7 +189,7 @@ export const drinks = [
       { name: "Prosecco", amount: "90ml" },
       { name: "Soda", amount: "30ml" },
     ],
-    preparation: "Servir en copa grande con hielo.",
+    preparation: "Servir en una copa grande con hielo.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/aperol-spritz_lnewe7.jpg",
       png: "Clean isolated Aperol Spritz wine glass, transparent background, 8k.",
@@ -200,12 +200,12 @@ export const drinks = [
   {
     id: 9,
     name: "Moscow Mule",
-    color: "#C57940",
-    category: "Cocktail",
+    color: "#9E6A33",
+    category: "Cóctel",
     alcohol: {
-      type: "Alcoholic",
+      type: "Alcohólico",
       abv: 14,
-      level: "Medium",
+      level: "Medio",
     },
     description: "Picante y refrescante con ginger beer.",
     ingredients: [
@@ -213,7 +213,7 @@ export const drinks = [
       { name: "Ginger beer", amount: "120ml" },
       { name: "Lima", amount: "15ml" },
     ],
-    preparation: "Servir en taza de cobre con hielo.",
+    preparation: "Servir en una taza de cobre con hielo.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/moscow-mule_t4z0fo.jpg",
       png: "Studio isolated copper mug with Moscow Mule, transparent background, 8k.",
@@ -224,12 +224,12 @@ export const drinks = [
   {
     id: 10,
     name: "Limonada Frozen",
-    color: "#D7F9FF",
-    category: "Mocktail",
+    color: "#17B225",
+    category: "Sin alcohol",
     alcohol: {
-      type: "Non-alcoholic",
+      type: "No alcohólico",
       abv: 0,
-      level: "None",
+      level: "Ninguno",
     },
     description: "Refrescante, cítrica y perfecta para el calor.",
     ingredients: [
@@ -237,7 +237,7 @@ export const drinks = [
       { name: "Hielo picado", amount: "1 taza" },
       { name: "Azúcar", amount: "2 cdas" },
     ],
-    preparation: "Licuar todo hasta obtener textura frozen.",
+    preparation: "Licuar todo hasta obtener una textura frozen.",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/limonada-frozen_ihudhf.jpg",
       png: "Isolated frozen lemonade cup, clean white background, 8k.",
@@ -245,28 +245,3 @@ export const drinks = [
     price: 6.5,
   },
 ];
-
-
-
-const drinkPrompts = {
-  full: [
-    "Ultra realistic {{NAME}} cocktail on a polished wooden bar, dim warm bar lighting, shallow depth of field, cinematic 8k photography.",
-    "Realistic {{NAME}} served on a light wooden café table, bright natural daylight from a nearby window, mint/fresh elements visible, 8k professional photo.",
-    "Tropical {{NAME}} placed on a beach table with soft sand background, warm sunlight, vibrant colors, slight breeze, ultra detailed 8k.",
-    "Moody {{NAME}} on a dark marble bar in an elegant lounge, dramatic low-key lighting, cinematic contrast, hyper realistic 8k.",
-    "Vibrant {{NAME}} on a glossy black table inside a nightclub, neon reflections (pink/blue), bokeh lights, high-contrast realistic 8k.",
-    "Minimalist {{NAME}} on a white marble counter, soft diffused daylight, elegant composition, frost and condensation visible, clean 8k photo.",
-    "Refreshing {{NAME}} on an outdoor wooden terrace table at sunset, warm lighting, summer atmosphere, ultra detailed 8k.",
-    "Aperitivo-style {{NAME}} on a European balcony metal table, golden-hour sunlight, realistic glass reflections, cinematic 8k.",
-    "Industrial bar scene with a {{NAME}} cocktail on a concrete countertop, cool blue lighting and orange accents, extremely detailed 8k.",
-    "Bright and refreshing {{NAME}} on a speckled stone café table, clean daylight, frosty details sharp, hyper-realistic 8k photography.",
-  ],
-
-  png: [
-    "Ultra-detailed studio shot of a {{NAME}} cocktail in a realistic glass, isolated on transparent background, no shadows, no reflections, no props, 8k clean cut-out.",
-    "Professional product photo of {{NAME}} cocktail, centered, transparent background, sharp edges, even lighting, no table, no background, ultra realism 8k.",
-    "High-resolution isolated {{NAME}} glass, perfect cut-out, neutral lighting, transparent PNG style, 8k clarity.",
-    "Studio photography of a single {{NAME}} cocktail, floating isolated on transparent background, crisp details, no surface, ultra sharp 8k.",
-    "Realistic {{NAME}} cocktail rendered as a transparent-background PNG, clean edges, no shadows, balanced lighting, 8k resolution.",
-  ],
-};
