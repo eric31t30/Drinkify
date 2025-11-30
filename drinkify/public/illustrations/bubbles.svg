@@ -1,0 +1,127 @@
+<svg
+          className="footer-bubbles"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+        >
+          <circle r="4" cx="453" cy="364"></circle>
+          <circle
+            r="11.5"
+            cx="604"
+            cy="143"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle
+            r="14.5"
+            cx="574"
+            cy="76"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle r="5" cx="338" cy="548"></circle>
+          <circle r="5" cx="35" cy="264"></circle>
+          <circle r="5.5" cx="279" cy="612"></circle>
+          <circle r="7.5" cx="482" cy="625"></circle>
+          <circle r="7" cx="109" cy="90"></circle>
+          <circle r="5.5" cx="93" cy="448"></circle>
+          <circle r="8" cx="193" cy="748" strokeWidth="2" fill="none"></circle>
+          <circle r="4.5" cx="295" cy="551"></circle>
+          <circle r="6.5" cx="221" cy="274"></circle>
+          <circle r="9" cx="105" cy="549"></circle>
+          <circle r="8" cx="222" cy="75"></circle>
+          <circle r="6.5" cx="757" cy="345"></circle>
+          <circle
+            r="8.5"
+            cx="494"
+            cy="207"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle r="13.5" cx="569" cy="319"></circle>
+          <circle r="7" cx="361" cy="730"></circle>
+          <circle
+            r="11.5"
+            cx="426"
+            cy="156"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle
+            r="10.5"
+            cx="533"
+            cy="708"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle
+            r="8.5"
+            cx="196"
+            cy="292"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle r="8" cx="471" cy="406" strokeWidth="2" fill="none"></circle>
+          <circle
+            r="6.5"
+            cx="320"
+            cy="212"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle r="7" cx="529" cy="166" strokeWidth="2" fill="none"></circle>
+          <circle r="7" cx="355" cy="779" strokeWidth="2" fill="none"></circle>
+          <circle
+            r="13.5"
+            cx="447"
+            cy="65"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle r="4.5" cx="355" cy="183"></circle>
+          <circle r="10.5" cx="273" cy="424"></circle>
+          <circle r="7.5" cx="90" cy="311" strokeWidth="2" fill="none"></circle>
+          <circle r="11" cx="579" cy="374"></circle>
+          <circle r="5" cx="696" cy="281" strokeWidth="2" fill="none"></circle>
+          <circle r="7" cx="226" cy="760" strokeWidth="2" fill="none"></circle>
+          <circle r="7.5" cx="441" cy="470"></circle>
+          <circle r="3" cx="398" cy="670"></circle>
+          <circle r="11.5" cx="710" cy="720"></circle>
+          <circle r="8.5" cx="75" cy="628"></circle>
+          <circle r="8" cx="216" cy="164"></circle>
+          <circle
+            r="6.5"
+            cx="278"
+            cy="330"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle r="8" cx="544" cy="200" strokeWidth="2" fill="none"></circle>
+          <circle r="8.5" cx="669" cy="330"></circle>
+          <circle r="6.5" cx="149" cy="119"></circle>
+          <circle r="10.5" cx="122" cy="725"></circle>
+          <circle r="7.5" cx="199" cy="14" strokeWidth="2" fill="none"></circle>
+          <circle
+            r="11.5"
+            cx="720"
+            cy="18"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+          <circle r="7" cx="270" cy="647" strokeWidth="2" fill="none"></circle>
+          <circle r="10" cx="70" cy="694" strokeWidth="2" fill="none"></circle>
+          <circle r="13" cx="622" cy="334" strokeWidth="2" fill="none"></circle>
+          <circle r="6" cx="358" cy="152" strokeWidth="2" fill="none"></circle>
+          <circle r="11.5" cx="753" cy="630"></circle>
+          <circle r="7" cx="681" cy="782"></circle>
+          <circle r="9" cx="730" cy="326" strokeWidth="2" fill="none"></circle>
+          <circle r="13.5" cx="645" cy="711"></circle>
+          <circle r="8" cx="256" cy="380"></circle>
+          <circle r="6" cx="473" cy="680"></circle>
+          <circle
+            r="7.5"
+            cx="267"
+            cy="562"
+            strokeWidth="2"
+            fill="none"
+          ></circle>
+        </svg>
