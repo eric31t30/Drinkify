@@ -46,9 +46,9 @@ function Footer() {
       </div>
 
       <div className="footer-cont">
-        <img className="footer-logo" src={logo} alt="" />
+        <img className="footer-logo" src={logo} alt="logo" />
 
-        <img className="footer-bubbles" src={bubbles} alt="" />
+        <img className="footer-bubbles" src={bubbles} alt="bubbles-decoration" draggable="false" />
         <p className="footer-copyright">© 2025 Eric — Drinkify</p>
       </div>
     </footer>

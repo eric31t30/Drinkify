@@ -60,6 +60,7 @@
     filter: invert(100%);
     opacity: .2;
     z-index: 11;
+    pointer-events: none;
 }
 
 .footer-copyright{

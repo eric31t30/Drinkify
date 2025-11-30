@@ -1,70 +1,71 @@
 .hero{
     width: 100%;
     position: relative;
-}
-
-.hero-wave-cont{
-    width: 100%;
-    height: 300px !important;
-    
-    transform: scaleY(-1) scaleX(-1); 
-}
-
-.hero-wave{
-    width: 100%;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .hero-title-cont{
     width: 100%;
     height: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px; 
- 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #e249be, #08C9F4);
+    padding: 40px 20px;
+    padding-bottom: 20px;
+    z-index: 10;
 }
 
 .hero-title{
-    position: absolute;
-    left: 20px;
-    top: 30%; 
-    
-    font-size: 2.2rem;
-    color: white;
     transform: rotate(-5deg);
+    filter: invert(100%);
+}
+.hero-waves-cont{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-wave-1{
+    z-index: 8;
+}
+
+.hero-wave-2{
+    position: absolute;
+    z-index: 6;
+    top: 10px;
+    left: 0px;
+}
+
+.hero-lemon{
+    position: absolute;
+    bottom: -0px;
+    right: 40px;
+    z-index: 7;
+    width: 140px;
 }
 
 .hero-circle{
     position: absolute;
-
     background-color: rgba(255, 255, 255, .3);
     pointer-events: none;
     border-radius: 50%;
     z-index: 30;
 }
 
-.hero-circle-1{
-    top: 20px;
-    right: 50px;
-
-    width: 30px;
-    height: 30px;
-}
-
-.hero-circle-2{
-    top: 40px;
-    right: 120px;
-
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, .3);
-}
-
-.hero-circle-3{
-    top: 80px;
-    right: 80px;
-
-    width: 20px;
-    height: 20px;
+.hero-bubbles{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(100%);
+    opacity: .2;
+    z-index: 11;
+    pointer-events: none;
 }
