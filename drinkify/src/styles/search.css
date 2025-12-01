@@ -20,7 +20,7 @@
 }
 
 .search-input-cont:focus-within {
-  border-color: rgb(255, 140, 0);
+  border-color: #08C9F4;
 }
 
 .search-icon{
@@ -62,6 +62,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 20px;
 }
 

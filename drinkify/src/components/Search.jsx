@@ -1,23 +1,48 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/search.css'
 
-import seach from '/icons/search.svg'
+import search from '/icons/search.svg'
 
-function Search() {
+function Search({ localCategories, filters, setFilters}) {
 
-  const [category, setCategory] = useState("all")
-  const [level, setLevel] = useState("low")
-  const [abv, setAbv] = useState(0);
+  const[input, setInput] = useState("")
+
+  
+  const categories = [
+    { label: "Todos", value: "all" },
+    ...localCategories.map((cat) => ({
+      label: cat,
+      value: cat,
+    })),
+  ];
+
+  const levels = [
+    { label: "Todos", value: "all" },
+    { label: "Bajo", value: "Bajo" },
+    { label: "Medio", value: "Medio" },
+    { label: "Alto", value: "Alto" },
+  ];
+
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setFilters((prev) => ({ ...prev, search: input }));
+    }, 150);
+
+    return () => clearTimeout(id);
+  }, [input]);
 
   return (
     <div className="search">
       <div className="search-input-cont">
-        <img className="search-icon" src={seach} alt="" />
+        <img className="search-icon" src={search} alt="" />
         <input
           className="search-input"
           type="text"
           name="search"
           placeholder="Buscar bebidas..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
         />
       </div>
 
@@ -25,122 +50,52 @@ function Search() {
         <h2 className="search-filter-title">Category</h2>
 
         <div className="search-filter-buttons">
-          <div
-            className={`search-button-type ${
-              category === "all" ? "search-button-type-active" : ""
-            }`}
-            onClick={() => setCategory("all")}
-          >
-            Todos
-            <span
-              className={`search-border${
-                category === "all" ? "search-no-border" : ""
+          {categories.map((cat) => (
+            <div
+              key={cat.value}
+              className={`search-button-type ${
+                filters.category === cat.value
+                  ? "search-button-type-active"
+                  : ""
               }`}
-            ></span>
-          </div>
-          <div
-            className={`search-button-type ${
-              category === "cocktail" ? "search-button-type-active" : ""
-            }`}
-            onClick={() => setCategory("cocktail")}
-          >
-            cocktail
-            <span
-              className={`search-border${
-                category === "cocktail" ? "search-no-border" : ""
-              }`}
-            ></span>
-          </div>
-          <div
-            className={`search-button-type ${
-              category === "no-alcohol" ? "search-button-type-active" : ""
-            }`}
-            onClick={() => setCategory("no-alcohol")}
-          >
-            sin alcohol
-            <span
-              className={`search-border${
-                category === "no-alcohol" ? "search-no-border" : ""
-              }`}
-            ></span>
-          </div>
+              onClick={() =>
+                setFilters((prev) => ({ ...prev, category: cat.value }))
+              }
+            >
+              {cat.label}
+              <span
+                className={`search-border ${
+                  filters.category === cat.value ? "search-no-border" : ""
+                }`}
+              ></span>
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="search-filter-cont">
-        <h2 className="search-filter-title">Nivel</h2>
+        <h2 className="search-filter-title">Nivel de alcohol</h2>
+
         <div className="search-filter-buttons">
-          <div
-            className={`search-button-type ${
-              level === "all" ? "search-button-type-active" : ""
-            }`}
-            onClick={() => setLevel("all")}
-          >
-            Todos
-            <span
-              className={`search-border${
-                level === "all" ? "search-no-border" : ""
+          {levels.map((lvl) => (
+            <div
+              key={lvl.value}
+              className={`search-button-type ${
+                filters.level === lvl.value ? "search-button-type-active" : ""
               }`}
-            ></span>
-          </div>
-          <div
-            className={`search-button-type ${
-              level === "low" ? "search-button-type-active" : ""
-            }`}
-            onClick={() => setLevel("low")}
-          >
-            Bajo
-            <span
-              className={`search-border${
-                level === "low" ? "search-no-border" : ""
-              }`}
-            ></span>
-          </div>
-          <div
-            className={`search-button-type ${
-              level === "mid" ? "search-button-type-active" : ""
-            }`}
-            onClick={() => setLevel("mid")}
-          >
-            Medio
-            <span
-              className={`search-border${
-                level === "mid" ? "search-no-border" : ""
-              }`}
-            ></span>
-          </div>
-          <div
-            className={`search-button-type ${
-              level === "high" ? "search-button-type-active" : ""
-            }`}
-            onClick={() => setLevel("high")}
-          >
-            Alto
-            <span
-              className={`search-border${
-                level === "high" ? "search-no-border" : ""
-              }`}
-            ></span>
-          </div>
+              onClick={() =>
+                setFilters((prev) => ({ ...prev, level: lvl.value }))
+              }
+            >
+              {lvl.label}
+              <span
+                className={`search-border ${
+                  filters.level === lvl.value ? "search-no-border" : ""
+                }`}
+              ></span>
+            </div>
+          ))}
         </div>
-      </div>
-
-      <div className="search-filter-cont">
-        <div className="search-filter-abv-cont">
-          <h2 className="search-filter-title">Nivel de alcohol</h2>
-          <div className="search-abv">
-            <p>{abv}%</p>
-          </div>
-        </div>
-
-        <input
-          className="search-filter-abv"
-          type="range"
-          min="0"
-          max="100"
-          value={abv}
-          onChange={(e) => setAbv(e.target.value)}
-        />
       </div>
     </div>
   );
