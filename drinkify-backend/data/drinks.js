@@ -245,3 +245,5 @@ export const drinks = [
     price: 6.5,
   },
 ];
+
+export const categories = [...new Set(drinks.map((d) => d.category))];

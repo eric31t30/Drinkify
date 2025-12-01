@@ -1,4 +1,5 @@
 
+import { useEffect, useMemo, useState } from 'react';
 import './App.css'
 import DrinkList from './components/DrinkList';
 import Footer from './components/footer';
@@ -8,14 +9,60 @@ import Search from './components/Search';
 
 function App() {
 
+  const [drinks, setDrinks] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [filters, setFilters] = useState({
+    category: "all",
+    level: "all",
+    search: ""
+  });
+
+  useEffect(() => {
+    fetch("http://localhost:3000/drinks")
+      .then((res) => res.json())
+      .then((data) => setDrinks(data));
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, []);
+
+  const filteredDrinks = useMemo(() => {
+    let result = [...drinks];
+    const searchTerm = filters.search.toLowerCase().trim();
+
+    if (filters.category !== "all") {
+      result = result.filter((d) => d.category === filters.category);
+    }
+
+    if (filters.level !== "all") {
+      result = result.filter((d) => d.alcohol.level === filters.level);
+    }
+    
+    if (searchTerm) {
+      result = result.filter((d) => {
+        const name = d.name.toLowerCase();
+        return name.includes(searchTerm);
+      });
+    }
+
+    return result;
+  }, [filters.category, filters.level, filters.search, drinks]);
+
+  useEffect(() => {
+    console.log(filters);
+    
+  }, [filters])
+  
+  
   return (
     <section className="app">
-
       <Hero />
-      <Search />
-      <DrinkList />
+      <Search localCategories={categories} filters={filters} setFilters={setFilters} />
+      <DrinkList drinks={filteredDrinks} />
       <Footer />
-
     </section>
   );
 }
