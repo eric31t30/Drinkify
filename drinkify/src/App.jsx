@@ -4,6 +4,7 @@ import DrinkList from './components/DrinkList';
 import Footer from './components/footer';
 
 import Hero from './components/Hero';
+import Search from './components/Search';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <section className="app">
 
       <Hero />
+      <Search />
       <DrinkList />
       <Footer />
 

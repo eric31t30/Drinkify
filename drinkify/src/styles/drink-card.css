@@ -6,9 +6,7 @@
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .6);
-
     font-family: "Noto Sans", sans-serif;
-
     background: linear-gradient(180deg, transparent 50%, cyan 200%);
 }
 
