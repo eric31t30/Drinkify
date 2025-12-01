@@ -1,29 +1,22 @@
-import { useState } from 'react'
+
 import './App.css'
-import { useEffect } from 'react';
+import DrinkList from './components/DrinkList';
+import Footer from './components/footer';
+
+import Hero from './components/Hero';
+import Search from './components/Search';
 
 function App() {
 
-  const [drinks, setDrinks] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:3000/drinks")
-      .then((res) => res.json())
-      .then((data) => setDrinks(data));
-  }, []);
-
   return (
-    <div>
-      <h1>Drinkify 🍹</h1>
+    <section className="app">
 
-      <div>
+      <Hero />
+      <Search />
+      <DrinkList />
+      <Footer />
 
-      {drinks.map(data => (
-        <div key={data.id}>{data.name}</div>
-      ))}
-
-      </div>
-    </div>
+    </section>
   );
 }
 
