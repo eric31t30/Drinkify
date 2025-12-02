@@ -15,6 +15,10 @@ function DrinkCard({ drink }) {
         <img className="drink-image" src={drink.images.full} alt="" />
       </div>
 
+      <div className='drink-level' style={{background: drink.color}}>
+        {drink.alcohol.level}
+      </div>
+
       <div className="drink-text">
         <div>
           <h2 className="drink-name">{drink.name}</h2>

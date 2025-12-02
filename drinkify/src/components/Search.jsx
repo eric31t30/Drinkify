@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import '../styles/search.css'
 
 import search from '/icons/search.svg'
+import cocktail from "/icons/cocktail.svg";
+import drink from "/icons/drink.svg";
+import bottle from "/icons/bottle.svg";
 
 function Search({ localCategories, filters, setFilters}) {
 
@@ -34,6 +37,11 @@ function Search({ localCategories, filters, setFilters}) {
 
   return (
     <div className="search">
+      <h2 className="slogan">
+        Explora la colección de bebidas
+        <img className="slogan-icon" src={cocktail} alt="cocktail-icon" />
+      </h2>
+
       <div className="search-input-cont">
         <img className="search-icon" src={search} alt="" />
         <input
@@ -47,13 +55,16 @@ function Search({ localCategories, filters, setFilters}) {
       </div>
 
       <div className="search-filter-cont search-filter-type">
-        <h2 className="search-filter-title">Category</h2>
+        <h2 className="search-filter-title">
+          <img className="search-title-icon" src={drink} alt="icon" />
+          Category
+        </h2>
 
         <div className="search-filter-buttons">
           {categories.map((cat) => (
             <div
               key={cat.value}
-              className={`search-button-type ${
+              className={`search-button-filter ${
                 filters.category === cat.value
                   ? "search-button-type-active"
                   : ""
@@ -74,13 +85,16 @@ function Search({ localCategories, filters, setFilters}) {
       </div>
 
       <div className="search-filter-cont">
-        <h2 className="search-filter-title">Nivel de alcohol</h2>
+        <h2 className="search-filter-title">
+          <img className="search-title-icon" src={bottle} alt="icon" />
+          Nivel de alcohol
+        </h2>
 
         <div className="search-filter-buttons">
           {levels.map((lvl) => (
             <div
               key={lvl.value}
-              className={`search-button-type ${
+              className={`search-button-filter ${
                 filters.level === lvl.value ? "search-button-type-active" : ""
               }`}
               onClick={() =>

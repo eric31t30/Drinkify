@@ -1,8 +1,46 @@
 .drink-list{
-    margin-top: 20px;
+
+    margin-bottom: 80px;
     padding: 40px;
-    
     display: flex;
     flex-direction: column;
     gap: 40px 20px;
+}
+
+.drinks-quantity-cont{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    padding: 5px 20px;
+    border: 2px solid #08C9F4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.drinks-quantity-1{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.drinks-quantity-2{
+    font-size: 2rem;
+    color: #08C9F4;
+    font-weight: 700;
+}
+
+.drinks-quantity-3{
+    font-size: .8rem;
+    color: rgba(0, 0, 0, .6);
+}
+
+.drinks-quantity-icon{
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    opacity: .1;
+    pointer-events: none;
 }
