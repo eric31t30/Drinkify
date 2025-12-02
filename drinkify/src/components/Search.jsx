@@ -33,13 +33,13 @@ function Search({ localCategories, filters, setFilters}) {
     }, 150);
 
     return () => clearTimeout(id);
-  }, [input]);
+  }, [input, setFilters]);
 
   return (
-    <div className="search">
+    <section className="search">
       <h2 className="slogan">
         Explora la colección de bebidas
-        <img className="slogan-icon" src={cocktail} alt="cocktail-icon" />
+        <img className="slogan-icon" src={cocktail} alt="" />
       </h2>
 
       <div className="search-input-cont">
@@ -56,13 +56,13 @@ function Search({ localCategories, filters, setFilters}) {
 
       <div className="search-filter-cont search-filter-type">
         <h2 className="search-filter-title">
-          <img className="search-title-icon" src={drink} alt="icon" />
+          <img className="search-title-icon" src={drink} alt="" />
           Category
         </h2>
 
         <div className="search-filter-buttons">
           {categories.map((cat) => (
-            <div
+            <button
               key={cat.value}
               className={`search-button-filter ${
                 filters.category === cat.value
@@ -79,7 +79,7 @@ function Search({ localCategories, filters, setFilters}) {
                   filters.category === cat.value ? "search-no-border" : ""
                 }`}
               ></span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -92,7 +92,7 @@ function Search({ localCategories, filters, setFilters}) {
 
         <div className="search-filter-buttons">
           {levels.map((lvl) => (
-            <div
+            <button
               key={lvl.value}
               className={`search-button-filter ${
                 filters.level === lvl.value ? "search-button-type-active" : ""
@@ -107,11 +107,11 @@ function Search({ localCategories, filters, setFilters}) {
                   filters.level === lvl.value ? "search-no-border" : ""
                 }`}
               ></span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

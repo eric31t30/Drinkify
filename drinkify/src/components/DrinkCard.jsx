@@ -11,13 +11,13 @@ function DrinkCard({ drink }) {
         borderBottom: `2px solid ${drink.color}`,
       }}
     >
-      <div className="drink-image-cont">
+      <figure className="drink-image-cont">
         <img className="drink-image" src={drink.images.full} alt="" />
-      </div>
+      </figure>
 
-      <div className='drink-level' style={{background: drink.color}}>
+      <span className='drink-level' style={{background: drink.color}}>
         {drink.alcohol.level}
-      </div>
+      </span>
 
       <div className="drink-text">
         <div>
@@ -26,22 +26,22 @@ function DrinkCard({ drink }) {
         </div>
         <p className="drink-description">{drink.description}</p>
 
-        <div className="drink-info">
+        <dl className="drink-info">
           <div className="drink-info-cont drink-info-abv">
-            <p className="drink-info-title">ABV</p>
-            <p className="drink-info-text">{drink.alcohol.abv}%</p>
+            <dt className="drink-info-title">ABV</dt>
+            <dd className="drink-info-text">{drink.alcohol.abv}%</dd>
           </div>
 
           <div className="drink-info-cont drink-info-type">
-            <p className="drink-info-title">Tipo</p>
-            <p className="drink-info-text">{drink.alcohol.type}</p>
+            <dt className="drink-info-title">Tipo</dt>
+            <dd className="drink-info-text">{drink.alcohol.type}</dd>
           </div>
 
           <div className="drink-info-cont drink-info-ingredients">
-            <p className="drink-info-title">ingredientes</p>
-            <p className="drink-info-text">{drink.ingredients.length}</p>
+            <dt className="drink-info-title">ingredientes</dt>
+            <dd className="drink-info-text">{drink.ingredients.length}</dd>
           </div>
-        </div>
+        </dl>
 
         <div className="drink-button-cont">
           <button

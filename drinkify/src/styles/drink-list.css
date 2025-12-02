@@ -7,36 +7,38 @@
     gap: 40px 20px;
 }
 
-.drinks-quantity-cont{
+.drink-list__header{
     position: relative;
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: start;
-    flex-direction: column;
     padding: 5px 20px;
     border: 2px solid #08C9F4;
     border-radius: 5px;
     overflow: hidden;
 }
 
-.drinks-quantity-1{
-    font-size: 1rem;
-    font-weight: 500;
+.drink-list__title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    font-size: .8rem;
+    color: rgba(0, 0, 0, .6);
 }
 
-.drinks-quantity-2{
+
+.drink-list__results{
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+}
+
+.drink-list__count{
     font-size: 2rem;
     color: #08C9F4;
     font-weight: 700;
 }
 
-.drinks-quantity-3{
-    font-size: .8rem;
-    color: rgba(0, 0, 0, .6);
-}
-
-.drinks-quantity-icon{
+.drink-list__icon{
     position: absolute;
     bottom: -20px;
     right: -20px;
