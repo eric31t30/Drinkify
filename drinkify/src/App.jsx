@@ -18,15 +18,26 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:3000/drinks")
-      .then((res) => res.json())
-      .then((data) => setDrinks(data));
-  }, []);
+    const loadData = async () => {
+      try {
+        const [drinksRes, categoriesRes] = await Promise.all([
+          fetch("http://localhost:3000/drinks"),
+          fetch("http://localhost:3000/categories"),
+        ]);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
+        const [drinksData, categoriesData] = await Promise.all([
+          drinksRes.json(),
+          categoriesRes.json(),
+        ]);
+
+        setDrinks(drinksData);
+        setCategories(categoriesData);
+      } catch (err) {
+        console.error("Error al cargar los datos", err);
+      }
+    };
+
+    loadData();
   }, []);
 
   const filteredDrinks = useMemo(() => {
