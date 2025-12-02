@@ -8,13 +8,16 @@ function DrinkList({ drinks }) {
 
   return (
     <section className="drink-list">
-      <div className="drinks-quantity-cont">
-        <p className="drinks-quantity-1">Resultados</p>
-        <p className="drinks-quantity-2">{drinks.length}</p>
-        <p className="drinks-quantity-3">Bebidas encontradas</p>
 
-        <img className="drinks-quantity-icon" src={lemon} alt="" />
-      </div>
+      <header className="drink-list__header">
+        <h2 className="drink-list__title">
+          <span className='drink-list__results'>Resultados</span> 
+          <span className="drink-list__count">{drinks.length}</span> 
+          bebidas encontradas
+        </h2>
+
+        <img className="drink-list__icon" src={lemon} alt="Icono de limón" />
+      </header>
 
       {drinks.map((item) => (
         <DrinkCard key={item.id} drink={item} />
