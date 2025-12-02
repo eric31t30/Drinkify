@@ -17,6 +17,8 @@ function Footer() {
           height="100%"
           id="svg"
           viewBox="0 0 1440 590"
+          aria-hidden="true"
+          focusable="false"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -33,6 +35,8 @@ function Footer() {
           height="100%"
           id="svg"
           viewBox="0 0 1440 590"
+          aria-hidden="true"
+          focusable="false"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -46,9 +50,14 @@ function Footer() {
       </div>
 
       <div className="footer-cont">
-        <img className="footer-logo" src={logo} alt="logo" />
+        <img className="footer-logo" src={logo} alt="logo de drinkify" />
 
-        <img className="footer-bubbles" src={bubbles} alt="bubbles-decoration" draggable="false" />
+        <img
+          className="footer-bubbles"
+          src={bubbles}
+          alt="bubbles-decoration"
+          draggable="false"
+        />
         <p className="footer-copyright">© 2025 Eric — Drinkify</p>
       </div>
     </footer>
