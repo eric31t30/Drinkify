@@ -74,7 +74,6 @@
 }
 
 .search-filter-title{
-   
     font-size: 1.1rem;
     font-weight: 500;
     color: rgba(0, 0, 0, .8);
@@ -101,10 +100,12 @@
     color: rgba(0, 0, 0, .8);
     font-weight: 500;
     font-size: .9rem;
-    padding: 4px 12px;
+    padding: 6px 12px;
     border-radius: 7px;
     cursor: pointer;
     transition: border .5s ease;
+    border: none;
+    outline: none;
 }
 
 .search-border{
