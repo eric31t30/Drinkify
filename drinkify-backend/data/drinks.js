@@ -229,7 +229,7 @@ export const drinks = [
     alcohol: {
       type: "No alcohólico",
       abv: 0,
-      level: "Ninguno",
+      level: "Sin alcohol",
     },
     description: "Refrescante, cítrica y perfecta para el calor.",
     ingredients: [

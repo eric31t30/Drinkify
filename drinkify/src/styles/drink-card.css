@@ -5,7 +5,7 @@
     gap: 10px;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, .6);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
     font-family: "Noto Sans", sans-serif;
     background: linear-gradient(180deg, transparent 50%, cyan 200%);
 }
@@ -14,7 +14,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     overflow: hidden;
     border-radius: 15px;
 }
@@ -28,6 +27,18 @@
 
 .drink-image:hover{
     transform: scale(1.06);
+}
+
+.drink-level{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 3px 25px;
+    border-bottom-left-radius: 15px;
 }
 
 .drink-text{
