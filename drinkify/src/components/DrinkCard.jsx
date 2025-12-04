@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/drink-card.css'
 
 import arrow from '/icons/arrow.svg'
@@ -44,14 +45,15 @@ function DrinkCard({ drink }) {
         </dl>
 
         <div className="drink-button-cont">
-          <button
+          <Link
+            to={`/drink/${drink.id}`}
             className="drink-button"
             onClick={() => console.log("click")}
-            style={{ background: `${drink.color}` }}
+            style={{ background: drink.color }}
           >
             <p>Ver Detalles</p>
             <img className="drink-button-icon" src={arrow} alt="" />
-          </button>
+          </Link>
         </div>
 
         <svg
