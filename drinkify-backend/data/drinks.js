@@ -29,7 +29,7 @@ export const drinks = [
   {
     id: 2,
     name: "Mojito",
-    color: "#7FCC77",
+    color: "#65c75aff",
     category: "Cóctel",
     alcohol: {
       type: "Alcohólico",
@@ -56,7 +56,7 @@ export const drinks = [
   {
     id: 3,
     name: "Piña Colada",
-    color: "#C6BE36",
+    color: "#cdd831ff",
     category: "Cóctel",
     alcohol: {
       type: "Alcohólico",

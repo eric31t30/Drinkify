@@ -1,0 +1,62 @@
+import React from 'react'
+import styles from "../../styles/drink-hero.module.css";
+import { Link } from "react-router-dom";
+
+import arrow from "/icons/arrow-2.svg";
+import scroll from "/icons/scroll.svg";
+
+import leafs from "/illustrations/leafs.svg";
+import lemon from "/illustrations/lemon-2.svg";
+import dots from "/illustrations/dots.svg";
+
+function DrinkHero({ drink }) {
+  return (
+    <div>
+      <section
+        className={styles["drink-hero-cont"]}
+        style={{
+          background: drink.color,
+        }}
+      >
+        <div className={styles["drink-hero"]}>
+          <img
+            className={styles["drink-image"]}
+            src={drink.images.png}
+            alt={drink.name}
+          />
+          <article className={styles["drink-main-info"]}>
+            <p className={styles["drink-category"]}>{drink.category}</p>
+            <h1 className={styles["drink-name"]}>{drink.name}</h1>
+            <p className={styles["drink-description"]}>{drink.description}</p>
+            <img
+              className={styles["drink-scroll-icon"]}
+              src={scroll}
+              alt="boton de scroll"
+              draggable="false"
+            />
+          </article>
+        </div>
+
+        <div className={styles.shadow1}></div>
+        <div className={styles.shadow2}></div>
+
+        <Link className={styles["back"]} to="/">
+          <img
+            className={styles["back-icon"]}
+            src={arrow}
+            alt="regresar"
+            draggable="false"
+          />
+          Volver
+        </Link>
+
+        <img className={styles["lemon"]} src={lemon} alt="" draggable="false" />
+        <img className={styles["dots"]} src={dots} alt="" draggable="false" />
+        <img className={styles["leafs"]} src={leafs} alt="" draggable="false" />
+        <div className={styles["circle"]}></div>
+      </section>
+    </div>
+  );
+}
+
+export default DrinkHero

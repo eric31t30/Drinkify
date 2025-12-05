@@ -1,36 +1,40 @@
 import { useEffect, useState } from "react";
-import "../styles/drink-details.css";
+import styles from "../styles/drink-details.module.css";
 import { useParams } from "react-router-dom";
+
+import DrinkHero from "../components/drink-details/DrinkHero";
+
 
 function DrinkDetails() {
 
   const { id } = useParams();
-  const [drink, setDrink] = useState([])
+  const [drink, setDrink] = useState(null)
 
   useEffect(() => {
 
     const getdrink = async()=>{
-        try{
-            const res = await fetch(`http://localhost:3000/drink/${id}`);
-            const data = await res.json()
-
-            setDrink(data)
-            console.log(data);
-            
-        }catch(err){
-            console.error("Error al cargar la bebida", err);   
-        }
+      try{
+        const res = await fetch(`http://localhost:3000/drink/${id}`);
+        const data = await res.json()
+        setDrink(data)
+        console.log(data);
+          
+      }catch(err){
+        console.error("Error al cargar la bebida", err);   
+      }
     }
 
     getdrink();
     
   }, [id])
+
   
+  if (!drink) return <p>Cargando...</p>;
 
   return (
-    <div className="drink">
-      <h1>detalles de { drink.name }</h1>
-    </div>
+    <section className={styles.drink}>
+      <DrinkHero drink={drink}/>
+    </section>
   );
 }
 
