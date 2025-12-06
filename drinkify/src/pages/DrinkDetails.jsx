@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 
 import DrinkHero from "../components/drink-details/DrinkHero";
 import DrinkInfo from "../components/drink-details/DrinkInfo";
+import DrinkIngredients from "../components/drink-details/DrinkIngredients";
 
 function DrinkDetails() {
 
   const { id } = useParams();
   const [drink, setDrink] = useState(null)
-
 
   useEffect(() => {
 
@@ -36,6 +36,7 @@ function DrinkDetails() {
     <section className={styles.drink}>
       <DrinkHero drink={drink} />
       <DrinkInfo drink={drink} />
+      <DrinkIngredients drink={drink} />
     </section>
   );
 }
