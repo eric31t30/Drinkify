@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import DrinkHero from "../components/drink-details/DrinkHero";
 import DrinkInfo from "../components/drink-details/DrinkInfo";
 import DrinkIngredients from "../components/drink-details/DrinkIngredients";
+import DrinkPreparation from "../components/drink-details/DrinkPreparation";
 
 function DrinkDetails() {
 
@@ -37,6 +38,8 @@ function DrinkDetails() {
       <DrinkHero drink={drink} />
       <DrinkInfo drink={drink} />
       <DrinkIngredients drink={drink} />
+      <DrinkPreparation drink={drink} />
+
     </section>
   );
 }

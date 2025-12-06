@@ -16,8 +16,14 @@ export const drinks = [
       { name: "Jugo de limón", amount: "25ml" },
       { name: "Sal", amount: "Al gusto" },
     ],
-    preparation:
-      "Agitar todos los ingredientes con hielo y servir en un vaso escarchado con sal.",
+    preparation: [
+      "Escarchar el borde del vaso con limón y sal.",
+      "Agregar tequila, triple sec y jugo de limón a una coctelera.",
+      "Añadir hielo hasta llenar la coctelera.",
+      "Agitar vigorosamente durante 10–12 segundos.",
+      "Colar sobre el vaso escarchado y servir.",
+    ],
+    prepTime: "3 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764340852/margarita_aqsoqk.webp",
       png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764340852/margarita-png_vpvn5k.png",
@@ -43,8 +49,14 @@ export const drinks = [
       { name: "Lima", amount: "1/2" },
       { name: "Soda", amount: "Al gusto" },
     ],
-    preparation:
-      "Macerar la hierbabuena con la lima, añadir ron, hielo y completar con soda.",
+    preparation: [
+      "Colocar la hierbabuena y la lima en un vaso resistente.",
+      "Macerar suavemente para liberar aromas sin romper las hojas.",
+      "Agregar el ron blanco.",
+      "Llenar el vaso con hielo picado o cubos.",
+      "Completar con soda y mezclar suavemente.",
+    ],
+    prepTime: "4 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764342493/mojito_mqx7lh.webp",
       png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764342493/mojito-png_ismdgp.png",
@@ -69,7 +81,13 @@ export const drinks = [
       { name: "Crema de coco", amount: "30ml" },
       { name: "Jugo de piña", amount: "90ml" },
     ],
-    preparation: "Mezclar todos los ingredientes con hielo picado y servir.",
+    preparation: [
+      "Agregar el ron, la crema de coco y el jugo de piña a la licuadora.",
+      "Añadir hielo picado al gusto.",
+      "Licuar hasta obtener una mezcla cremosa y homogénea.",
+      "Servir en un vaso alto y decorar si se desea.",
+    ],
+    prepTime: "3 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764343651/pi%C3%B1a-colada_kcjhra.png",
       png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764343651/pi%C3%B1a-colada-png_siln3z.png",
@@ -93,7 +111,14 @@ export const drinks = [
       { name: "Bitter", amount: "2 dash" },
       { name: "Azúcar", amount: "1 terrón" },
     ],
-    preparation: "Disolver el azúcar con bitter, luego agregar whisky y hielo.",
+    preparation: [
+      "Colocar el terrón de azúcar en un vaso old fashioned.",
+      "Agregar el bitter y unas gotas de agua.",
+      "Aplastar hasta disolver el azúcar.",
+      "Añadir hielo (preferiblemente un cubo grande).",
+      "Verter el whisky y mezclar suavemente.",
+    ],
+    prepTime: "3 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345097/old-fashioned_gxq8rx.jpg",
       png: "Studio isolated Old Fashioned with large clear ice cube, sharp 8k cut-out.",
@@ -117,7 +142,13 @@ export const drinks = [
       { name: "Triple Sec", amount: "15ml" },
       { name: "Jugo de arándanos", amount: "30ml" },
     ],
-    preparation: "Agitar con hielo y servir en una copa Martini.",
+    preparation: [
+      "Agregar vodka, triple sec y jugo de arándanos a una coctelera.",
+      "Añadir hielo hasta llenarla.",
+      "Agitar enérgicamente durante 10–12 segundos.",
+      "Colar en una copa Martini bien fría.",
+    ],
+    prepTime: "3 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345487/cosmopolitan_b1nkzd.jpg",
       png: "Isolated cosmopolitan martini glass, clean transparent background, 8k.",
@@ -141,7 +172,13 @@ export const drinks = [
       { name: "Jugo de limón", amount: "25ml" },
       { name: "Jarabe simple", amount: "20ml" },
     ],
-    preparation: "Agitar con hielo y colar en una copa fría.",
+    preparation: [
+      "Agregar todos los ingredientes a una coctelera.",
+      "Añadir hielo y cerrar bien.",
+      "Agitar fuerte durante 10–12 segundos.",
+      "Colar en una copa fría para obtener una textura limpia.",
+    ],
+    prepTime: "3 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345803/daiquiri_l5psis.jpg",
       png: "Isolated daiquiri coupe glass, clean studio shot, 8k.",
@@ -165,7 +202,14 @@ export const drinks = [
       { name: "Frutas mixtas", amount: "Al gusto" },
       { name: "Refresco de naranja", amount: "50ml" },
     ],
-    preparation: "Mezclar todo y dejar reposar al menos 1 hora.",
+    preparation: [
+      "Colocar las frutas picadas en una jarra.",
+      "Añadir el vino tinto.",
+      "Agregar el refresco de naranja o soda.",
+      "Mezclar bien todos los ingredientes.",
+      "(Recomendado) Refrigerar al menos 1 hora antes de servir.",
+    ],
+    prepTime: "5 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764353820/sangria_udkpsl.jpg",
       png: "Studio isolated glass of sangria with fruit pieces, transparent background.",
@@ -189,7 +233,14 @@ export const drinks = [
       { name: "Prosecco", amount: "90ml" },
       { name: "Soda", amount: "30ml" },
     ],
-    preparation: "Servir en una copa grande con hielo.",
+    preparation: [
+      "Llenar una copa grande con hielo.",
+      "Añadir el Aperol.",
+      "Agregar el prosecco suavemente.",
+      "Completar con un toque de soda.",
+      "Mezclar de forma ligera para no perder gas.",
+    ],
+    prepTime: "2 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/aperol-spritz_lnewe7.jpg",
       png: "Clean isolated Aperol Spritz wine glass, transparent background, 8k.",
@@ -213,7 +264,14 @@ export const drinks = [
       { name: "Ginger beer", amount: "120ml" },
       { name: "Lima", amount: "15ml" },
     ],
-    preparation: "Servir en una taza de cobre con hielo.",
+    preparation: [
+      "Llenar una taza de cobre con hielo.",
+      "Agregar el vodka.",
+      "Añadir el jugo de lima.",
+      "Completar con ginger beer.",
+      "Mezclar suavemente y servir.",
+    ],
+    prepTime: "2 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/moscow-mule_t4z0fo.jpg",
       png: "Studio isolated copper mug with Moscow Mule, transparent background, 8k.",
@@ -237,7 +295,13 @@ export const drinks = [
       { name: "Hielo picado", amount: "1 taza" },
       { name: "Azúcar", amount: "2 cdas" },
     ],
-    preparation: "Licuar todo hasta obtener una textura frozen.",
+    preparation: [
+      "Colocar todos los ingredientes en una licuadora.",
+      "Licuar hasta obtener una textura frozen suave.",
+      "Probar y ajustar dulzor si es necesario.",
+      "Servir inmediatamente.",
+    ],
+    prepTime: "3 min",
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/limonada-frozen_ihudhf.jpg",
       png: "Isolated frozen lemonade cup, clean white background, 8k.",
