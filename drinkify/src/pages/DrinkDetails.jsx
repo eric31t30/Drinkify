@@ -3,12 +3,13 @@ import styles from "../styles/drink-details.module.css";
 import { useParams } from "react-router-dom";
 
 import DrinkHero from "../components/drink-details/DrinkHero";
-
+import DrinkInfo from "../components/drink-details/DrinkInfo";
 
 function DrinkDetails() {
 
   const { id } = useParams();
   const [drink, setDrink] = useState(null)
+
 
   useEffect(() => {
 
@@ -25,7 +26,7 @@ function DrinkDetails() {
     }
 
     getdrink();
-    
+
   }, [id])
 
   
@@ -33,7 +34,8 @@ function DrinkDetails() {
 
   return (
     <section className={styles.drink}>
-      <DrinkHero drink={drink}/>
+      <DrinkHero drink={drink} />
+      <DrinkInfo drink={drink} />
     </section>
   );
 }
