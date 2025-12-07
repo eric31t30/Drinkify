@@ -10,6 +10,15 @@ import lemon from "/illustrations/lemon-2.svg";
 import dots from "/illustrations/dots.svg";
 
 function DrinkHero({ drink }) {
+
+
+  const scrollinfo = ()=>{
+    document.getElementById("drink-info-scroll")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
   return (
     <div>
       <section
@@ -33,6 +42,7 @@ function DrinkHero({ drink }) {
               src={scroll}
               alt="boton de scroll"
               draggable="false"
+              onClick={()=> scrollinfo()}
             />
           </article>
         </div>

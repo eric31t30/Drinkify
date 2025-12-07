@@ -4,11 +4,7 @@ export const drinks = [
     name: "Margarita",
     color: "#D4B244",
     category: "Cóctel",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 13,
-      level: "Medio",
-    },
+    alcohol: { type: "Alcohólico", abv: 13, level: "Medio" },
     description: "Clásico ácido y refrescante con un toque cítrico.",
     ingredients: [
       { name: "Tequila", amount: "50ml" },
@@ -24,6 +20,7 @@ export const drinks = [
       "Colar sobre el vaso escarchado y servir.",
     ],
     prepTime: "3 min",
+    tags: ["cítrico", "refrescante", "ligero"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764340852/margarita_aqsoqk.webp",
       png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764340852/margarita-png_vpvn5k.png",
@@ -37,11 +34,7 @@ export const drinks = [
     name: "Mojito",
     color: "#65c75aff",
     category: "Cóctel",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 10,
-      level: "Bajo",
-    },
+    alcohol: { type: "Alcohólico", abv: 10, level: "Bajo" },
     description: "Refrescante mezcla de menta, limón y ron.",
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
@@ -57,6 +50,7 @@ export const drinks = [
       "Completar con soda y mezclar suavemente.",
     ],
     prepTime: "4 min",
+    tags: ["refrescante", "herbal", "cítrico"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764342493/mojito_mqx7lh.webp",
       png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764342493/mojito-png_ismdgp.png",
@@ -70,11 +64,7 @@ export const drinks = [
     name: "Piña Colada",
     color: "#cdd831ff",
     category: "Cóctel",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 8,
-      level: "Bajo",
-    },
+    alcohol: { type: "Alcohólico", abv: 8, level: "Bajo" },
     description: "Dulce, cremosa y tropical.",
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
@@ -88,6 +78,7 @@ export const drinks = [
       "Servir en un vaso alto y decorar si se desea.",
     ],
     prepTime: "3 min",
+    tags: ["dulce", "tropical", "cremoso"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764343651/pi%C3%B1a-colada_kcjhra.png",
       png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764343651/pi%C3%B1a-colada-png_siln3z.png",
@@ -100,11 +91,7 @@ export const drinks = [
     name: "Old Fashioned",
     color: "#B4783D",
     category: "Cóctel",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 32,
-      level: "Alto",
-    },
+    alcohol: { type: "Alcohólico", abv: 32, level: "Alto" },
     description: "Clásico fuerte con notas de whisky y naranja.",
     ingredients: [
       { name: "Whisky bourbon", amount: "60ml" },
@@ -119,6 +106,7 @@ export const drinks = [
       "Verter el whisky y mezclar suavemente.",
     ],
     prepTime: "3 min",
+    tags: ["fuerte", "amargo"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345097/old-fashioned_gxq8rx.jpg",
       png: "Studio isolated Old Fashioned with large clear ice cube, sharp 8k cut-out.",
@@ -131,11 +119,7 @@ export const drinks = [
     name: "Cosmopolitan",
     color: "#D96480",
     category: "Cóctel",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 20,
-      level: "Medio",
-    },
+    alcohol: { type: "Alcohólico", abv: 20, level: "Medio" },
     description: "Dulce, cítrico y elegante.",
     ingredients: [
       { name: "Vodka", amount: "45ml" },
@@ -149,6 +133,7 @@ export const drinks = [
       "Colar en una copa Martini bien fría.",
     ],
     prepTime: "3 min",
+    tags: ["dulce", "cítrico", "afrutado"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345487/cosmopolitan_b1nkzd.jpg",
       png: "Isolated cosmopolitan martini glass, clean transparent background, 8k.",
@@ -161,11 +146,7 @@ export const drinks = [
     name: "Daiquiri",
     color: "#D06A60",
     category: "Cóctel",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 17,
-      level: "Medio",
-    },
+    alcohol: { type: "Alcohólico", abv: 17, level: "Medio" },
     description: "Equilibrio perfecto entre dulce y ácido.",
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
@@ -179,6 +160,7 @@ export const drinks = [
       "Colar en una copa fría para obtener una textura limpia.",
     ],
     prepTime: "3 min",
+    tags: ["cítrico", "refrescante", "ligero"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345803/daiquiri_l5psis.jpg",
       png: "Isolated daiquiri coupe glass, clean studio shot, 8k.",
@@ -191,11 +173,7 @@ export const drinks = [
     name: "Sangría",
     color: "#952F43",
     category: "Vino preparado",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 7,
-      level: "Bajo",
-    },
+    alcohol: { type: "Alcohólico", abv: 7, level: "Bajo" },
     description: "Fresca mezcla de vino y frutas.",
     ingredients: [
       { name: "Vino tinto", amount: "150ml" },
@@ -210,6 +188,7 @@ export const drinks = [
       "(Recomendado) Refrigerar al menos 1 hora antes de servir.",
     ],
     prepTime: "5 min",
+    tags: ["afrutado", "dulce", "refrescante"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764353820/sangria_udkpsl.jpg",
       png: "Studio isolated glass of sangria with fruit pieces, transparent background.",
@@ -222,11 +201,7 @@ export const drinks = [
     name: "Aperol Spritz",
     color: "#D9873A",
     category: "Spritz",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 11,
-      level: "Bajo",
-    },
+    alcohol: { type: "Alcohólico", abv: 11, level: "Bajo" },
     description: "Ligero, burbujeante y con sabor amargo dulce.",
     ingredients: [
       { name: "Aperol", amount: "60ml" },
@@ -241,6 +216,7 @@ export const drinks = [
       "Mezclar de forma ligera para no perder gas.",
     ],
     prepTime: "2 min",
+    tags: ["amargo", "refrescante"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/aperol-spritz_lnewe7.jpg",
       png: "Clean isolated Aperol Spritz wine glass, transparent background, 8k.",
@@ -253,11 +229,7 @@ export const drinks = [
     name: "Moscow Mule",
     color: "#9E6A33",
     category: "Cóctel",
-    alcohol: {
-      type: "Alcohólico",
-      abv: 14,
-      level: "Medio",
-    },
+    alcohol: { type: "Alcohólico", abv: 14, level: "Medio" },
     description: "Picante y refrescante con ginger beer.",
     ingredients: [
       { name: "Vodka", amount: "50ml" },
@@ -272,6 +244,7 @@ export const drinks = [
       "Mezclar suavemente y servir.",
     ],
     prepTime: "2 min",
+    tags: ["picante", "cítrico", "refrescante"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/moscow-mule_t4z0fo.jpg",
       png: "Studio isolated copper mug with Moscow Mule, transparent background, 8k.",
@@ -284,11 +257,7 @@ export const drinks = [
     name: "Limonada Frozen",
     color: "#17B225",
     category: "Sin alcohol",
-    alcohol: {
-      type: "No alcohólico",
-      abv: 0,
-      level: "Sin alcohol",
-    },
+    alcohol: { type: "No alcohólico", abv: 0, level: "Sin alcohol" },
     description: "Refrescante, cítrica y perfecta para el calor.",
     ingredients: [
       { name: "Limón", amount: "2" },
@@ -302,6 +271,7 @@ export const drinks = [
       "Servir inmediatamente.",
     ],
     prepTime: "3 min",
+    tags: ["cítrico", "refrescante", "dulce"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/limonada-frozen_ihudhf.jpg",
       png: "Isolated frozen lemonade cup, clean white background, 8k.",

@@ -26,7 +26,7 @@ function DrinkInfo({ drink }) {
   
   return (
     <section className={styles["drink-info"]}>
-      <h2 className={styles["drink-details-title"]}>
+      <h2 className={styles["drink-details-title"]} id="drink-info-scroll">
         <span style={{ color: drink.color }}>Det</span>alles
       </h2>
 

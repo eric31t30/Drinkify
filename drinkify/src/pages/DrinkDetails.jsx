@@ -6,11 +6,14 @@ import DrinkHero from "../components/drink-details/DrinkHero";
 import DrinkInfo from "../components/drink-details/DrinkInfo";
 import DrinkIngredients from "../components/drink-details/DrinkIngredients";
 import DrinkPreparation from "../components/drink-details/DrinkPreparation";
+import Footer from "../components/footer";
+import DrinkRecommendations from "../components/drink-details/DrinkRecommendations";
 
 function DrinkDetails() {
 
   const { id } = useParams();
   const [drink, setDrink] = useState(null)
+  const [recommendations, setRecommendations] = useState(null);
 
   useEffect(() => {
 
@@ -28,10 +31,26 @@ function DrinkDetails() {
 
     getdrink();
 
+    const getSimilars = async()=>{
+      try {
+        const res = await fetch(`http://localhost:3000/recommendations/drink/${id}`);
+        const data = await res.json();
+        setRecommendations(data);
+        console.log(data);
+        
+      } catch (err) {
+        console.error("Error al cargar la bebida", err);
+      }
+
+    }
+
+    getSimilars();
+
   }, [id])
 
   
   if (!drink) return <p>Cargando...</p>;
+  if (!recommendations) return <p>Cargando...</p>;
 
   return (
     <section className={styles.drink}>
@@ -39,7 +58,9 @@ function DrinkDetails() {
       <DrinkInfo drink={drink} />
       <DrinkIngredients drink={drink} />
       <DrinkPreparation drink={drink} />
+      <DrinkRecommendations drink={drink} recommendations={recommendations}/>
 
+      <Footer />
     </section>
   );
 }
