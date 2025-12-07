@@ -1,0 +1,42 @@
+.ingredients-cont{
+    position: relative;
+    margin: 50px 20px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.background{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.ingredients-title{
+    border-bottom: 2px solid rgba(0, 0, 0, .3);
+}
+
+.ingredients{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ingredient{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 0px;
+}
+
+.ingredient-name{
+    font-weight: 300;
+}
+
+.ingredient-amount{
+    font-weight: 500;
+}
