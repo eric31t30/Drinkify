@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import arrow from "/icons/arrow-2.svg";
 import scroll from "/icons/scroll.svg";
 
-import leafs from "/illustrations/leafs.svg";
+import leafs from "/illustrations/leafs-1.svg";
 import lemon from "/illustrations/lemon-2.svg";
 import dots from "/illustrations/dots.svg";
 
