@@ -23,7 +23,7 @@ body, *{
 @media (min-width: 700px) {
   :root {
     --font-size-small: .9rem;
-    --font-size-regular: 1.125rem;
+    --font-size-regular: 1.2rem;
     --font-size-medium: 1.75rem;
     --font-size-big: 2.25rem;
   }
