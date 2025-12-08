@@ -7,6 +7,7 @@
     align-items: center;
     flex-direction: column;
     background: linear-gradient(to bottom, #e249be, #08C9F4);
+    overflow: hidden;
 }
 
 .hero-title-cont{

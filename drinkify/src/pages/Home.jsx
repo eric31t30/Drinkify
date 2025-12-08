@@ -66,6 +66,7 @@ function Home() {
 
   return (
     <section className="home">
+
       <Hero />
       <Search
         localCategories={categories}
