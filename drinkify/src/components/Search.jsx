@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../styles/search.css'
+import styles from '../styles/search.module.css'
 
 import search from '/icons/search.svg'
 import cocktail from "/icons/cocktail.svg";
@@ -36,16 +36,16 @@ function Search({ localCategories, filters, setFilters}) {
   }, [input, setFilters]);
 
   return (
-    <section className="search">
-      <h2 className="slogan">
+    <section className={styles.search}>
+      <h2 className={styles.title}>
         Explora la colección de bebidas
-        <img className="slogan-icon" src={cocktail} alt="" />
+        <img className={styles["title-icon"]} src={cocktail} alt="" />
       </h2>
 
-      <div className="search-input-cont">
-        <img className="search-icon" src={search} alt="" />
+      <div className={styles["search-input-cont"]}>
+        <img className={styles["search-icon"]} src={search} alt="" />
         <input
-          className="search-input"
+          className={styles["search-input"]}
           type="text"
           name="search"
           placeholder="Buscar bebidas..."
@@ -54,61 +54,68 @@ function Search({ localCategories, filters, setFilters}) {
         />
       </div>
 
-      <div className="search-filter-cont search-filter-type">
-        <h2 className="search-filter-title">
-          <img className="search-title-icon" src={drink} alt="" />
-          Category
-        </h2>
-
-        <div className="search-filter-buttons">
-          {categories.map((cat) => (
-            <button
-              key={cat.value}
-              className={`search-button-filter ${
-                filters.category === cat.value
-                  ? "search-button-type-active"
-                  : ""
-              }`}
-              onClick={() =>
-                setFilters((prev) => ({ ...prev, category: cat.value }))
-              }
-            >
-              {cat.label}
-              <span
-                className={`search-border ${
-                  filters.category === cat.value ? "search-no-border" : ""
+      <div className={styles["search-filters"]}>
+        <div className={`${styles["search-filter-cont"]} ${styles["search-filter-type"]}`}>
+          <h2 className={styles["search-filter-title"]}>
+            <img className={styles["search-title-icon"]} src={drink} alt="" />
+            Category
+          </h2>
+          <div className={styles["search-filter-buttons"]}>
+            {categories.map((cat) => (
+              <button
+                key={cat.value}
+                className={`${styles["search-button-filter"]} ${
+                  filters.category === cat.value
+                    ? styles["search-button-type-active"]
+                    : ""
                 }`}
-              ></span>
-            </button>
-          ))}
+                onClick={() =>
+                  setFilters((prev) => ({ ...prev, category: cat.value }))
+                }
+              >
+                {cat.label}
+                <span
+                  className={`${styles["search-border"]} ${
+                    filters.category === cat.value
+                      ? styles["search-no-border"]
+                      : ""
+                  }`}
+                ></span>
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="search-filter-cont">
-        <h2 className="search-filter-title">
-          <img className="search-title-icon" src={bottle} alt="icon" />
-          Nivel de alcohol
-        </h2>
-
-        <div className="search-filter-buttons">
-          {levels.map((lvl) => (
-            <button
-              key={lvl.value}
-              className={`search-button-filter ${
-                filters.level === lvl.value ? "search-button-type-active" : ""
-              }`}
-              onClick={() =>
-                setFilters((prev) => ({ ...prev, level: lvl.value }))
-              }
-            >
-              {lvl.label}
-              <span
-                className={`search-border ${
-                  filters.level === lvl.value ? "search-no-border" : ""
+        <div className={styles["search-filter-cont"]}>
+          <h2 className={styles["search-filter-title"]}>
+            <img
+              className={styles["search-title-icon"]}
+              src={bottle}
+              alt="icon"
+            />
+            Nivel de alcohol
+          </h2>
+          <div className={styles["search-filter-buttons"]}>
+            {levels.map((lvl) => (
+              <button
+                key={lvl.value}
+                className={`${styles["search-button-filter"]} ${
+                  filters.level === lvl.value
+                    ? styles["search-button-type-active"]
+                    : ""
                 }`}
-              ></span>
-            </button>
-          ))}
+                onClick={() =>
+                  setFilters((prev) => ({ ...prev, level: lvl.value }))
+                }
+              >
+                {lvl.label}
+                <span
+                  className={`${styles["search-border"]} ${
+                    filters.level === lvl.value ? styles["search-no-border"] : ""
+                  }`}
+                ></span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
