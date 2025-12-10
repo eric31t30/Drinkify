@@ -1,0 +1,131 @@
+.drink-list{
+    margin-bottom: 80px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.drink-list__header{
+    position: relative;
+    width: 100%;
+    padding: 5px 20px;
+    border: 2px solid #08C9F4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.drink-list__cont{
+    display: grid;
+    gap: 40px;
+}
+
+.drink-list__title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    font-size: calc(var(--font-size-regular) - .2rem);
+    color: rgba(0, 0, 0, .6);
+}
+
+.drink-list__results{
+    font-size: var(--font-size-regular);
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+}
+
+.drink-list__count{
+    font-size: 2rem;
+    color: #08C9F4;
+    font-weight: 700;
+}
+
+.drink-list__lemon{
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    opacity: .1;
+    pointer-events: none;
+}
+
+
+@media (min-width: 700px){
+
+    .drink-list__cont{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+
+    .drink-list__header{
+        padding: 25px 30px;
+    }
+}
+
+@media (min-width: 1024px){
+
+    .drink-list{
+        padding: 40px 60px;
+        margin-top: 20px;
+        gap: 90px;
+    }
+
+    .drink-list__header{
+        border-radius: 20px;
+    }
+
+    .drink-list__count{
+        font-size: 3rem;
+    }
+
+    .drink-list__lemon{
+        width: 180px;
+        bottom: -40px;
+        right: -40px;
+    }
+    
+    .drink-list__cont{
+        gap: 100px;
+    }
+}
+
+@media (min-width: 1280px){
+
+    .drink-list{
+        padding: 40px 80px;
+    }
+
+    .drink-list__header{
+        padding: 15px 40px;
+    }
+    
+    .drink-list__count{
+        font-size: 2rem;
+    }
+
+    .drink-list__lemon{
+        width: 160px;
+        bottom: -40px;
+        right: -40px;
+    }
+
+    .drink-list__cont{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+}
+
+@media (min-width: 1920px){
+    
+    .drink-list{
+        padding: 40px 160px;
+    }
+
+    .drink-list__cont{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+    }
+
+} 
