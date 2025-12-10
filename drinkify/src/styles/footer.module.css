@@ -1,0 +1,143 @@
+.footer{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.footer-umbrella{
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    z-index: 9;
+    width: 140px;
+}
+
+.footer-waves-cont{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-wave-1{
+    z-index: 15;
+    pointer-events: none;
+}
+
+.footer-wave-2{
+    position: absolute;
+    z-index: 8;
+    top: -20px;
+    left: 0px;
+    pointer-events: none;
+}
+
+.footer-cont{
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to top, #e249be, #08C9F4);
+    z-index: 10;
+}
+
+.footer-logo{
+    filter: invert(100%);
+    z-index: 12;
+}
+
+.bubbles{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(/illustrations/bubbles.svg);
+    background-size: contain;
+    background-repeat: repeat;
+    opacity: .2;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.footer-copyright{
+    color: rgba(255, 255, 255, .7);
+    font-size: var(--font-size-small);
+    font-weight: 500;
+}
+
+
+@media (min-width: 700px){
+    .footer-umbrella{
+        top: -10px;
+        width: 190px;
+    }
+
+    .footer-cont{
+        gap: 30px;
+        min-height: 300px;
+    }
+
+    .footer-logo{
+        transform: scale(1.3);
+    }
+
+    .footer-copyright{
+        font-size: calc(var(--font-size-small) + .2rem);
+    }
+}
+
+@media (min-width: 1024px){
+    .footer-umbrella{
+        top: 20px;
+        right: 120px;
+        width: 240px;
+    }
+
+    .footer-logo{
+        transform: scale(1.5);
+    }
+
+    .footer-copyright{
+        font-size: var(--font-size-regular);
+    }
+}
+
+@media (min-width: 1280px){
+
+    .footer-umbrella{
+        top: 60px;
+    }
+
+    .footer-logo{
+        transform: scale(1.4);
+    }
+
+    .footer-copyright{
+        font-size: calc(var(--font-size-small) + .1rem);
+    }
+
+    .bubbles{
+        background-size: 30%;
+        opacity: .1;
+    }
+}
+
+@media (min-width: 1920px){
+    
+    .footer-umbrella{
+        top: 160px;
+        right: 10%;
+    }
+
+    .footer-wave-2{
+        top: 20px;
+    }
+} 
