@@ -34,7 +34,7 @@ function DrinkInfo({ drink }) {
         {alcoholInfo.map((data) => (
           <article className={styles["info-card"]} key={data.value}>
             <div className={styles["info-icon"]}>
-              <img src={data.icon} alt="icono de intensidad" />
+              <img src={data.icon} alt="icono" />
               <span style={{ background: drink.color }}></span>
             </div>
         
