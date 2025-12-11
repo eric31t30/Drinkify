@@ -1,22 +1,20 @@
-import '../styles/footer.css'
-
+import styles from '../styles/footer.module.css'
 
 import umbrella2 from "/illustrations/umbrella.svg";
 import logo from '/illustrations/drinkify-logo.svg'
-import bubbles from "/illustrations/bubbles.svg";
 
 function Footer() {
   return (
-    <footer className="footer">
-      <img className="footer-umbrella" src={umbrella2} alt="" />
+    <footer className={styles["footer"]}>
+      <img className={styles["footer-umbrella"]} src={umbrella2} alt="" draggable="false" />
 
-      <div className="footer-waves-cont">
+      <div className={styles["footer-waves-cont"]}>
         <svg
-          className="footer-wave footer-wave-2"
+          className={`${styles["footer-wave"]} ${styles["footer-wave-2"]}`}
           width="100%"
           height="100%"
           id="svg"
-          viewBox="0 0 1440 590"
+          viewBox="0 0 1440 340"
           aria-hidden="true"
           focusable="false"
           xmlns="http://www.w3.org/2000/svg"
@@ -30,11 +28,11 @@ function Footer() {
           ></path>
         </svg>
         <svg
-          className="footer-wave footer-wave-1"
+          className={`${styles["footer-wave"]} ${styles["footer-wave-1"]}`}
           width="100%"
           height="100%"
           id="svg"
-          viewBox="0 0 1440 590"
+          viewBox="0 0 1440 340"
           aria-hidden="true"
           focusable="false"
           xmlns="http://www.w3.org/2000/svg"
@@ -49,16 +47,22 @@ function Footer() {
         </svg>
       </div>
 
-      <div className="footer-cont">
-        <img className="footer-logo" src={logo} alt="logo de drinkify" />
-
+      <div className={styles["footer-cont"]}>
         <img
-          className="footer-bubbles"
+          className={styles["footer-logo"]}
+          src={logo}
+          alt="logo de drinkify"
+          draggable="false"
+        />
+
+        {/* <img
+          className={styles["footer-bubbles"]}
           src={bubbles}
           alt="bubbles-decoration"
           draggable="false"
-        />
-        <p className="footer-copyright">© 2025 Eric — Drinkify</p>
+        /> */}
+        <div className={styles.bubbles}></div>
+        <p className={styles["footer-copyright"]}>© 2025 Eric — Drinkify</p>
       </div>
     </footer>
   );

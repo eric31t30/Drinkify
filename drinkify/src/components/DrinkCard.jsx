@@ -1,64 +1,50 @@
 import { Link } from 'react-router-dom';
-import '../styles/drink-card.css'
+import styles from '../styles/drink-card.module.css'
 
 import arrow from '/icons/arrow.svg'
 
 function DrinkCard({ drink }) {
   return (
     <article
-      className="drink-card"
+      className={styles["drink-card"]}
       style={{
         background: `linear-gradient(180deg, transparent 50%, ${drink.color} 300%)`,
         borderBottom: `2px solid ${drink.color}`,
       }}
     >
-      <figure className="drink-image-cont">
-        <img className="drink-image" src={drink.images.full} alt="" />
+      <figure className={styles["drink-image-cont"]}>
+        <img className={styles["drink-image"]} src={drink.images.full} alt="" />
+        <span
+          className={styles["drink-level"]}
+          style={{ background: drink.color }}
+        >
+          {drink.alcohol.level}
+        </span>
       </figure>
 
-      <span className='drink-level' style={{background: drink.color}}>
-        {drink.alcohol.level}
-      </span>
-
-      <div className="drink-text">
+      <div className={styles["drink-text"]}>
         <div>
-          <h2 className="drink-name">{drink.name}</h2>
-          <p className="drink-category">{drink.category}</p>
+          <h2 className={styles["drink-name"]}>{drink.name}</h2>
+          <p className={styles["drink-category"]}>{drink.category}</p>
         </div>
-        <p className="drink-description">{drink.description}</p>
 
-        <dl className="drink-info">
-          <div className="drink-info-cont drink-info-abv">
-            <dt className="drink-info-title">ABV</dt>
-            <dd className="drink-info-text">{drink.alcohol.abv}%</dd>
-          </div>
+        <p className={styles["drink-description"]}>{drink.description}</p>
 
-          <div className="drink-info-cont drink-info-type">
-            <dt className="drink-info-title">Tipo</dt>
-            <dd className="drink-info-text">{drink.alcohol.type}</dd>
-          </div>
-
-          <div className="drink-info-cont drink-info-ingredients">
-            <dt className="drink-info-title">ingredientes</dt>
-            <dd className="drink-info-text">{drink.ingredients.length}</dd>
-          </div>
-        </dl>
-
-        <div className="drink-button-cont">
+        <div className={styles["drink-button-cont"]}>
           <Link
             to={`/drink/${drink.id}`}
-            className="drink-button"
+            className={styles["drink-button"]}
             onClick={() => console.log("click")}
             style={{ background: drink.color }}
           >
             <p>Ver Detalles</p>
-            <img className="drink-button-icon" src={arrow} alt="" />
+            <img className={styles["drink-button-icon"]} src={arrow} alt="" />
           </Link>
         </div>
 
         <svg
           fill={`${drink.color}`}
-          className="drink-deco drink-deco-1"
+          className={`${styles["drink-deco"]} ${styles["drink-deco-1"]}`}
           version="1.1"
           id="Layer_1"
           xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +114,7 @@ function DrinkCard({ drink }) {
           width="800px"
           height="800px"
           viewBox="0 0 1024 1024"
-          className="icon drink-deco drink-deco-2"
+          className={`${styles["drink-deco"]} ${styles["drink-deco-2"]}`}
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           fill={drink.color}
@@ -160,3 +146,30 @@ function DrinkCard({ drink }) {
 }
 
 export default DrinkCard
+
+{
+  /* <dl className={styles["drink-info"]}>
+          <div
+            className={`${styles["drink-info-cont"]} ${styles["drink-info-abv"]}`}
+          >
+            <dt className={styles["drink-info-title"]}>ABV</dt>
+            <dd className={styles["drink-info-text"]}>{drink.alcohol.abv}%</dd>
+          </div>
+
+          <div
+            className={`${styles["drink-info-cont"]} ${styles["drink-info-type"]}`}
+          >
+            <dt className={styles["drink-info-title"]}>Tipo</dt>
+            <dd className={styles["drink-info-text"]}>{drink.alcohol.type}</dd>
+          </div>
+
+          <div
+            className={`${styles["drink-info-cont"]} ${styles["drink-info-ingredients"]}`}
+          >
+            <dt className={styles["drink-info-title"]}>Ingredientes</dt>
+            <dd className={styles["drink-info-text"]}>
+              {drink.ingredients.length}
+            </dd>
+          </div>
+        </dl> */
+}

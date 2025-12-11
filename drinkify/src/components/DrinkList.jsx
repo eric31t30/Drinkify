@@ -1,29 +1,32 @@
-import DrinkCard from './DrinkCard'
-import '../styles/drink-list.css'
+import styles from "../styles/drink-list.module.css";
+import DrinkCard from "./DrinkCard";
 
-import lemon from '/icons/lemon.svg'
+import lemon from "/icons/lemon.svg";
 
 function DrinkList({ drinks }) {
-
-
   return (
-    <section className="drink-list">
-
-      <header className="drink-list__header">
-        <h2 className="drink-list__title">
-          <span className='drink-list__results'>Resultados</span> 
-          <span className="drink-list__count">{drinks.length}</span> 
+    <section className={styles["drink-list"]}>
+      <header className={styles["drink-list__header"]}>
+        <h2 className={styles["drink-list__title"]}>
+          <span className={styles["drink-list__results"]}>Resultados</span>
+          <span className={styles["drink-list__count"]}>{drinks.length}</span>
           bebidas encontradas
         </h2>
 
-        <img className="drink-list__icon" src={lemon} alt="Icono de limón" />
+        <img
+          className={styles["drink-list__lemon"]}
+          src={lemon}
+          alt="Icono de limón"
+        />
       </header>
 
-      {drinks.map((item) => (
-        <DrinkCard key={item.id} drink={item} />
-      ))}
+      <div className={styles["drink-list__cont"]}>
+        {drinks.map((item) => (
+          <DrinkCard key={item.id} drink={item} />
+        ))}
+      </div>
     </section>
   );
 }
 
-export default DrinkList
+export default DrinkList;

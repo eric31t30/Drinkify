@@ -12,3 +12,57 @@ body, *{
   box-sizing: border-box;
   font-family: "Noto Sans", sans-serif;;
 }
+
+:root {
+  --font-size-small: .8rem;
+  --font-size-regular: 1rem;
+  --font-size-medium: 1.5rem;
+  --font-size-big: 2.8rem;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --font-size-small: .9rem;
+    --font-size-regular: 1.2rem;
+    --font-size-medium: 1.75rem;
+    --font-size-big: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-small: 1rem;
+    --font-size-regular: 1.3rem;
+    --font-size-medium: 2rem;
+    --font-size-big: 3.2rem;
+  }
+}
+
+
+/* 
+
+@media (max-width: 399px){
+    
+}
+
+@media (min-width: 400px){
+
+}
+
+@media (min-width: 700px){
+    
+}
+
+@media (min-width: 1024px){
+    
+}
+
+@media (min-width: 1280px){
+    
+}
+
+@media (min-width: 1920px){
+    
+} 
+
+*/
