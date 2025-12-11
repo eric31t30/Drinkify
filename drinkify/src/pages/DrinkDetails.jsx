@@ -55,8 +55,12 @@ function DrinkDetails() {
   return (
     <section className={styles.drink}>
       <DrinkHero drink={drink} />
-      <DrinkInfo drink={drink} />
-      <DrinkIngredients drink={drink} />
+
+      <section className={styles.info}>
+        <DrinkInfo drink={drink} />
+        <DrinkIngredients drink={drink} />
+      </section>
+      
       <DrinkPreparation drink={drink} />
       <DrinkRecommendations drink={drink} recommendations={recommendations}/>
 
