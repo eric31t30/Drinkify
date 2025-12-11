@@ -2,42 +2,69 @@
     width: 100%;
 }
 
+.drink-content{
+    padding: 0px 20px;  
+}
+
 .info{
     display: flex;
     flex-direction: column; 
     gap: 50px;
     width: 100%;
-    padding: 50px 20px;       
+    padding: 50px 0px;       
+}
+
+.recommended-drinks{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1;
 }
 
 @media (min-width: 700px){
+
+    .drink-content{
+        padding: 0px 40px;
+    }
     
     .info{
-        padding: 50px 40px;
+        padding: 50px 0px;
         gap: 60px;    
     }
 }
 
 @media (min-width: 1024px){
 
+    .drink-content{
+        padding: 0px 60px;
+    }
+
     .info{
-        padding: 60px;
+        padding: 60px 0px;
         gap: 80px;       
     }
 }
 
 @media (min-width: 1280px){
+
+    .drink-content{
+        padding: 0px 60px;
+    }
     
     .info{
-        padding: 100px 30px;
+        padding: 100px 0px;
         flex-direction: row;
         justify-content: space-between;
     }
 }
 
 @media (min-width: 1920px){
+
+    .drink-content{
+        padding: 0px 60px;
+    }
+
     .info{
-        padding: 120px 30px;
+        padding: 120px 0px;
         flex-direction: row;
         justify-content: space-between;
     }

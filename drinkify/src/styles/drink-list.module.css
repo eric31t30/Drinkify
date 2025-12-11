@@ -1,6 +1,6 @@
 .drink-list{
     margin-bottom: 80px;
-    padding: 40px;
+    padding: 40px 0px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -67,7 +67,6 @@
 @media (min-width: 1024px){
 
     .drink-list{
-        padding: 40px 60px;
         margin-top: 20px;
         gap: 90px;
     }
@@ -93,9 +92,6 @@
 
 @media (min-width: 1280px){
 
-    .drink-list{
-        padding: 40px 80px;
-    }
 
     .drink-list__header{
         padding: 15px 40px;
@@ -118,10 +114,6 @@
 }
 
 @media (min-width: 1920px){
-    
-    .drink-list{
-        padding: 40px 160px;
-    }
 
     .drink-list__cont{
         grid-template-columns: repeat(3, 1fr);

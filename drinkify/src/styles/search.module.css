@@ -1,7 +1,7 @@
 .search{
     width: 100%;
     margin-top: 40px;
-    padding: 40px;
+    padding: 40px 0px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -131,10 +131,6 @@
 }
 
 @media (min-width: 700px){
-
-    .search{
-        padding: 40px 60px;
-    }
     
     .title-icon{
         left: 10px;
@@ -184,7 +180,6 @@
 @media (min-width: 1280px){
 
     .search{
-        padding: 40px 80px;
         margin-top: 100px;
     }
 
@@ -234,7 +229,6 @@
 @media (min-width: 1920px){
 
     .search{
-        padding: 40px 160px;
         margin-top: 100px;
     }
 

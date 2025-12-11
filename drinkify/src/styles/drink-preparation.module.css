@@ -135,7 +135,7 @@
 
 @media (min-width: 1024px){
     .preparation{
-        margin: 30px 50px;
+        margin: 30px 60px;
         border-radius: 20px;
     }
 
@@ -169,7 +169,7 @@
 
 @media (min-width: 1280px){
     .preparation{
-        margin: 0px 50px;
+        margin: 0px 60px;
     }
 
     .preparation-steps{

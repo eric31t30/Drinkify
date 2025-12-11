@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import "../styles/home.css";
+
+import styles from '../styles/home.module.css'
 import DrinkList from "../components/DrinkList";
 import Footer from "../components/footer";
 
@@ -65,15 +66,19 @@ function Home() {
   }, [filters]);
 
   return (
-    <section className="home">
+    <section className={styles.home}>
 
       <Hero />
-      <Search
-        localCategories={categories}
-        filters={filters}
-        setFilters={setFilters}
-      />
-      <DrinkList drinks={filteredDrinks} />
+      
+      <div className={styles["home-content"]}>
+        <Search
+          localCategories={categories}
+          filters={filters}
+          setFilters={setFilters}
+        />
+        <DrinkList drinks={filteredDrinks} />
+      </div>
+      
       <Footer />
     </section>
   );
