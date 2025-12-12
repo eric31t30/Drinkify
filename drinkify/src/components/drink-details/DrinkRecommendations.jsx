@@ -1,5 +1,4 @@
 import styles from "../../styles/drink-recommendations.module.css";
-import DrinkCard from "../DrinkCard";
 import DrinkList from "../DrinkList";
 
 function DrinkRecommendations({ drink, recommendations }) {

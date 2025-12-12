@@ -3,7 +3,7 @@
 }
 
 .drink-content{
-    padding: 0px 20px;  
+    padding: 0px 40px;  
 }
 
 .info{
@@ -23,7 +23,7 @@
 @media (min-width: 700px){
 
     .drink-content{
-        padding: 0px 40px;
+        padding: 0px 60px;
     }
     
     .info{
@@ -34,10 +34,6 @@
 
 @media (min-width: 1024px){
 
-    .drink-content{
-        padding: 0px 60px;
-    }
-
     .info{
         padding: 60px 0px;
         gap: 80px;       
@@ -47,7 +43,7 @@
 @media (min-width: 1280px){
 
     .drink-content{
-        padding: 0px 60px;
+        padding: 0px 80px;
     }
     
     .info{
@@ -60,7 +56,7 @@
 @media (min-width: 1920px){
 
     .drink-content{
-        padding: 0px 60px;
+        padding: 0px 100px;
     }
 
     .info{

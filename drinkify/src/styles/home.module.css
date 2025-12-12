@@ -5,11 +5,13 @@
 
 .home-content{
     padding: 0px 40px;
+    padding-bottom: 40px;
 }
 
 @media (min-width: 700px){
     .home-content{
         padding: 0px 60px;
+        padding-bottom: 50px;
     }
 }
 
