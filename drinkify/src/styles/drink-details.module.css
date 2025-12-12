@@ -1,5 +1,8 @@
 .drink{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .drink-content{
@@ -10,8 +13,7 @@
     display: flex;
     flex-direction: column; 
     gap: 50px;
-    width: 100%;
-    padding: 50px 0px;       
+    width: 100%;    
 }
 
 .recommended-drinks{
@@ -22,32 +24,41 @@
 
 @media (min-width: 700px){
 
+    .drink{
+        gap: 60px;
+    }
+
     .drink-content{
         padding: 0px 60px;
     }
     
     .info{
-        padding: 50px 0px;
         gap: 60px;    
     }
 }
 
 @media (min-width: 1024px){
 
+    .drink{
+        gap: 80px;
+    }
+
     .info{
-        padding: 60px 0px;
         gap: 80px;       
     }
 }
 
 @media (min-width: 1280px){
 
+    .drink{
+        gap: 100px;
+    }
+
     .drink-content{
         padding: 0px 80px;
     }
     
     .info{
-        padding: 100px 0px;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -55,12 +66,15 @@
 
 @media (min-width: 1920px){
 
+    .drink{
+        gap: 120px;
+    }
+
     .drink-content{
         padding: 0px 100px;
     }
 
     .info{
-        padding: 120px 0px;
         flex-direction: row;
         justify-content: space-between;
     }
