@@ -10,7 +10,7 @@ function DrinkRecommendations({ drink, recommendations }) {
       </h2>
 
       <article className={styles["recommendations-container"]}>
-        <DrinkList drinks={recommendations}></DrinkList>
+        <DrinkList drinks={recommendations} results={false}></DrinkList>
       </article>
     </section>
   );
