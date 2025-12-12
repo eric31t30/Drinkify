@@ -1,6 +1,6 @@
 import styles from '../styles/header.module.css'
 
-import logo from '../../public/illustrations/drinkify-logo-bold.svg'
+import logo from '/illustrations/drinkify-logo-bold.svg'
 import { Link } from 'react-router-dom';
 
 function Header() {

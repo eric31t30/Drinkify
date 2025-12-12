@@ -109,7 +109,7 @@ export const drinks = [
     tags: ["fuerte", "amargo"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345097/old-fashioned_gxq8rx.jpg",
-      png: "Studio isolated Old Fashioned with large clear ice cube, sharp 8k cut-out.",
+      png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765552864/old-fashioned-png_oudmxi.png",
     },
     price: 14,
   },
@@ -136,7 +136,7 @@ export const drinks = [
     tags: ["dulce", "cítrico", "afrutado"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345487/cosmopolitan_b1nkzd.jpg",
-      png: "Isolated cosmopolitan martini glass, clean transparent background, 8k.",
+      png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765552865/cosmopolitan-png_rclmoz.png",
     },
     price: 13,
   },
@@ -144,7 +144,7 @@ export const drinks = [
   {
     id: 6,
     name: "Daiquiri",
-    color: "#D06A60",
+    color: "#cad060ff",
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 17, level: "Medio" },
     description: "Equilibrio perfecto entre dulce y ácido.",
@@ -162,8 +162,8 @@ export const drinks = [
     prepTime: "3 min",
     tags: ["cítrico", "refrescante", "ligero"],
     images: {
-      full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764345803/daiquiri_l5psis.jpg",
-      png: "Isolated daiquiri coupe glass, clean studio shot, 8k.",
+      full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765575845/daiquiri_l5psis.jpg",
+      png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765575870/daiquiri-png_udslsx.png",
     },
     price: 11,
   },
@@ -191,7 +191,7 @@ export const drinks = [
     tags: ["afrutado", "dulce", "refrescante"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764353820/sangria_udkpsl.jpg",
-      png: "Studio isolated glass of sangria with fruit pieces, transparent background.",
+      png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765552865/sangria-png_n3ubxo.png",
     },
     price: 9.5,
   },
@@ -219,7 +219,7 @@ export const drinks = [
     tags: ["amargo", "refrescante"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/aperol-spritz_lnewe7.jpg",
-      png: "Clean isolated Aperol Spritz wine glass, transparent background, 8k.",
+      png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765552865/aperol-spritz-png_e6fdum.png",
     },
     price: 12,
   },
@@ -247,7 +247,7 @@ export const drinks = [
     tags: ["picante", "cítrico", "refrescante"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/moscow-mule_t4z0fo.jpg",
-      png: "Studio isolated copper mug with Moscow Mule, transparent background, 8k.",
+      png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765552864/moscow-mule-png_vfmtia.png",
     },
     price: 12.5,
   },
@@ -274,7 +274,7 @@ export const drinks = [
     tags: ["cítrico", "refrescante", "dulce"],
     images: {
       full: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1764354736/limonada-frozen_ihudhf.jpg",
-      png: "Isolated frozen lemonade cup, clean white background, 8k.",
+      png: "https://res.cloudinary.com/dzuibzgu2/image/upload/v1765552864/limonada-frozen-png_zdcv1x.png",
     },
     price: 6.5,
   },
