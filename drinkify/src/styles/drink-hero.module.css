@@ -19,13 +19,13 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    transform: translateY(-40px);
+    transform: translateY(-20px);
     z-index: 10;
 }
 
 .drink-image{
     position: relative;
-    width: 70%;
+    width: 60%;
     object-fit: contain;
     z-index: 10;
     filter: drop-shadow(0px 30px 10px rgba(0, 0, 0, .2));
@@ -62,23 +62,47 @@
     text-align: center;
 }
 
+.tags-cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.tag{
+    font-size: var(--font-size-small);
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    padding: 1px 10px;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.tag:hover{
+    transform: translateY(-5px);
+}
+
 .drink-scroll-icon{
     width: 30px;
     cursor: pointer;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .back{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
     position: absolute;
+    gap: 2px;
     top: 90px;
     left: 20px;
     font-size: var(--font-size-regular);
     color: white;
-    padding: 3px 10px;
+    padding: 0px 10px;
     border: 2px solid rgba(255, 255, 255, .6);
     border-radius: 10px;
     cursor: pointer;
@@ -87,8 +111,12 @@
     z-index: 20;
 }
 
+.back:hover{
+    gap: 7px;
+}
+
 .back:hover .back-icon{
-    width: .8rem;
+    width: .6rem;
 }
 
 .back-icon{
@@ -158,7 +186,7 @@
 
 @media (min-width: 700px){
     .drink-image{
-        width: 60%;
+        width: 55%;
     }
 
     .drink-category{
@@ -173,24 +201,39 @@
 
     .drink-description{
         font-size: calc(var(--font-size-medium) - .2rem);
+        width: 90%;
+    }
+
+    .tags-cont{
+        gap: 16px;
+        margin-top: 40px;
+    }
+
+    .tag{
+        font-size: calc(var(--font-size-regular) - .1rem);
+        padding: 3px 14px;
     }
 
     .drink-scroll-icon{
         width: 50px;
-        margin-top: 90px;
+        margin-top: 80px;
     }
 
     .back{
-        gap: 15px;
+        gap: 5px;
         top: 120px;
         left: 40px;
-        font-size: calc(var(--font-size-regular) + .2rem);
+        font-size: calc(var(--font-size-regular) + .1rem);
         color: white;
         padding: 3px 14px;
     }
 
+    .back:hover{
+        gap: 15px;
+    }
+
     .back:hover .back-icon{
-        width: 1rem;
+        width: .9rem;
     }
 
     .lemon{
@@ -228,11 +271,11 @@
     }
     
     .drink-image{
-        width: 50%;
+        width: 40%;
     }
 
     .drink-category{
-        font-size: calc(var(--font-size-medium));
+        font-size: calc(var(--font-size-medium) - .1rem);
     }
 
     .drink-name{
@@ -244,8 +287,22 @@
         font-size: calc(var(--font-size-medium) - .2rem);
     }
 
+    .tags-cont{
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .tag{
+        font-size: calc(var(--font-size-regular) + .1rem);
+        padding: 3px 20px;
+    }
+
     .back{
         top: 180px;
+    }
+
+    .back:hover .back-icon{
+        width: 1rem;
     }
 
     .circle{
@@ -302,6 +359,17 @@
     .drink-description{
         font-size: calc(var(--font-size-regular) - .1rem);
         width: auto;
+    }
+
+    .tags-cont{
+        justify-content: flex-start;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .tag{
+        font-size: calc(var(--font-size-regular) - .3rem);
+        padding: 0px 14px;
     }
     
     .drink-scroll-icon{

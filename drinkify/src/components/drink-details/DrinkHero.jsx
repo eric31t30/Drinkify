@@ -15,7 +15,7 @@ function DrinkHero({ drink }) {
   const scrollinfo = ()=>{
     document.getElementById("drink-info-scroll")?.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
     });
   }
 
@@ -37,12 +37,19 @@ function DrinkHero({ drink }) {
             <p className={styles["drink-category"]}>{drink.category}</p>
             <h1 className={styles["drink-name"]}>{drink.name}</h1>
             <p className={styles["drink-description"]}>{drink.description}</p>
+
+            <ul className={styles["tags-cont"]}>
+              {drink.tags.map((t) => (
+                <li key={t} className={styles.tag}>{t}</li>
+              ))}
+            </ul>
+
             <img
               className={styles["drink-scroll-icon"]}
               src={scroll}
               alt="boton de scroll"
               draggable="false"
-              onClick={()=> scrollinfo()}
+              onClick={() => scrollinfo()}
             />
           </article>
         </div>
