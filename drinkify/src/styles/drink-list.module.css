@@ -56,7 +56,6 @@
         gap: 40px;
     }
 
-
     .drink-list__header{
         padding: 25px 30px;
     }
@@ -84,8 +83,10 @@
     }
     
     .drink-list__cont{
-        gap: 100px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px 100px;
     }
+
 }
 
 @media (min-width: 1280px){
