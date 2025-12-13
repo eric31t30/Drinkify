@@ -56,13 +56,23 @@ function DrinkDetails() {
     <section className={styles.drink}>
       <DrinkHero drink={drink} />
 
-      <section className={styles.info}>
-        <DrinkInfo drink={drink} />
-        <DrinkIngredients drink={drink} />
-      </section>
+      <div className={styles["drink-content"]}>
+        <section className={styles.info}>
+          <DrinkInfo drink={drink} />
+          <DrinkIngredients drink={drink} />
+        </section>
+      </div>
       
       <DrinkPreparation drink={drink} />
-      <DrinkRecommendations drink={drink} recommendations={recommendations}/>
+      
+      <div className={styles["drink-content"]}>
+        <section className={styles["recommended-drinks"]}>
+          <DrinkRecommendations
+            drink={drink}
+            recommendations={recommendations}
+          />
+        </section>
+      </div>
 
       <Footer />
     </section>

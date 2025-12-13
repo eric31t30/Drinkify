@@ -1,18 +1,25 @@
 .recommendations{
     position: relative;
-    margin: 20px 0px;
-    margin-top: 60px;
-    margin-bottom: 140px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     gap: 30px 0px;
     z-index: 10;
-    padding: 0px 20px;
+}
+
+.title{
+   font-size: var(--font-size-medium);
 }
 
 .recommendations-container{
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 0px 20px;
+}
+
+@media (min-width: 1280px){
+    .recommendations{
+        margin-bottom: 0px;
+    }
+
 }

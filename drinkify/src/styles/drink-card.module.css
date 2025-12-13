@@ -1,7 +1,7 @@
 .drink-card{
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     gap: 10px;
@@ -19,14 +19,17 @@
     align-items: center;
     overflow: hidden;
     border-radius: 15px;
+    width: 100%;
+    aspect-ratio: 1/1;
 }
 
 .drink-image{
     width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 15px;
     transition: all .7s ease;
-    transform-origin: center;
+
 }
 
 .drink-image:hover{
@@ -50,6 +53,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: start;
     flex-direction: column;
     width: 100%;
     gap: 20px;
@@ -127,7 +131,7 @@
     font-size: calc(var(--font-size-regular) - .2rem);
     font-weight: 500;
     color: white;
-    padding: 10px 10px;
+    padding: 7px 10px;
     border-radius: 5px;
     transition: all .3s ease;
     gap: 10px;
@@ -173,14 +177,23 @@
 
 @media (min-width: 700px){
 
+    .drink-card{
+        gap: 10px;
+    }
+
     .drink-text{
         gap: 20px;
-        padding: 15px 40px;
+        padding: 15px 20px;
         padding-bottom: 40px;
     }
 }
 
 @media (min-width: 1024px){
+
+    .drink-text{
+        padding: 15px 30px;
+        padding-bottom: 40px;
+    }
     
     .drink-category{
         font-size: calc(var(--font-size-small) + .1rem);

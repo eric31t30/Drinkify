@@ -1,43 +1,80 @@
 .drink{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.drink-content{
+    padding: 0px 40px;  
 }
 
 .info{
     display: flex;
     flex-direction: column; 
     gap: 50px;
+    width: 100%;    
+}
+
+.recommended-drinks{
     width: 100%;
-    padding: 50px 20px;       
+    display: grid;
+    grid-template-columns: 1;
 }
 
 @media (min-width: 700px){
+
+    .drink{
+        gap: 60px;
+    }
+
+    .drink-content{
+        padding: 0px 60px;
+    }
     
     .info{
-        padding: 50px 40px;
         gap: 60px;    
     }
 }
 
 @media (min-width: 1024px){
 
+    .drink{
+        gap: 80px;
+    }
+
     .info{
-        padding: 60px;
         gap: 80px;       
     }
 }
 
 @media (min-width: 1280px){
+
+    .drink{
+        gap: 100px;
+    }
+
+    .drink-content{
+        padding: 0px 80px;
+    }
     
     .info{
-        padding: 100px 30px;
         flex-direction: row;
         justify-content: space-between;
     }
 }
 
 @media (min-width: 1920px){
+
+    .drink{
+        gap: 120px;
+    }
+
+    .drink-content{
+        padding: 0px 100px;
+    }
+
     .info{
-        padding: 120px 30px;
         flex-direction: row;
         justify-content: space-between;
     }
