@@ -125,6 +125,23 @@
     transition: all .5s ease;
 }
 
+.blobs{
+    position: absolute;
+    opacity: .1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blob-1{
+    top: 10%;
+    right: -20%;
+    width: 200px;
+}
+
+.blob-2{
+    display: none;
+}
+
 .shadow1{
     position: absolute;
     left: 0px;
@@ -145,15 +162,6 @@
     background: linear-gradient(to bottom, rgba(255, 255, 255, .3), transparent);
     z-index: 0;
     pointer-events: none;
-}
-
-.lemon{
-    position: absolute;
-    width: 60px;
-    right: 50px;
-    top: 50px;
-    pointer-events: none;
-    opacity: .09;
 }
 
 .dots{
@@ -183,6 +191,7 @@
     bottom: 0px;
     pointer-events: none;
 }
+
 
 @media (min-width: 700px){
     .drink-image{
@@ -236,10 +245,10 @@
         width: .9rem;
     }
 
-    .lemon{
-        width: 100px;
-        right: 80px;
-        top: 180px;
+    .blob-1{
+        top: 10%;
+        right: -10%;
+        width: 300px;
     }
 
     .dots{
@@ -305,6 +314,19 @@
         width: 1rem;
     }
 
+    .blob-1{
+        width: 400px;
+        top: 10%;
+        right: 0%;
+    }
+
+    .blob-2{
+        display: block;
+        width: 200px;
+        bottom: 10%;
+        left: 30%;
+    }
+
     .circle{
         width: 500px;
         height: 500px;
@@ -323,7 +345,7 @@
         left: 40px;
         bottom: 80px;
     }
-
+    
 }
 
 @media (min-width: 1280px){
@@ -390,10 +412,16 @@
         width: .8rem;
     }
 
-    .lemon{
-        width: 80px;
-        right: 120px;
-        top: 140px;
+    .blob-1{
+        width: 300px;
+        top: 20%;
+        right: 10%;
+    }
+
+    .blob-2{
+        width: 150px;
+        bottom: 0%;
+        left: 30%;
     }
 
     .circle{
@@ -414,7 +442,6 @@
         left: -10px;
         bottom: 10px;
     }
-
 }
 
 @media (min-width: 1920px){
@@ -429,10 +456,16 @@
         filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0))
     }
 
-    .lemon{
-        width: 80px;
-        right: 220px;
-        top: 140px;
+    .blob-1{
+        width: 400px;
+        top: 20%;
+        right: 10%;
+    }
+
+    .blob-2{
+        width: 200px;
+        bottom: 0%;
+        left: 30%;
     }
 
     .circle{

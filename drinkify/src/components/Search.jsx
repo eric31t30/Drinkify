@@ -36,7 +36,7 @@ function Search({ localCategories, filters, setFilters}) {
   }, [input, setFilters]);
 
   return (
-    <section className={styles.search}>
+    <section className={styles.search} id='drink-list'>
       <h2 className={styles.title}>
         Explora la colección de bebidas
         <img className={styles["title-icon"]} src={cocktail} alt="" />
