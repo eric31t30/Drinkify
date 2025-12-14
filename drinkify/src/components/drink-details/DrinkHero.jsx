@@ -6,8 +6,9 @@ import arrow from "/icons/arrow-2.svg";
 import scroll from "/icons/scroll.svg";
 
 import leafs from "/illustrations/leafs-1.svg";
-import lemon from "/illustrations/lemon-2.svg";
 import dots from "/illustrations/dots.svg";
+import blob1 from "/illustrations/blob-1.svg";
+import blob2 from "/illustrations/blob-2.svg";
 
 function DrinkHero({ drink }) {
 
@@ -40,7 +41,9 @@ function DrinkHero({ drink }) {
 
             <ul className={styles["tags-cont"]}>
               {drink.tags.map((t) => (
-                <li key={t} className={styles.tag}>{t}</li>
+                <li key={t} className={styles.tag}>
+                  {t}
+                </li>
               ))}
             </ul>
 
@@ -67,7 +70,8 @@ function DrinkHero({ drink }) {
           Volver
         </Link>
 
-        <img className={styles["lemon"]} src={lemon} alt="" draggable="false" />
+        <img className={`${styles["blobs"]} ${styles["blob-1"]}`} src={blob1} alt="" draggable="false" />
+        <img className={`${styles["blobs"]} ${styles["blob-2"]}`} src={blob2} alt="" draggable="false" />
         <img className={styles["dots"]} src={dots} alt="" draggable="false" />
         <img className={styles["leafs"]} src={leafs} alt="" draggable="false" />
         <div className={styles["circle"]}></div>

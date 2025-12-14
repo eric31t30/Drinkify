@@ -62,7 +62,7 @@ export const drinks = [
   {
     id: 3,
     name: "Piña Colada",
-    color: "#cdd831ff",
+    color: "#bbc257ff",
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 8, level: "Bajo" },
     description: "Dulce, cremosa y tropical.",
