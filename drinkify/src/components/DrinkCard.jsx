@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { cloudinary } from "../utils/Cloudinary";
 import styles from '../styles/drink-card.module.css'
 
 import arrow from '/icons/arrow.svg'
@@ -13,7 +14,11 @@ function DrinkCard({ drink }) {
       }}
     >
       <figure className={styles["drink-image-cont"]}>
-        <img className={styles["drink-image"]} src={drink.images.full} alt="" />
+        <img
+          className={styles["drink-image"]}
+          src={cloudinary(drink.images.full, "e_blur:100")}
+          alt=""
+        />
         <span
           className={styles["drink-level"]}
           style={{ background: drink.color }}

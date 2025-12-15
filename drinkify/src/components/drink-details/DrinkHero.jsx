@@ -1,6 +1,6 @@
-import React from 'react'
 import styles from "../../styles/drink-hero.module.css";
 import { Link } from "react-router-dom";
+import { cloudinary } from "../../utils/Cloudinary";
 
 import arrow from "/icons/arrow-2.svg";
 import scroll from "/icons/scroll.svg";
@@ -31,7 +31,7 @@ function DrinkHero({ drink }) {
         <div className={styles["drink-hero"]}>
           <img
             className={styles["drink-image"]}
-            src={drink.images.png}
+            src={cloudinary(drink.images.png)}
             alt={drink.name}
           />
           <article className={styles["drink-main-info"]}>
