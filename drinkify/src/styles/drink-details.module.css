@@ -6,6 +6,9 @@
 }
 
 .drink-content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     padding: 0px 40px;  
 }
 

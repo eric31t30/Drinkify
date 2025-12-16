@@ -8,6 +8,7 @@ import DrinkIngredients from "../components/drink-details/DrinkIngredients";
 import DrinkPreparation from "../components/drink-details/DrinkPreparation";
 import Footer from "../components/footer";
 import DrinkRecommendations from "../components/drink-details/DrinkRecommendations";
+import DrinkImages from "../components/drink-details/DrinkImages";
 
 function DrinkDetails() {
 
@@ -62,10 +63,11 @@ function DrinkDetails() {
           <DrinkIngredients drink={drink} />
         </section>
       </div>
-      
+
       <DrinkPreparation drink={drink} />
-      
+
       <div className={styles["drink-content"]}>
+        <DrinkImages drink={drink}></DrinkImages>
         <section className={styles["recommended-drinks"]}>
           <DrinkRecommendations
             drink={drink}
