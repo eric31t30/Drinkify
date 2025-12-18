@@ -6,6 +6,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 13, level: "Medio" },
     description: "Clásico ácido y refrescante con un toque cítrico.",
+    history:
+      "La Margarita es uno de los cócteles más populares del mundo. Su origen se remonta a México a mediados del siglo XX, creada como homenaje a una mujer llamada Margarita.",
+    difficulty: { value: 5, label: "Media" },
     ingredients: [
       { name: "Tequila", amount: "50ml" },
       { name: "Triple Sec", amount: "25ml" },
@@ -36,6 +39,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 10, level: "Bajo" },
     description: "Refrescante mezcla de menta, limón y ron.",
+    history:
+      "El Mojito nació en Cuba y es uno de los cócteles más representativos del Caribe. Su combinación de ron, menta y lima lo convirtió en un símbolo de frescura tropical.",
+    difficulty: { value: 4, label: "Media-Baja" },
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
       { name: "Hierbabuena", amount: "6 hojas" },
@@ -66,6 +72,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 8, level: "Bajo" },
     description: "Dulce, cremosa y tropical.",
+    history:
+      "La Piña Colada es originaria de Puerto Rico y fue creada en los años 50. Su mezcla cremosa la convirtió en un emblema de las bebidas tropicales.",
+    difficulty: { value: 3, label: "Baja" },
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
       { name: "Crema de coco", amount: "30ml" },
@@ -93,6 +102,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 32, level: "Alto" },
     description: "Clásico fuerte con notas de whisky y naranja.",
+    history:
+      "El Old Fashioned es uno de los cócteles más antiguos registrados, nacido en Estados Unidos en el siglo XIX. Representa la esencia del cóctel clásico.",
+    difficulty: { value: 6, label: "Media-Alta" },
     ingredients: [
       { name: "Whisky bourbon", amount: "60ml" },
       { name: "Bitter", amount: "2 dash" },
@@ -121,6 +133,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 20, level: "Medio" },
     description: "Dulce, cítrico y elegante.",
+    history:
+      "El Cosmopolitan ganó popularidad en los años 90 gracias a la cultura urbana y la televisión, convirtiéndose en un símbolo de sofisticación moderna.",
+    difficulty: { value: 4, label: "Media-Baja" },
     ingredients: [
       { name: "Vodka", amount: "45ml" },
       { name: "Triple Sec", amount: "15ml" },
@@ -148,6 +163,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 17, level: "Medio" },
     description: "Equilibrio perfecto entre dulce y ácido.",
+    history:
+      "El Daiquiri nació en Cuba y es un referente de la coctelería clásica. Su simplicidad exige precisión para lograr el balance perfecto.",
+    difficulty: { value: 5, label: "Media" },
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
       { name: "Jugo de limón", amount: "25ml" },
@@ -175,6 +193,9 @@ export const drinks = [
     category: "Vino preparado",
     alcohol: { type: "Alcohólico", abv: 7, level: "Bajo" },
     description: "Fresca mezcla de vino y frutas.",
+    history:
+      "La Sangría es una bebida tradicional española, popularizada como una opción refrescante para compartir en reuniones y celebraciones.",
+    difficulty: { value: 2, label: "Muy Baja" },
     ingredients: [
       { name: "Vino tinto", amount: "150ml" },
       { name: "Frutas mixtas", amount: "Al gusto" },
@@ -203,6 +224,9 @@ export const drinks = [
     category: "Spritz",
     alcohol: { type: "Alcohólico", abv: 11, level: "Bajo" },
     description: "Ligero, burbujeante y con sabor amargo dulce.",
+    history:
+      "El Aperol Spritz nació en el norte de Italia y se popularizó como aperitivo. Es símbolo de la cultura del spritz y el ritual del aperitivo italiano.",
+    difficulty: { value: 2, label: "Muy Baja" },
     ingredients: [
       { name: "Aperol", amount: "60ml" },
       { name: "Prosecco", amount: "90ml" },
@@ -231,6 +255,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 14, level: "Medio" },
     description: "Picante y refrescante con ginger beer.",
+    history:
+      "El Moscow Mule surgió en Estados Unidos en los años 40 y se hizo famoso por servirse en taza de cobre, destacando su carácter refrescante.",
+    difficulty: { value: 3, label: "Baja" },
     ingredients: [
       { name: "Vodka", amount: "50ml" },
       { name: "Ginger beer", amount: "120ml" },
@@ -259,6 +286,9 @@ export const drinks = [
     category: "Sin alcohol",
     alcohol: { type: "No alcohólico", abv: 0, level: "Sin alcohol" },
     description: "Refrescante, cítrica y perfecta para el calor.",
+    history:
+      "La limonada frozen es una variante moderna de la limonada clásica, creada para combatir el calor con una textura helada y refrescante.",
+    difficulty: { value: 1, label: "Muy Baja" },
     ingredients: [
       { name: "Limón", amount: "2" },
       { name: "Hielo picado", amount: "1 taza" },
