@@ -9,18 +9,17 @@ import { Thumbs, EffectFade, Autoplay } from "swiper/modules";
 import "swiper/css"
 import "swiper/css/effect-fade";
 
+import umbrella from "/illustrations/leaf-border.svg";
+
 
 function DrinkImages({ drink }) {
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  const images = ["cosmopolitan_b1nkzd", "daiquiri_l5psis", "aperol-spritz_lnewe7"];
+  const gallery = [...drink.images.gallery];
 
   return (
     <section className={styles.images}>
-      <h2 className={styles.title}>
-        imag<span style={{ color: drink.color }}>enes</span>
-      </h2>
       <main className={styles.slider}>
         <Swiper
           className={styles["main-image-cont"]}
@@ -29,19 +28,19 @@ function DrinkImages({ drink }) {
           slidesPerView={1}
           resistanceRatio={0}
           effect="fade"
-          // autoplay={{
-          //   delay: 5000,
-          //   disableOnInteraction: false,
-          //   pauseOnMouseEnter: true,
-          // }}
-          // speed={500}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={500}
         >
-          {images.map((i) => (
+          {gallery.map((i) => (
             <SwiperSlide className={styles["main-slides"]} key={i}>
               <img
                 className={styles["main-images"]}
-                src={cloudinary(i)}
-                alt=""
+                src={cloudinary(i, "c_fill,ar_1:1,g_auto,w_1000")}
+                alt={`imagen de ${drink.name}`}
               />
             </SwiperSlide>
           ))}
@@ -56,17 +55,33 @@ function DrinkImages({ drink }) {
           style={{
             "--thumb-active-color": drink.color,
           }}
+          breakpoints={{
+            0: {
+              direction: "horizontal",
+            },
+            700: {
+              direction: "vertical",
+              spaceBetween: 20,
+            },
+            1024: {
+              direction: "horizontal",
+            },
+          }}
         >
-          {images.map((i) => (
+          {gallery.map((i) => (
             <SwiperSlide className={styles["thumbs-slides"]} key={i}>
-              <img
-                className={styles["thumb-image"]}
-                src={cloudinary(i)}
-                alt=""
-              />
+              <div className={styles["thumb-inner"]}>
+                <img
+                  className={styles["thumb-image"]}
+                  src={cloudinary(i, "w_1000")}
+                  alt={`imagen de ${drink.name}`}
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <img className={styles["umbrella"]} src={umbrella} alt="" />
       </main>
     </section>
   );
