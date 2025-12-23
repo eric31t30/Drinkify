@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../styles/drink-insights.module.css"
+
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { cloudinary } from "../../utils/Cloudinary";
 
 import fire from '../../../public/icons/fire.svg'
 import book from "../../../public/icons/book.svg";
 import tag from "../../../public/icons/tag.svg";
 
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { useState } from "react";
+import leaf from "/illustrations/leafs-3.svg"
 
 function DrinkInsights({ drink }) {
 
@@ -55,6 +57,9 @@ function DrinkInsights({ drink }) {
             </div>
           </div>
         </div>
+        <div className={styles["insights-deco"]}>
+          <img className={styles["difficulty-deco"]} src={leaf} alt="" />
+        </div>
       </article>
 
       <article
@@ -66,6 +71,12 @@ function DrinkInsights({ drink }) {
           Historia
         </h3>
         <p className={styles["insight-text"]}>{drink.history}</p>
+
+        <div
+          className={`${styles["insights-deco"]} ${styles["history-insights-deco"]}`}
+        >
+          <span className={styles["history-deco"]}></span>
+        </div>
       </article>
 
       <article
@@ -89,6 +100,17 @@ function DrinkInsights({ drink }) {
               {t}
             </p>
           ))}
+        </div>
+
+        <div
+          className={`${styles["insights-deco"]} ${styles["tag-insights-deco"]}`}
+        >
+          <img
+            className={styles["tag-deco"]}
+            src={cloudinary(drink.images.full)}
+            alt=""
+          />
+          <span className={styles.block}></span>
         </div>
       </article>
     </section>
