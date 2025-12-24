@@ -1,0 +1,342 @@
+.insights{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+}
+
+.insight-cont{
+    position: relative;
+    border-radius: 15px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10;
+    background: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(7px);
+    transition: all .5s ease;
+}
+
+.difficulty{
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+}
+
+.difficulty:hover{
+    transform: translateY(-10px);
+}
+
+.history{
+    color: white;
+    gap: 10px; 
+    overflow: visible;
+}
+
+.history:hover{
+    transform: translateY(-10px);
+}
+
+.tags{
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tags:hover{
+    transform: translateY(-10px);
+}
+
+.insight-title{
+    position: relative;
+    font-size: calc(var(--font-size-regular) + .2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.title-icon{
+    width: calc(var(--font-size-regular) + .2rem);
+}
+
+.history .title-icon{
+    filter: invert(100%);
+}
+
+.insight-text{
+    font-size: var(--font-size-small);
+    position: relative;
+    z-index: 10;
+}
+
+.insight-title-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label{
+    font-size: calc(var(--font-size-regular) - .1rem);
+    font-weight: 400;
+    opacity: .8;
+}
+
+.progress-cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    width: 100%;
+}
+
+.circle-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+}
+
+.tags-cont{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 10;
+}
+
+.insight-tag{
+    font-size: calc(var(--font-size-regular) - .2rem);
+    padding: 2px 10px;
+    border-radius: 10px;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.insight-tag:hover {
+    transform: translateY(-2px);
+}
+
+
+.block{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(to right, white, transparent );
+    width: 100%;
+    height: 100%;
+}
+
+.insights-deco{
+    display: none;
+    pointer-events: none;
+}
+
+@media (min-width: 600px){
+    .circle{
+        width: 30%;
+        height: 30%;
+    }
+}
+
+@media (min-width: 700px){
+
+    .insights{
+        gap: 20px;
+    }
+
+    .insight-cont{
+        padding: 30px 40px;
+    }
+
+    .insight-text{
+        font-size: calc(var(--font-size-small) + .2rem);
+        position: relative;
+        z-index: 10;
+    }
+
+    .circle{
+        width: 30%;
+        height: 30%;
+    }
+
+    .insights-deco{
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .tag-insights-deco{
+        width: 25%;
+    }
+
+    .difficulty-deco{
+        position: absolute;
+        right: -30px;
+        bottom: -30px;
+        width: 140px;
+        object-fit: cover;
+        z-index: 0;
+        opacity: .8;
+        transform: rotateY(180deg);
+    }
+
+    .history-deco{
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: .2;
+        background-image: url(/illustrations/bubbles.svg);
+        background-size: 400px;
+        background-repeat: repeat;
+    }
+
+    .tag-deco{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 900px){
+    .circle{
+        width: 25%;
+        height: 25%;
+    }
+}
+
+@media (min-width: 1024px){
+    .insights{
+        height: 100%;
+        gap: 40px;
+    }
+
+    .insight-cont{
+        padding: 20px 20px;
+    }
+    
+    .circle{
+        width: 50%;
+        height: 50%;
+    }
+
+}
+
+@media (min-width: 1280px){
+
+    .insights{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+        "one    two     two  "
+        "one    three   three"
+        "one    three   three"
+    }
+    
+    .insight-cont{
+        padding: 20px;
+    }
+
+    .difficulty{
+        grid-area: one;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .history{
+        grid-area: two;
+        
+    }
+
+    .tags{
+        grid-area: three;
+    }
+
+    .tags:hover{
+        transform: translateX(10px);
+    }
+
+    .insight-title{
+        font-size: var(--font-size-regular);
+        gap: 10px;
+    }
+
+    .title-icon{
+        width: var(--font-size-regular);
+    }
+
+    .insight-text{
+        font-size: var(--font-size-small);
+    }
+    
+    .circle{
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media (min-width: 1920px){
+
+    .insights{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+        "one    two     two     two"
+        "one    two     two     two"
+        "one    three   three   ."
+        ;
+    }
+
+    .insight-cont{
+        padding: 40px  30px;
+    }
+
+    .difficulty{
+        justify-content: center;
+        gap: 50px;
+        grid-area: one;
+    }
+
+    .history{
+        grid-area: two;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .tags{
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .circle{
+        width: 85%;
+        height: 85%;
+    }
+} 
