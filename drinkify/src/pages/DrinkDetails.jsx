@@ -21,7 +21,7 @@ function DrinkDetails() {
 
     const getdrink = async()=>{
       try{
-        const res = await fetch(`http://localhost:3000/drink/${id}`);
+        const res = await fetch(`http://localhost:3000/drinks/${id}`);
         const data = await res.json()
         setDrink(data)
         console.log(data);
@@ -35,7 +35,7 @@ function DrinkDetails() {
 
     const getSimilars = async()=>{
       try {
-        const res = await fetch(`http://localhost:3000/recommendations/drink/${id}?limit=4`);
+        const res = await fetch(`http://localhost:3000/drinks/${id}/recommendations?limit=4`);
         const data = await res.json();
         setRecommendations(data);
         console.log(data);
