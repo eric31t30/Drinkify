@@ -6,6 +6,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 13, level: "Medio" },
     description: "Clásico ácido y refrescante con un toque cítrico.",
+    history:
+      "La Margarita es uno de los cócteles más populares del mundo. Su origen se remonta a México a mediados del siglo XX, creada como homenaje a una mujer llamada Margarita.",
+    difficulty: { value: 5, label: "Media" },
     ingredients: [
       { name: "Tequila", amount: "50ml" },
       { name: "Triple Sec", amount: "25ml" },
@@ -22,8 +25,9 @@ export const drinks = [
     prepTime: "3 min",
     tags: ["cítrico", "refrescante", "ligero"],
     images: {
-      full: "margarita_aqsoqk",
+      full: "main_ouzdes",
       png: "margarita-png_vpvn5k",
+      gallery: ["main_ouzdes", "gallery-1_ww82aj", "gallery-2_xsuhb4"],
     },
     isPopular: true,
     price: 12.5,
@@ -36,6 +40,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 10, level: "Bajo" },
     description: "Refrescante mezcla de menta, limón y ron.",
+    history:
+      "El Mojito nació en Cuba y es uno de los cócteles más representativos del Caribe. Su combinación de ron, menta y lima lo convirtió en un símbolo de frescura tropical.",
+    difficulty: { value: 4, label: "Media-Baja" },
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
       { name: "Hierbabuena", amount: "6 hojas" },
@@ -52,8 +59,9 @@ export const drinks = [
     prepTime: "4 min",
     tags: ["refrescante", "herbal", "cítrico"],
     images: {
-      full: "mojito_mqx7lh",
+      full: "main_pa09zf",
       png: "mojito-png_ismdgp",
+      gallery: ["main_pa09zf", "gallery-1_nrmcvw", "gallery-2_eqnv9k"],
     },
     isPopular: true,
     price: 10,
@@ -66,6 +74,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 8, level: "Bajo" },
     description: "Dulce, cremosa y tropical.",
+    history:
+      "La Piña Colada es originaria de Puerto Rico y fue creada en los años 50. Su mezcla cremosa la convirtió en un emblema de las bebidas tropicales.",
+    difficulty: { value: 3, label: "Baja" },
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
       { name: "Crema de coco", amount: "30ml" },
@@ -80,8 +91,9 @@ export const drinks = [
     prepTime: "3 min",
     tags: ["dulce", "tropical", "cremoso"],
     images: {
-      full: "piña-colada_kcjhra",
+      full: "main_xdepyy",
       png: "piña-colada-png_siln3z",
+      gallery: ["main_xdepyy", "gallery-1_coifea", "gallery-2_ntb2rq"],
     },
     price: 11.5,
   },
@@ -93,6 +105,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 32, level: "Alto" },
     description: "Clásico fuerte con notas de whisky y naranja.",
+    history:
+      "El Old Fashioned es uno de los cócteles más antiguos registrados, nacido en Estados Unidos en el siglo XIX. Representa la esencia del cóctel clásico.",
+    difficulty: { value: 6, label: "Media-Alta" },
     ingredients: [
       { name: "Whisky bourbon", amount: "60ml" },
       { name: "Bitter", amount: "2 dash" },
@@ -108,8 +123,9 @@ export const drinks = [
     prepTime: "3 min",
     tags: ["fuerte", "amargo"],
     images: {
-      full: "old-fashioned_gxq8rx",
+      full: "main_rl8z4t",
       png: "old-fashioned-png_oudmxi",
+      gallery: ["main_rl8z4t", "gallery-1_w6eixn", "gallery-2_ipnjo2"],
     },
     price: 14,
   },
@@ -121,6 +137,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 20, level: "Medio" },
     description: "Dulce, cítrico y elegante.",
+    history:
+      "El Cosmopolitan ganó popularidad en los años 90 gracias a la cultura urbana y la televisión, convirtiéndose en un símbolo de sofisticación moderna.",
+    difficulty: { value: 4, label: "Media-Baja" },
     ingredients: [
       { name: "Vodka", amount: "45ml" },
       { name: "Triple Sec", amount: "15ml" },
@@ -135,8 +154,9 @@ export const drinks = [
     prepTime: "3 min",
     tags: ["dulce", "cítrico", "afrutado"],
     images: {
-      full: "cosmopolitan_b1nkzd",
+      full: "main_uedpcc",
       png: "cosmopolitan-png_rclmoz",
+      gallery: ["main_uedpcc", "gallery-1_vzq9kn", "gallery-2_ktc2j1"],
     },
     price: 13,
   },
@@ -148,6 +168,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 17, level: "Medio" },
     description: "Equilibrio perfecto entre dulce y ácido.",
+    history:
+      "El Daiquiri nació en Cuba y es un referente de la coctelería clásica. Su simplicidad exige precisión para lograr el balance perfecto.",
+    difficulty: { value: 5, label: "Media" },
     ingredients: [
       { name: "Ron blanco", amount: "50ml" },
       { name: "Jugo de limón", amount: "25ml" },
@@ -162,8 +185,9 @@ export const drinks = [
     prepTime: "3 min",
     tags: ["cítrico", "refrescante", "ligero"],
     images: {
-      full: "daiquiri_l5psis",
+      full: "main_cakfql",
       png: "daiquiri-png_udslsx",
+      gallery: ["main_cakfql", "gallery-1_x7kb2o", "gallery-2_mzltxc"],
     },
     price: 11,
   },
@@ -175,6 +199,9 @@ export const drinks = [
     category: "Vino preparado",
     alcohol: { type: "Alcohólico", abv: 7, level: "Bajo" },
     description: "Fresca mezcla de vino y frutas.",
+    history:
+      "La Sangría es una bebida tradicional española, popularizada como una opción refrescante para compartir en reuniones y celebraciones.",
+    difficulty: { value: 2, label: "Muy Baja" },
     ingredients: [
       { name: "Vino tinto", amount: "150ml" },
       { name: "Frutas mixtas", amount: "Al gusto" },
@@ -190,8 +217,9 @@ export const drinks = [
     prepTime: "5 min",
     tags: ["afrutado", "dulce", "refrescante"],
     images: {
-      full: "sangria_udkpsl",
+      full: "main_xchwqz",
       png: "sangria-png_n3ubxo",
+      gallery: ["main_xchwqz", "gallery-1_ajbuja", "gallery-2_e20y9y"],
     },
     price: 9.5,
   },
@@ -203,6 +231,9 @@ export const drinks = [
     category: "Spritz",
     alcohol: { type: "Alcohólico", abv: 11, level: "Bajo" },
     description: "Ligero, burbujeante y con sabor amargo dulce.",
+    history:
+      "El Aperol Spritz nació en el norte de Italia y se popularizó como aperitivo. Es símbolo de la cultura del spritz y el ritual del aperitivo italiano.",
+    difficulty: { value: 2, label: "Muy Baja" },
     ingredients: [
       { name: "Aperol", amount: "60ml" },
       { name: "Prosecco", amount: "90ml" },
@@ -218,8 +249,9 @@ export const drinks = [
     prepTime: "2 min",
     tags: ["amargo", "refrescante"],
     images: {
-      full: "aperol-spritz_lnewe7",
+      full: "main_kwheld",
       png: "aperol-spritz-png_e6fdum",
+      gallery: ["main_kwheld", "gallery-1_ojrjgg", "gallery-2_yelt80"],
     },
     price: 12,
   },
@@ -231,6 +263,9 @@ export const drinks = [
     category: "Cóctel",
     alcohol: { type: "Alcohólico", abv: 14, level: "Medio" },
     description: "Picante y refrescante con ginger beer.",
+    history:
+      "El Moscow Mule surgió en Estados Unidos en los años 40 y se hizo famoso por servirse en taza de cobre, destacando su carácter refrescante.",
+    difficulty: { value: 3, label: "Baja" },
     ingredients: [
       { name: "Vodka", amount: "50ml" },
       { name: "Ginger beer", amount: "120ml" },
@@ -246,8 +281,9 @@ export const drinks = [
     prepTime: "2 min",
     tags: ["picante", "cítrico", "refrescante"],
     images: {
-      full: "moscow-mule_t4z0fo",
+      full: "main_ktc9mb",
       png: "moscow-mule-png_vfmtia",
+      gallery: ["main_ktc9mb", "gallery-1_usqkio", "gallery-2_h1tdnz"],
     },
     price: 12.5,
   },
@@ -259,6 +295,9 @@ export const drinks = [
     category: "Sin alcohol",
     alcohol: { type: "No alcohólico", abv: 0, level: "Sin alcohol" },
     description: "Refrescante, cítrica y perfecta para el calor.",
+    history:
+      "La limonada frozen es una variante moderna de la limonada clásica, creada para combatir el calor con una textura helada y refrescante.",
+    difficulty: { value: 1, label: "Muy Baja" },
     ingredients: [
       { name: "Limón", amount: "2" },
       { name: "Hielo picado", amount: "1 taza" },
@@ -273,8 +312,9 @@ export const drinks = [
     prepTime: "3 min",
     tags: ["cítrico", "refrescante", "dulce"],
     images: {
-      full: "limonada-frozen_ihudhf",
+      full: "main_dbakpq",
       png: "limonada-frozen-png_zdcv1x",
+      gallery: ["main_dbakpq", "gallery-1_qrbd1l", "gallery-2_qbt4xt"],
     },
     price: 6.5,
   },

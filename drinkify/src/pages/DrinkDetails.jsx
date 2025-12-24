@@ -9,6 +9,7 @@ import DrinkPreparation from "../components/drink-details/DrinkPreparation";
 import Footer from "../components/footer";
 import DrinkRecommendations from "../components/drink-details/DrinkRecommendations";
 import DrinkImages from "../components/drink-details/DrinkImages";
+import DrinkInsights from "../components/drink-details/DrinkInsights";
 
 function DrinkDetails() {
 
@@ -67,7 +68,27 @@ function DrinkDetails() {
       <DrinkPreparation drink={drink} />
 
       <div className={styles["drink-content"]}>
-        <DrinkImages drink={drink}></DrinkImages>
+        <div className={styles["drink-extras"]}>
+          <div className={styles["images-cont"]}>
+            <DrinkImages drink={drink}></DrinkImages>
+          </div>
+          <div className={styles["insights-cont"]}>
+            <DrinkInsights drink={drink}></DrinkInsights>
+          </div>
+          <span
+            className={styles["float-name"]}
+            style={{
+              textShadow: `
+              0px 1px 0 ${drink.color}, 
+              1px 0px 0 ${drink.color},
+              0px -1px 0 ${drink.color}, 
+              -1px 0px 0 ${drink.color}`,
+              "--text-border": drink.color
+            }}
+          >
+            {drink.name}
+          </span>
+        </div>
         <section className={styles["recommended-drinks"]}>
           <DrinkRecommendations
             drink={drink}
