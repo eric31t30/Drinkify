@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 
 import styles from '../styles/home.module.css'
 import DrinkList from "../components/DrinkList";
-import Footer from "../components/footer";
 
 import Hero from "../components/Hero";
 import Search from "../components/Search";
@@ -78,8 +77,6 @@ function Home() {
         />
         <DrinkList drinks={filteredDrinks} />
       </div>
-      
-      <Footer />
     </section>
   );
 }
