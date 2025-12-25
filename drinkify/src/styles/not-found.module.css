@@ -39,8 +39,9 @@
     align-items: center;
     flex-direction: column;
     background-color: black;
-    padding: 20px 20px;
+    padding: 20px;
     border-radius: 20px;
+    z-index: 10;
 }
 
 .blackboard-cont{
@@ -52,7 +53,6 @@
     flex-direction: column;
     gap: 40px;
     padding: 40px 20px;
-    /* border: 2px dashed rgba(255, 255, 255, 0.6); */
     border-radius: 20px;
     color: white;
     overflow: hidden;
@@ -90,20 +90,24 @@
     border: 2px double rgba(255, 255, 255, .5);
     padding: 5px;
     color: white;
-    font-weight: 700;
     cursor: pointer;
-    transition: all .5s ease;
     margin-bottom: 70px;
+    text-decoration: none;
 }
 
-.button:hover{
-    transform: scale(1.02);
+.button:hover p{
+    padding: 2px 28px;
 }
 
 .button p{
     width: 100%;
     border: 2px double rgba(255, 255, 255, .5);
     padding: 2px 16px;
+    font-size: var(--font-size-regular);
+    font-family: "Indie Flower", cursive;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    transition: all .5s ease;
 }
 
 .drink{
@@ -140,3 +144,214 @@
     object-fit: cover;
     pointer-events: none;
 }
+
+.corner{
+    position: absolute;
+    top: -20px;
+    height: 180px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.corner-1{
+    left: -20px;
+}
+
+.corner-2{
+    right: -20px;
+    transform: rotateY(180deg);
+    filter: brightness(0) saturate(100%) invert(63%) sepia(72%) saturate(292%) hue-rotate(59deg) brightness(97%) contrast(93%);
+}
+
+
+@media (min-width: 700px){
+    .notfound{
+        gap: 150px;
+    }
+
+    .title{
+        font-size: calc(var(--font-size-big) + 2rem);
+    }
+
+    .message{
+        font-size: calc(var(--font-size-regular) + .2rem);
+    }
+
+    .blackboard{
+        width: 70%;
+        padding: 40px;
+    }
+
+    .blackboard-cont{
+        gap: 50px;
+    }
+    
+    .title-404{
+        font-size: calc(var(--font-size-big) + 3rem);
+        line-height: calc(var(--font-size-big) + 3rem);
+        letter-spacing: .4rem;
+    }
+
+    .cont-404 p{
+        font-size: calc(var(--font-size-regular) + .3rem);
+    }
+
+    .button p{
+        font-size: calc(var(--font-size-regular) - .1rem);
+    }
+
+    .drink{
+        height: 130px;
+    }
+
+    .drink-1{
+        right: 40px;
+    }
+
+    .drink-2{
+        left: 60px;
+    }
+
+    .corner{
+       top: -40px;
+       height: 320px;
+    }
+    
+    .corner-1{
+       left: -40px;
+    }
+    
+    .corner-2{
+       right: -40px;
+    }
+}
+
+@media (min-width: 1024px){
+    
+    .blackboard{
+        width: 60%;
+        padding: 40px;
+    }
+
+    .blackboard-cont{
+        gap: 70px;
+    }
+
+    .drink{
+        height: 140px;
+    }
+
+    .drink-1{
+        right: 80px;
+    }
+
+    .drink-2{
+        left: 100px;
+    }
+
+    .corner{
+       top: -60px;
+       height: 400px;
+    }
+    
+    .corner-1{
+       left: -60px;
+    }
+    
+    .corner-2{
+       right: -60px;
+    }
+}
+
+@media (min-width: 1280px){
+
+    .notfound{
+        flex-direction: row;
+    }
+
+    .message-cont{
+        align-items: start;
+    }
+
+    .title{
+        font-size: calc(var(--font-size-big) + 1rem);
+    }
+
+    .blackboard{
+        width: 40%;
+        padding: 40px;
+    }
+
+    .blackboard-cont{
+        gap: 40px;
+    }
+
+    .title-404{
+        font-size: calc(var(--font-size-big) + 1rem);
+        line-height: calc(var(--font-size-big) + 1rem);
+    }
+
+
+    .button p{
+        font-size: calc(var(--font-size-regular) - .1rem);
+        padding: 2px 16px;
+    }
+
+    .drink{
+        height: 120px;
+    }
+
+    .drink-1{
+        right: 60px;
+    }
+
+    .drink-2{
+        left: 80px;
+    }
+
+    .corner{
+       top: -40px;
+       height: 320px;
+    }
+    
+    .corner-1{
+       left: -40px;
+    }
+    
+    .corner-2{
+       right: -40px;
+    }
+    
+}
+
+@media (min-width: 1920px){
+
+    .notfound{
+        gap: 200px;
+    }
+
+    .drink{
+        height: 140px;
+    }
+
+    .drink-1{
+        right: 80px;
+    }
+
+    .drink-2{
+        left: 100px;
+    }
+
+    .corner{
+       top: -60px;
+       height: 380px;
+    }
+    
+    .corner-1{
+       left: -40px;
+    }
+    
+    .corner-2{
+       right: -40px;
+    }
+} 

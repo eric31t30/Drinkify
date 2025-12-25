@@ -1,8 +1,11 @@
 import styles from '../styles/not-found.module.css'
+import { Link } from "react-router-dom";
 
 import chalk from "/illustrations/chalk.svg"
 import drink1 from "/illustrations/menu-drink-1.svg"
 import drink2 from "/illustrations/menu-drink-2.svg";
+
+import corner1 from "/illustrations/leafs-corner.svg";
 
 
 function NotFound() {
@@ -22,9 +25,9 @@ function NotFound() {
             <p>page not found</p>
           </div>
 
-          <button className={styles.button}>
+          <Link to="/" className={styles.button}>
             <p>Volver</p>
-          </button>
+          </Link>
 
           <img className={`${styles.drink} ${styles["drink-1"]}`} src={drink1} alt="" />
           <img className={`${styles.drink} ${styles["drink-2"]}`} src={drink2} alt="" />
@@ -845,6 +848,9 @@ function NotFound() {
 
         <img className={styles.chalk} src={chalk} alt="" />
       </article>
+
+      <img className={`${styles.corner} ${styles["corner-1"]}`}  src={corner1} alt="" />
+      <img className={`${styles.corner} ${styles["corner-2"]}`}  src={corner1} alt="" />
     </section>
   );
 }
