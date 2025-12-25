@@ -5,9 +5,9 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { cloudinary } from "../../utils/Cloudinary";
 
-import fire from '../../../public/icons/fire.svg'
-import book from "../../../public/icons/book.svg";
-import tag from "../../../public/icons/tag.svg";
+import fire from '/icons/fire.svg'
+import book from "/icons/book.svg";
+import tag from "/icons/tag.svg";
 
 import leaf from "/illustrations/leafs-3.svg"
 

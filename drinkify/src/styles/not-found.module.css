@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.notfound{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    overflow: hidden;
+}
+
+.message-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title{
+    font-size: var(--font-size-big);
+    font-family: "Indie Flower", cursive;
+}
+
+.message{
+    font-size: var(--font-size-regular);
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+}
+
+.blackboard{
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+
+.blackboard-cont{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+    /* border: 2px dashed rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    color: white;
+    overflow: hidden;
+}
+
+.menu-title{
+    font-size: var(--font-size-medium);
+    font-family: "Indie Flower", cursive;
+    border: 2px solid rgba(255, 255, 255, .5);
+    padding: 5px 16px;
+    line-height: var(--font-size-medium);
+}
+
+.cont-404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-404{
+    font-size: calc(var(--font-size-big) + 2rem);
+    font-family: "Indie Flower", cursive;
+    line-height: calc(var(--font-size-big) + 2rem);
+}
+
+.cont-404 p{
+    font-size: var(--font-size-regular);
+    font-family: "Indie Flower", cursive;
+}
+
+.button{
+    position: relative;
+    background-color: transparent;
+    border: 2px double rgba(255, 255, 255, .5);
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .5s ease;
+    margin-bottom: 70px;
+}
+
+.button:hover{
+    transform: scale(1.02);
+}
+
+.button p{
+    width: 100%;
+    border: 2px double rgba(255, 255, 255, .5);
+    padding: 2px 16px;
+}
+
+.drink{
+    position: absolute;
+    height: 100px;
+    pointer-events: none;
+    bottom: -10px;
+}
+
+.drink-1{
+    right: 30px;
+}
+
+.drink-2{
+    left: 40px;
+}
+
+.border{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    stroke-width: 2;
+}
+
+.chalk{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
