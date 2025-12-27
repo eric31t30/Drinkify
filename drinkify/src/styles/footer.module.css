@@ -5,35 +5,20 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
-.footer-umbrella{
+.footer-wave{
     position: absolute;
-    top: -20px;
-    right: 40px;
-    z-index: 9;
-    width: 140px;
-}
-
-.footer-waves-cont{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-wave-1{
-    z-index: 15;
-    pointer-events: none;
-}
-
-.footer-wave-2{
-    position: absolute;
-    z-index: 8;
-    top: -10px;
+    top: 0px;
     left: 0px;
+    z-index: 16;
     pointer-events: none;
+    transform: rotateX(180deg) translateY(1px);
+}
+
+path{
+   transition: opacity 2.5s ease;
 }
 
 .footer-cont{
@@ -44,8 +29,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(to top, #e249be, #08C9F4);
-    z-index: 10;
+    z-index: 15;
+}
+
+.footer-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .footer-logo{
@@ -73,16 +65,24 @@
     font-weight: 500;
 }
 
+.background{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
 
 @media (min-width: 700px){
-    .footer-umbrella{
-        top: -10px;
-        width: 190px;
-    }
 
     .footer-cont{
         gap: 30px;
-        min-height: 300px;
+        min-height: 350px;
+    }
+
+    .footer-main{
+        gap: 20px;
+        transform: translateY(20px);
     }
 
     .footer-logo{
@@ -95,11 +95,16 @@
 }
 
 @media (min-width: 1024px){
-    .footer-umbrella{
-        top: 20px;
-        right: 120px;
-        width: 240px;
+
+    .footer-cont{
+        gap: 30px;
+        min-height: 400px;
     }
+
+    .footer-main{
+        transform: translateY(20px);
+    }
+
 
     .footer-logo{
         transform: scale(1.5);
@@ -108,16 +113,22 @@
     .footer-copyright{
         font-size: var(--font-size-regular);
     }
-
-    .footer-wave-2{
-        top: -20px;
-    }
 }
 
 @media (min-width: 1280px){
 
-    .footer-umbrella{
-        top: 60px;
+    .footer{
+        margin-top: 180px;
+    }
+
+    .footer-cont{
+        gap: 30px;
+        min-height: 400px;
+    }
+
+    .footer-main{
+        gap: 20px;
+        transform: translateY(50px);
     }
 
     .footer-logo{
@@ -135,13 +146,17 @@
 }
 
 @media (min-width: 1920px){
-    
-    .footer-umbrella{
-        top: 160px;
-        right: 10%;
+
+    .footer{
+        margin-top: 220px;
     }
 
-    .footer-wave-2{
-        top: 20px;
+    .footer-cont{
+        min-height: 500px;
     }
+
+    .footer-main{
+        transform: translateY(70px);
+    }
+
 } 
