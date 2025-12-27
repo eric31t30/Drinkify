@@ -92,6 +92,7 @@
     width: 100px;
     pointer-events: none;
     opacity: .3;
+    z-index: 1;
 }
 
 .bubbles{
@@ -99,13 +100,9 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 100%;
-    background-image: url(/illustrations/bubbles.svg);
-    background-size: contain;
-    background-repeat: repeat;
-    opacity: .1;
-    pointer-events: none;
+    height: 100vh;
     z-index: 0;
+    pointer-events: none;
 }
 
 .hero-wave-1{
@@ -220,7 +217,6 @@
         transform: rotate(10deg);
     }
 
-
     .leaf-1{
         left: -60px;
         width: 300px;
@@ -233,10 +229,6 @@
 
     .lemon{
         width: 160px;
-    }
-
-    .bubbles{
-        background-size: 60%;
     }
 }
 
@@ -297,10 +289,6 @@
     .lemon{
         width: 140px;
     }
-
-    .bubbles{
-        background-size: 40%;
-    }
 }
 
 @media (min-width: 1920px){
@@ -359,10 +347,6 @@
 
     .lemon{
         width: 140px;
-    }
-
-    .bubbles{
-        background-size: 30%;
     }
 } 
 

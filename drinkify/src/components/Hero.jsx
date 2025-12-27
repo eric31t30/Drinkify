@@ -9,6 +9,7 @@ import leaf2 from "/illustrations/leafs-2.svg";
 import lemon from "/illustrations/lemon.svg";
 
 import scroll from "/icons/scroll.svg";
+import Bubbles from "../utils/Bubbles";
 
 function Hero() {
 
@@ -46,8 +47,11 @@ function Hero() {
       <img className={styles["leaf-2"]} src={leaf2} alt="" />
       <img className={styles["cocktail-1"]} src={cocktail1} alt="" />
       <img className={styles["cocktail-2"]} src={cocktail2} alt="" />
-      <div className={styles.bubbles}></div>
       <img className={styles.lemon} src={lemon} alt="" />
+
+      <div className={styles.bubbles}>
+        <Bubbles />
+      </div>
 
       <svg
         className={styles["hero-wave-1"]}
