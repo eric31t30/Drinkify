@@ -19,7 +19,9 @@ function Hero() {
     });
   };
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero}`}>
+      <div className={`${styles.background} bg-layer`}></div>
+
       <div className={styles["hero-title-cont"]}>
         <div className={styles["hero-title-text"]}>
           <img
@@ -32,7 +34,12 @@ function Hero() {
           </p>
         </div>
 
-        <img className={styles.scroll} src={scroll} alt="" onClick={()=> scrolldrinks()}/>
+        <img
+          className={styles.scroll}
+          src={scroll}
+          alt=""
+          onClick={() => scrolldrinks()}
+        />
       </div>
 
       <img className={styles["leaf-1"]} src={leaf1} alt="" />

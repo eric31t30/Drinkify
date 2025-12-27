@@ -36,7 +36,7 @@ function Search({ localCategories, filters, setFilters}) {
   }, [input, setFilters]);
 
   return (
-    <section className={styles.search} id='drink-list'>
+    <section className={styles.search} id="drink-list">
       <h2 className={styles.title}>
         Explora la colección de bebidas
         <img className={styles["title-icon"]} src={cocktail} alt="" />
@@ -55,7 +55,9 @@ function Search({ localCategories, filters, setFilters}) {
       </div>
 
       <div className={styles["search-filters"]}>
-        <div className={`${styles["search-filter-cont"]} ${styles["search-filter-type"]}`}>
+        <div
+          className={`${styles["search-filter-cont"]} ${styles["search-filter-type"]}`}
+        >
           <h2 className={styles["search-filter-title"]}>
             <img className={styles["search-title-icon"]} src={drink} alt="" />
             Category
@@ -66,7 +68,7 @@ function Search({ localCategories, filters, setFilters}) {
                 key={cat.value}
                 className={`${styles["search-button-filter"]} ${
                   filters.category === cat.value
-                    ? styles["search-button-type-active"]
+                    ? `color-layer ${styles["search-button-type-active"]}`
                     : ""
                 }`}
                 onClick={() =>
@@ -100,7 +102,7 @@ function Search({ localCategories, filters, setFilters}) {
                 key={lvl.value}
                 className={`${styles["search-button-filter"]} ${
                   filters.level === lvl.value
-                    ? styles["search-button-type-active"]
+                    ? `color-layer ${styles["search-button-type-active"]}`
                     : ""
                 }`}
                 onClick={() =>
@@ -110,7 +112,9 @@ function Search({ localCategories, filters, setFilters}) {
                 {lvl.label}
                 <span
                   className={`${styles["search-border"]} ${
-                    filters.level === lvl.value ? styles["search-no-border"] : ""
+                    filters.level === lvl.value
+                      ? styles["search-no-border"]
+                      : ""
                   }`}
                 ></span>
               </button>

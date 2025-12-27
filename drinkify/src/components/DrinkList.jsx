@@ -7,7 +7,7 @@ function DrinkList({ drinks, results }) {
   return (
     <section className={styles["drink-list"]}>
       {results ?? (
-        <header className={styles["drink-list__header"]}>
+        <header className={`${styles["drink-list__header"]} split-border`}>
           <h2 className={styles["drink-list__title"]}>
             <span className={styles["drink-list__results"]}>Resultados</span>
             <span className={styles["drink-list__count"]}>{drinks.length}</span>
