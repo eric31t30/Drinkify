@@ -9,6 +9,7 @@ import DrinkPreparation from "../components/drink-details/DrinkPreparation";
 import DrinkRecommendations from "../components/drink-details/DrinkRecommendations";
 import DrinkImages from "../components/drink-details/DrinkImages";
 import DrinkInsights from "../components/drink-details/DrinkInsights";
+import Loader from "../components/Loader";
 
 function DrinkDetails() {
 
@@ -50,8 +51,8 @@ function DrinkDetails() {
   }, [id])
 
   
-  if (!drink) return <p>Cargando...</p>;
-  if (!recommendations) return <p>Cargando...</p>;
+  if (!drink) return <Loader />;
+  if (!recommendations) return <Loader />;
 
   return (
     <section className={styles.drink}>
