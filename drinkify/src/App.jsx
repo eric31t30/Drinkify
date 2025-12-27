@@ -1,15 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import Home from "./pages/Home";
-import DrinkDetails from "./pages/DrinkDetails";
-import ScrollTop from "./utils/ScrollTop";
-import Header from "./components/Header";
-import NotFound from "./pages/NotFound";
-import Footer from "./components/footer";
+import MainLayout from "./layout/MainLayout";
+const Home = lazy(() => import("./pages/Home"));
+const DrinkDetails = lazy(() => import("./pages/DrinkDetails"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 import { setRandomColors} from './utils/SwitchColor'
+import Loader from "./components/Loader";
 
 function App() {
   useEffect(() => {
@@ -21,16 +20,14 @@ function App() {
   }, []);
 
   return (
-    <>
-      <ScrollTop />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/drink/:id" element={<DrinkDetails />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/drink/:id" element={<DrinkDetails />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/loader" element={<Loader />} />
+      </Route>
+    </Routes>
   );
 }
 

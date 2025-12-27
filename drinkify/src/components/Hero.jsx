@@ -1,3 +1,4 @@
+
 import styles from "../styles/hero.module.css";
 
 import logo from "/illustrations/drinkify-logo.svg";
@@ -9,7 +10,6 @@ import leaf2 from "/illustrations/leafs-2.svg";
 import lemon from "/illustrations/lemon.svg";
 
 import scroll from "/icons/scroll.svg";
-import Bubbles from "../utils/Bubbles";
 
 function Hero() {
 
@@ -19,10 +19,10 @@ function Hero() {
       block: "center",
     });
   };
+
   return (
     <section className={`${styles.hero}`}>
       <div className={`${styles.background} bg-layer`}></div>
-
       <div className={styles["hero-title-cont"]}>
         <div className={styles["hero-title-text"]}>
           <img
@@ -42,16 +42,11 @@ function Hero() {
           onClick={() => scrolldrinks()}
         />
       </div>
-
       <img className={styles["leaf-1"]} src={leaf1} alt="" />
       <img className={styles["leaf-2"]} src={leaf2} alt="" />
       <img className={styles["cocktail-1"]} src={cocktail1} alt="" />
       <img className={styles["cocktail-2"]} src={cocktail2} alt="" />
       <img className={styles.lemon} src={lemon} alt="" />
-
-      <div className={styles.bubbles}>
-        <Bubbles />
-      </div>
 
       <svg
         className={styles["hero-wave-1"]}
