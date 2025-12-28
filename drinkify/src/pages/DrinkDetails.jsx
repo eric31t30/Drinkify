@@ -10,6 +10,7 @@ import DrinkRecommendations from "../components/drink-details/DrinkRecommendatio
 import DrinkImages from "../components/drink-details/DrinkImages";
 import DrinkInsights from "../components/drink-details/DrinkInsights";
 import Loader from "../components/Loader";
+import { useBreakPoints } from "../custom-hooks/UseBreakpoints";
 
 function DrinkDetails() {
 
@@ -17,6 +18,8 @@ function DrinkDetails() {
   const [drink, setDrink] = useState(null)
   const [recommendations, setRecommendations] = useState(null);
 
+  const limit = useBreakPoints();
+  
   useEffect(() => {
 
     const getdrink = async()=>{
@@ -24,7 +27,6 @@ function DrinkDetails() {
         const res = await fetch(`http://localhost:3000/drinks/${id}`);
         const data = await res.json()
         setDrink(data)
-        console.log(data);
           
       }catch(err){
         console.error("Error al cargar la bebida", err);   
@@ -33,12 +35,13 @@ function DrinkDetails() {
 
     getdrink();
 
+    const quantity = limit >= 1920 ? 3 : 4;
+
     const getSimilars = async()=>{
       try {
-        const res = await fetch(`http://localhost:3000/drinks/${id}/recommendations?limit=4`);
+        const res = await fetch(`http://localhost:3000/drinks/${id}/recommendations?limit=${quantity}`);
         const data = await res.json();
         setRecommendations(data);
-        console.log(data);
         
       } catch (err) {
         console.error("Error al cargar la bebida", err);
@@ -48,7 +51,7 @@ function DrinkDetails() {
 
     getSimilars();
 
-  }, [id])
+  }, [id, limit])
 
   
   if (!drink) return <Loader />;

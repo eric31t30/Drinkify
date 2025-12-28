@@ -39,7 +39,6 @@ function DrinkCard({ drink }) {
           <Link
             to={`/drink/${drink.id}`}
             className={styles["drink-button"]}
-            onClick={() => console.log("click")}
             style={{ background: drink.color }}
           >
             <p>Ver Detalles</p>

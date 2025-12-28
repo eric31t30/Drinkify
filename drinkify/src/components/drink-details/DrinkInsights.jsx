@@ -21,11 +21,6 @@ function DrinkInsights({ drink }) {
     setProgress(percentage);
   }, [percentage]);
 
-  useEffect(() => {
-    console.log(drink);
-    
-  }, [drink])
-
   return (
     <section className={styles.insights}>
       <article

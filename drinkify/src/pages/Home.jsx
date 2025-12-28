@@ -60,10 +60,6 @@ function Home() {
     return result;
   }, [filters.category, filters.level, filters.search, drinks]);
 
-  useEffect(() => {
-    console.log(filters);
-  }, [filters]);
-
   return (
     <section className={styles.home}>
 
