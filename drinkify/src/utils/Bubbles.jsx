@@ -14,10 +14,6 @@ export default function Bubbles() {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   const options = useMemo(
     () => ({
       fullScreen: { enable: false },
@@ -59,7 +55,6 @@ export default function Bubbles() {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={options}
       />
     );

@@ -1,9 +1,11 @@
 import styles from "../styles/drink-list.module.css";
 import DrinkCard from "./DrinkCard";
+import DrinksSkeleton from "./DrinksSkeleton";
 
 import lemon from "/icons/lemon.svg";
 
-function DrinkList({ drinks, results }) {
+function DrinkList({ drinks = [], results, loading }) {
+
   return (
     <section className={styles["drink-list"]}>
       {results ?? (
@@ -23,9 +25,15 @@ function DrinkList({ drinks, results }) {
       )}
 
       <div className={styles["drink-list__cont"]}>
-        {drinks.map((item) => (
-          <DrinkCard key={item.id} drink={item} />
-        ))}
+        {loading 
+          ? Array.from({ length: 8 }).map((_, i) => (
+              <DrinksSkeleton key={i}></DrinksSkeleton>
+            ))
+          : drinks.map((item) => (
+              <DrinkCard key={item.id} drink={item} />
+            ))
+        }
+      
       </div>
     </section>
   );

@@ -1,0 +1,51 @@
+.skeleton{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, .1);
+    height: 360px;
+}
+
+.skeleton-brightness{
+    position: absolute;
+    top: 0px;
+    left: -40%;
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: skeleton 1s infinite;
+    pointer-events: none;
+}
+
+@keyframes skeleton {
+    0%{
+        left: -40%;
+    }
+
+    100%{
+        left: 140%;
+    }
+}
+
+@media (min-width: 700px){
+    .skeleton{
+        height: 440px;
+    }
+}
+
+@media (min-width: 1024px){
+    .skeleton{
+        height: 240px;
+    }
+}
+
+@media (min-width: 1280px){
+    
+}
+
+@media (min-width: 1920px){
+    
+} 
