@@ -11,8 +11,11 @@ import DrinkImages from "../components/drink-details/DrinkImages";
 import DrinkInsights from "../components/drink-details/DrinkInsights";
 import Loader from "../components/Loader";
 import { useBreakPoints } from "../custom-hooks/UseBreakpoints";
+import NoData from "../components/NoData";
 
 function DrinkDetails() {
+
+  const [status, setStatus] = useState("loading")
 
   const { id } = useParams();
   const [drink, setDrink] = useState(null)
@@ -22,40 +25,53 @@ function DrinkDetails() {
   
   useEffect(() => {
 
-    const getdrink = async()=>{
-      try{
-        const res = await fetch(`http://localhost:3000/drinks/${id}`);
-        const data = await res.json()
-        setDrink(data)
-          
-      }catch(err){
-        console.error("Error al cargar la bebida", err);   
-      }
-    }
-
-    getdrink();
-
-    const quantity = limit >= 1920 ? 3 : 4;
-
-    const getSimilars = async()=>{
+    const loadData = async()=>{
       try {
-        const res = await fetch(`http://localhost:3000/drinks/${id}/recommendations?limit=${quantity}`);
-        const data = await res.json();
-        setRecommendations(data);
-        
-      } catch (err) {
-        console.error("Error al cargar la bebida", err);
-      }
+        setStatus("loading");
+        const quantity = limit >= 1920 ? 3 : 4;
 
+        const [drinkRes, recRes] = await Promise.all([
+          fetch(`http://localhost:3000/drinks/${id}`),
+          fetch(
+            `http://localhost:3000/drinks/${id}/recommendations?limit=${quantity}`
+          ),
+        ]);
+
+        const drinkData = await drinkRes.json();
+        const recData = await recRes.json();
+
+        if (!drinkRes.ok) {
+          throw new Error(drinkData.message || "No se pudo cargar la bebida");
+        }
+
+        if (!recRes.ok) {
+          throw new Error("No se pudieron cargar las recomendaciones");
+        }
+
+        setDrink(drinkData);
+        setRecommendations(recData);
+        setStatus("success");
+
+      } catch (err) {
+        console.error(err);
+        setStatus("error");
+      }
     }
 
-    getSimilars();
+    loadData()
 
   }, [id, limit])
 
   
-  if (!drink) return <Loader />;
-  if (!recommendations) return <Loader />;
+  if (status === "loading") {
+    return <Loader />;
+  }
+
+  if (status === "error") {
+    return (
+      <NoData />
+    );
+  }
 
   return (
     <section className={styles.drink}>

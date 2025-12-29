@@ -1,0 +1,135 @@
+.error{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.message{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    z-index: 10;
+}
+
+.title{
+    position: relative;
+    font-size: calc(var(--font-size-medium) - .4rem);
+    text-align: center;
+    z-index: 10;
+}
+
+.description{
+    position: relative;
+    font-size: var(--font-size-regular);
+    text-align: center;
+    z-index: 10;
+}
+
+.drink{
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+    height: 220px;
+    transform: rotate(10deg);
+    z-index: 0;
+}
+
+.spill{
+    position: absolute;
+    z-index: 0;
+    opacity: .2;
+    transform: translate(-20px, -80px);
+}
+
+path{
+    transition: all 2.5s ease;
+}
+
+
+.ice-cubes{
+    position: absolute;
+    width: 30px;
+}
+
+.ice-1{
+    left: 0px;
+    top: -40px;
+    transform: rotate(20deg);
+}
+
+
+@media (min-width: 700px){
+    .drink{
+        bottom: 0px;
+        height: 340px;
+    }
+
+    .message{
+        transform: translateY(-50px);
+    }
+}
+
+@media (min-width: 1024px){
+    .message{
+        gap: 40px;
+        width: 60%;
+    }
+
+    .spill{
+        transform: translate(-40px, -80px) scale(1.5);
+    }
+
+}
+
+@media (min-width: 1280px){
+
+    .error{
+        margin-top: 40px;
+        height: 100vh;
+        justify-content: space-between;
+    }
+
+    .message{
+        gap: 40px;
+        width: 40%;
+        margin-right: 10%;
+        transform: translateY(0px);
+    }
+
+    .drink{
+        position: relative;
+        left: 0px;
+        bottom: 0;
+        height: 420px;
+    }
+
+    .spill{
+        transform: translate(-40px, -100px) scale(1.3);
+    }
+}
+
+@media (min-width: 1920px){
+    
+    .error{
+        margin-top: 80px;
+    }
+
+    .spill{
+        transform: translate(-50px, -70px) scale(2);
+    }
+
+    .drink{
+        position: relative;
+        left: 0px;
+        bottom: 0;
+        height: 550px;
+    }
+} 

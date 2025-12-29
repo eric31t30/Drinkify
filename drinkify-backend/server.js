@@ -11,7 +11,11 @@ app.get("/", (req, res) => {
 });
 
 app.get('/drinks', (req, res)=> {
-  res.json(drinks)
+  try {
+    res.json(drinks);
+  } catch (err) {
+    res.status(500).json({ message: "Error loading drinks" });
+  }
 })
 
 app.get("/drinks/:id", (req, res) => {
