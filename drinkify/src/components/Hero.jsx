@@ -22,7 +22,7 @@ function Hero() {
 
   return (
     <section className={`${styles.hero}`}>
-      <div className={`${styles.background} bg-layer`}></div>
+      <div className={`${styles.background} bg-linear-color`}></div>
       <div className={styles["hero-title-cont"]}>
         <div className={styles["hero-title-text"]}>
           <img

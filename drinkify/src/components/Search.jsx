@@ -68,7 +68,7 @@ function Search({ localCategories, filters, setFilters}) {
                 key={cat.value}
                 className={`${styles["search-button-filter"]} ${
                   filters.category === cat.value
-                    ? `color-layer ${styles["search-button-type-active"]}`
+                    ? styles["search-button-type-active"]
                     : ""
                 }`}
                 onClick={() =>
@@ -102,7 +102,7 @@ function Search({ localCategories, filters, setFilters}) {
                 key={lvl.value}
                 className={`${styles["search-button-filter"]} ${
                   filters.level === lvl.value
-                    ? `color-layer ${styles["search-button-type-active"]}`
+                    ? styles["search-button-type-active"]
                     : ""
                 }`}
                 onClick={() =>

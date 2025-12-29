@@ -7,16 +7,12 @@ const Home = lazy(() => import("./pages/Home"));
 const DrinkDetails = lazy(() => import("./pages/DrinkDetails"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-import { setRandomColors} from './utils/SwitchColor'
+import { applyThemeOnce } from './utils/SwitchColor'
 import Loader from "./components/Loader";
 
 function App() {
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setRandomColors(20000);
-    }, 100);
-
-    return () => clearTimeout(timeout);
+    applyThemeOnce();
   }, []);
 
   return (

@@ -3,6 +3,8 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 
 import { loadSlim } from "@tsparticles/slim";
 
+import styles from '../styles/bubbles.module.css'
+
 export default function Bubbles() {
   const [init, setInit] = useState(false);
 
@@ -16,7 +18,11 @@ export default function Bubbles() {
 
   const options = useMemo(
     () => ({
+      fpsLimit: 45,
+      detectRetina: false,
       fullScreen: { enable: false },
+      pauseOnBlur: true,
+      pauseOnOutsideViewport: true,
       particles: {
         number: {
           value: 40,
@@ -44,19 +50,19 @@ export default function Bubbles() {
             default: "out",
           },
         },
-        fpsLimit: 45,
       },
-      detectRetina: true,
     }),
     []
   );
 
   if (init) {
     return (
-      <Particles
-        id="tsparticles"
-        options={options}
-      />
+      <div className={styles.bubbles}>
+        <Particles
+          id="tsparticles"
+          options={options}
+        />
+      </div>
     );
   }
 

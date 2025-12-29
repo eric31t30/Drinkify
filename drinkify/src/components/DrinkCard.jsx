@@ -18,6 +18,7 @@ function DrinkCard({ drink }) {
           className={styles["drink-image"]}
           src={cloudinary(drink.images.full, "e_blur:100")}
           alt=""
+          loading='lazy'
         />
         <span
           className={styles["drink-level"]}
