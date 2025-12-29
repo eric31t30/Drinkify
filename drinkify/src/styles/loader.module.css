@@ -20,9 +20,9 @@
   aspect-ratio: 1;
   border-radius: 50%; 
   background:
-    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,  var(--bg-a-1) 80%),
-    radial-gradient(var(--r1) var(--r2) at bottom,  var(--bg-a-1) 79.5%,#0000 80%),
-    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,  var(--bg-a-1) 80%),
+    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,  var(--color-1) 80%),
+    radial-gradient(var(--r1) var(--r2) at bottom,  var(--color-1) 79.5%,#0000 80%),
+    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,  var(--color-1) 80%),
     #ccc;
   background-size: 50.5% 220%;
   background-position: -100% 0%,0% 0%,100% 0%;

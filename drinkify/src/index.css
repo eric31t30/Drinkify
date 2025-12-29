@@ -50,96 +50,20 @@ body, *{
 }
 
 
-/* color changing */
+/* global color */
 
 :root {
-  --bg-a-1: hsl(200, 70%, 60%);
-  --bg-a-2: hsl(260, 70%, 60%);
-  --bg-b-1: hsl(320, 70%, 60%);
-  --bg-b-2: hsl(140, 70%, 60%);
-
-  --layer-a: 1;
-  --layer-b: 0;
+  --color-1: hsl(200, 70%, 60%);
+  --color-2: hsl(260, 70%, 60%);
 }
 
-.bg-layer {
-  position: relative;
-  overflow: hidden;
-  pointer-events: none;
+.bg-linear-color {
+  background: linear-gradient(to bottom, var(--color-1), var(--color-2));
 }
 
-.bg-layer::before,
-.bg-layer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transition: opacity 2.5s ease;
-  pointer-events: none;
+.border-color{
+  border: 2px solid var(--color-2);
 }
-
-.bg-layer::before {
-  background: linear-gradient(to bottom, var(--bg-a-1), var(--bg-a-2));
-  opacity: var(--layer-a);
-}
-
-.bg-layer::after {
-  background: linear-gradient(to bottom, var(--bg-b-1), var(--bg-b-2));
-  opacity: var(--layer-b);
-}
-
-
-.split-border {
-  position: relative;
-  border-radius: inherit;
-}
-
-.split-border::before,
-.split-border::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  border-radius: inherit;
-  inset: 0;
-  transition: opacity 2.5s ease;
-}
-
-.split-border::before {
-  border: 2px solid var(--bg-a-2);
-  opacity: var(--layer-a);
-}
-
-.split-border::after {
-  border: 2px solid var(--bg-b-2);
-  opacity: var(--layer-b);
-}
-
-.color-layer {
-  position: relative;
-  overflow: hidden;
-  transition: all 2.5s ease;
-}
-
-.color-layer::before,
-.color-layer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transition: opacity 2.5s ease;
-  pointer-events: none;
-}
-
-.color-layer::before {
-  background: var(--bg-a-2);
-  opacity: var(--layer-a);
-}
-
-.color-layer::after {
-  background: var(--bg-b-2);
-  opacity: var(--layer-b);
-}
-
 
 
 

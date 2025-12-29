@@ -9,7 +9,7 @@ function DrinkList({ drinks = [], results, loading }) {
   return (
     <section className={styles["drink-list"]}>
       {results ?? (
-        <header className={`${styles["drink-list__header"]} split-border`}>
+        <header className={`${styles["drink-list__header"]} border-color`}>
           <h2 className={styles["drink-list__title"]}>
             <span className={styles["drink-list__results"]}>Resultados</span>
             <span className={styles["drink-list__count"]}>{drinks.length}</span>

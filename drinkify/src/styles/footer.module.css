@@ -33,11 +33,13 @@ path{
 }
 
 .footer-main{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    z-index: 12;
 }
 
 .footer-logo{

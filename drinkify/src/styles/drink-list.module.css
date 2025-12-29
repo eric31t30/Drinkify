@@ -34,11 +34,7 @@
 
 .drink-list__count{
     font-size: 2rem;
-    color: color-mix(
-      in oklab,
-      var(--bg-a-2) calc(var(--layer-a) * 100%),
-      var(--bg-b-2) calc(var(--layer-b) * 100%)
-    );
+    color: var(--color-2);
     transition: color 2.5s ease;
     font-weight: 700;
 }
