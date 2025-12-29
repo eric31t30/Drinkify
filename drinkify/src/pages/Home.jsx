@@ -5,6 +5,8 @@ import DrinkList from "../components/DrinkList";
 
 import Hero from "../components/Hero";
 import Search from "../components/Search";
+import Loader from "../components/Loader";
+import NoData from "../components/NoData";
 
 function Home() {
   const [drinks, setDrinks] = useState([]);
@@ -15,6 +17,8 @@ function Home() {
     search: "",
   });
 
+  const [status, setStatus] = useState("loading");
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -23,6 +27,10 @@ function Home() {
           fetch("http://localhost:3000/categories"),
         ]);
 
+        if (!drinksRes.ok || !categoriesRes.ok) {
+          throw new Error("Error al cargar los datos");
+        }
+
         const [drinksData, categoriesData] = await Promise.all([
           drinksRes.json(),
           categoriesRes.json(),
@@ -30,8 +38,10 @@ function Home() {
 
         setDrinks(drinksData);
         setCategories(categoriesData);
+        setStatus("success");
       } catch (err) {
         console.error("Error al cargar los datos", err);
+        setStatus("error");
       }
     };
 
@@ -62,17 +72,22 @@ function Home() {
 
   return (
     <section className={styles.home}>
-
       <Hero />
-      
-      <div className={styles["home-content"]}>
-        <Search
-          localCategories={categories}
-          filters={filters}
-          setFilters={setFilters}
-        />
-        <DrinkList drinks={filteredDrinks} />
-      </div>
+
+      {status === "loading" && <Loader />}
+
+      {status === "error" && <NoData />}
+
+      {status === "success" && (
+        <div className={styles["home-content"]}>
+          <Search
+            localCategories={categories}
+            filters={filters}
+            setFilters={setFilters}
+          />
+          <DrinkList drinks={filteredDrinks} />
+        </div>
+      )}
     </section>
   );
 }
