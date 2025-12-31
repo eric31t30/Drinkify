@@ -8,6 +8,7 @@ import cocktail2 from "/illustrations/cocktail-2.svg";
 import leaf1 from "/illustrations/leafs-3.svg";
 import leaf2 from "/illustrations/leafs-2.svg";
 import lemon from "/illustrations/lemon.svg";
+import ice from "/illustrations/ice.svg";
 
 import scroll from "/icons/scroll.svg";
 
@@ -46,7 +47,11 @@ function Hero() {
       <img className={styles["leaf-2"]} src={leaf2} alt="" />
       <img className={styles["cocktail-1"]} src={cocktail1} alt="" />
       <img className={styles["cocktail-2"]} src={cocktail2} alt="" />
+
       <img className={styles.lemon} src={lemon} alt="" />
+
+      <img className={`${styles.ice} ${styles["ice-1"]}`} src={ice} alt="" />
+      <img className={`${styles.ice} ${styles["ice-2"]}`} src={ice} alt="" />
 
       <svg
         className={styles["hero-wave-1"]}
