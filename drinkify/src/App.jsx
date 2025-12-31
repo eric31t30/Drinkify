@@ -2,13 +2,13 @@ import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import MainLayout from "./layout/MainLayout";
-const Home = lazy(() => import("./pages/Home"));
-const DrinkDetails = lazy(() => import("./pages/DrinkDetails"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+import MainLayout from "./layout/MainLayout/MainLayout";
+const Home = lazy(() => import("./pages/Home/Home"));
+const DrinkDetails = lazy(() => import("./pages/DrinkDetails/DrinkDetails"));
+const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 import { applyThemeOnce } from './utils/SwitchColor'
-import Loader from "./components/Loader";
+import Loader from "./components/common/Loader/Loader";
 
 function App() {
 
