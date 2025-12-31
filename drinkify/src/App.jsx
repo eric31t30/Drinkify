@@ -1,4 +1,4 @@
-import { useEffect, lazy } from "react";
+import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -11,6 +11,7 @@ import { applyThemeOnce } from './utils/SwitchColor'
 import Loader from "./components/Loader";
 
 function App() {
+
   useEffect(() => {
     applyThemeOnce();
   }, []);

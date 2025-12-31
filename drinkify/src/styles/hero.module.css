@@ -30,6 +30,8 @@
 
 .hero-title{
     filter: invert(100%);
+    animation: mov-title 4s linear infinite alternate;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 .hero-slogan{
@@ -38,13 +40,20 @@
     font-weight: 300;
     width: 70%;
     text-align: center;
+    animation: mov 4s linear infinite alternate;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+    animation-delay: 1s;
 }
 
 .scroll{
     width: 30px;
     cursor: pointer;
+    transition: transform .5s ease;
 }
 
+.scroll:hover{
+    transform: scale(1.09);
+}
 
 .cocktail-1, .cocktail-2{
     position: absolute; 
@@ -93,6 +102,30 @@
     pointer-events: none;
     opacity: .3;
     z-index: 1;
+    animation: mov 3s linear infinite alternate;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+    animation-delay: .5s;
+}
+
+.ice{
+    position: absolute;
+    width: 50px;
+    pointer-events: none;
+    opacity: .6;
+    z-index: 1;
+    animation: mov 2s linear infinite alternate;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.ice-1{
+    left: 10%;
+    top: 25%;
+}
+
+.ice-2{
+    right: 10%;
+    top: 60%;
+    animation-delay: 1s;
 }
 
 .hero-wave-1{
@@ -113,6 +146,25 @@
     pointer-events: none;
 }
 
+@keyframes mov{
+    0%{
+        transform: translateY(0px);
+    }
+
+    100%{
+        transform: translateY(30px);
+    }
+}
+
+@keyframes mov-title{
+    0%{
+        transform: translateY(0px);
+    }
+
+    100%{
+        transform: translateY(30px);
+    }
+}
 
 @media (min-width: 700px){
     .hero{
@@ -165,9 +217,23 @@
     }
 
     .lemon{
-        right: 10%;
+        right: 15%;
         top: 10%;
         width: 140px;
+    }
+
+    .ice{
+        width: 70px
+    }
+
+    @keyframes mov-title{
+        0%{
+            transform: scale(1.4) translateY(0px);
+        }
+    
+        100%{
+            transform: scale(1.4) translateY(30px);
+        }
     }
 }
 
@@ -222,6 +288,16 @@
     .lemon{
         width: 160px;
     }
+
+    @keyframes mov-title{
+        0%{
+            transform: scale(1.7) translateY(0px);
+        }
+    
+        100%{
+            transform: scale(1.7) translateY(30px);
+        }
+    }
 }
 
 @media (min-width: 1280px){
@@ -249,6 +325,11 @@
     .scroll{
         width: 35px;
     }
+
+    .scroll:hover{
+        transform: scale(1.2);
+    }
+
 
     .cocktail-1, .cocktail-2{
         width: 120px;
@@ -281,6 +362,20 @@
     .lemon{
         width: 140px;
     }
+
+    .ice{
+        width: 60px
+    }
+
+    @keyframes mov-title{
+        0%{
+            transform: scale(1.4) translateY(0px);
+        }
+    
+        100%{
+            transform: scale(1.4) translateY(30px);
+        }
+    }
 }
 
 @media (min-width: 1920px){
@@ -296,11 +391,7 @@
     .hero-title-text{
         gap: 20px;
     }
-
-    .hero-title{
-        transform: scale(1.4);
-    }
-
+    
     .hero-slogan{
         font-size: var(--font-size-regular);
     }
@@ -340,6 +431,7 @@
     .lemon{
         width: 140px;
     }
+    
 } 
 
 
