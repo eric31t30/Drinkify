@@ -1,16 +1,23 @@
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import styles from './search.module.css'
 
 import search from '/icons/search.svg'
 import cocktail from "/icons/cocktail.svg";
 import drink from "/icons/drink.svg";
 import bottle from "/icons/bottle.svg";
+import { useSearchParams } from 'react-router-dom';
 
-function Search({ localCategories, filters, setFilters}) {
+const Search = forwardRef(function Search({ localCategories }, ref) {
+  const [input, setInput] = useState("");
 
-  const[input, setInput] = useState("")
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  
+  const filters = {
+    category: searchParams.get("category") || "all",
+    level: searchParams.get("level") || "all",
+    search: searchParams.get("search") || "",
+  };
+
   const categories = [
     { label: "Todos", value: "all" },
     ...localCategories.map((cat) => ({
@@ -26,17 +33,49 @@ function Search({ localCategories, filters, setFilters}) {
     { label: "Alto", value: "Alto" },
   ];
 
+  const updateParams = (updates) => {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+
+      Object.entries(updates).forEach(([key, value]) => {
+        if (
+          value === "" ||
+          value === "all" ||
+          value === 1 ||
+          value === null ||
+          value === undefined
+        ) {
+          next.delete(key);
+        } else {
+          next.set(key, value);
+        }
+      });
+
+      return next;
+    });
+  };
 
   useEffect(() => {
     const id = setTimeout(() => {
-      setFilters((prev) => ({ ...prev, search: input }));
-    }, 150);
+      updateParams({
+        search: input,
+        page: 1,
+      });
+    }, 300);
 
     return () => clearTimeout(id);
-  }, [input, setFilters]);
+  }, [input]);
+
+  const setFilter = (key, value) => {
+    setSearchParams((prev) => {
+      prev.set(key, value);
+      prev.set("page", 1);
+      return prev;
+    });
+  };
 
   return (
-    <section className={styles.search} id="drink-list">
+    <section ref={ref} className={styles.search} id="drink-list">
       <h2 className={styles.title}>
         Explora la colección de bebidas
         <img className={styles["title-icon"]} src={cocktail} alt="" />
@@ -47,7 +86,6 @@ function Search({ localCategories, filters, setFilters}) {
         <input
           className={styles["search-input"]}
           type="text"
-          name="search"
           placeholder="Buscar bebidas..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -62,6 +100,7 @@ function Search({ localCategories, filters, setFilters}) {
             <img className={styles["search-title-icon"]} src={drink} alt="" />
             Category
           </h2>
+
           <div className={styles["search-filter-buttons"]}>
             {categories.map((cat) => (
               <button
@@ -71,9 +110,7 @@ function Search({ localCategories, filters, setFilters}) {
                     ? styles["search-button-type-active"]
                     : ""
                 }`}
-                onClick={() =>
-                  setFilters((prev) => ({ ...prev, category: cat.value }))
-                }
+                onClick={() => setFilter("category", cat.value)}
               >
                 {cat.label}
                 <span
@@ -82,20 +119,18 @@ function Search({ localCategories, filters, setFilters}) {
                       ? styles["search-no-border"]
                       : ""
                   }`}
-                ></span>
+                />
               </button>
             ))}
           </div>
         </div>
+
         <div className={styles["search-filter-cont"]}>
           <h2 className={styles["search-filter-title"]}>
-            <img
-              className={styles["search-title-icon"]}
-              src={bottle}
-              alt="icon"
-            />
+            <img className={styles["search-title-icon"]} src={bottle} alt="" />
             Nivel de alcohol
           </h2>
+
           <div className={styles["search-filter-buttons"]}>
             {levels.map((lvl) => (
               <button
@@ -105,9 +140,7 @@ function Search({ localCategories, filters, setFilters}) {
                     ? styles["search-button-type-active"]
                     : ""
                 }`}
-                onClick={() =>
-                  setFilters((prev) => ({ ...prev, level: lvl.value }))
-                }
+                onClick={() => setFilter("level", lvl.value)}
               >
                 {lvl.label}
                 <span
@@ -116,7 +149,7 @@ function Search({ localCategories, filters, setFilters}) {
                       ? styles["search-no-border"]
                       : ""
                   }`}
-                ></span>
+                />
               </button>
             ))}
           </div>
@@ -124,6 +157,6 @@ function Search({ localCategories, filters, setFilters}) {
       </div>
     </section>
   );
-}
+});
 
-export default Search
+export default Search;

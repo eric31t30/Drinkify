@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { useSearchParams } from "react-router-dom";
 
 import styles from './home.module.css'
 import DrinkList from "../../components/DrinkList/DrinkList";
@@ -9,13 +11,23 @@ import Loader from "../../components/common/Loader/Loader";
 import NoData from "../../components/common/NoData/NoData";
 
 function Home() {
-  const [drinks, setDrinks] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [filters, setFilters] = useState({
-    category: "all",
-    level: "all",
-    search: "",
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const page = Number(searchParams.get("page")) || 1;
+  const category = searchParams.get("category") || "all";
+  const level = searchParams.get("level") || "all";
+  const search = searchParams.get("search") || "";
+
+  const listRef = useRef(null);
+
+  const [drinks, setDrinks] = useState({
+    data: [],
+    pagination: {},
   });
+  const [categories, setCategories] = useState([]);
+
+  const [totalDrinks, setTotalDrinks] = useState(null)
 
   const [status, setStatus] = useState("loading");
 
@@ -23,7 +35,9 @@ function Home() {
     const loadData = async () => {
       try {
         const [drinksRes, categoriesRes] = await Promise.all([
-          fetch("http://localhost:3000/api/drinks"),
+          fetch(
+            `http://localhost:3000/api/drinks/fil?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
+          ),
           fetch("http://localhost:3000/api/categories"),
         ]);
 
@@ -35,9 +49,10 @@ function Home() {
           drinksRes.json(),
           categoriesRes.json(),
         ]);
-
+        
         setDrinks(drinksData);
         setCategories(categoriesData);
+        setTotalDrinks(drinksData.pagination.total);
         setStatus("success");
       } catch (err) {
         console.error("Error al cargar los datos", err);
@@ -46,29 +61,20 @@ function Home() {
     };
 
     loadData();
-  }, []);
+  }, [ page, category, level, search ]);
 
-  const filteredDrinks = useMemo(() => {
-    let result = [...drinks];
-    const searchTerm = filters.search.toLowerCase().trim();
+  const goToPage = (newPage) => {
+    setSearchParams((prev) => {
+      prev.set("page", newPage);
+      return prev;
+    });
+  };
 
-    if (filters.category !== "all") {
-      result = result.filter((d) => d.category === filters.category);
-    }
-
-    if (filters.level !== "all") {
-      result = result.filter((d) => d.alcohol.level === filters.level);
-    }
-
-    if (searchTerm) {
-      result = result.filter((d) => {
-        const name = d.name.toLowerCase();
-        return name.includes(searchTerm);
-      });
-    }
-
-    return result;
-  }, [filters.category, filters.level, filters.search, drinks]);
+  useEffect(() => {
+    listRef.current?.scrollIntoView({
+      block: "start",
+    });
+  }, [page]);
 
   return (
     <section className={styles.home}>
@@ -82,10 +88,16 @@ function Home() {
         <div className={styles["home-content"]}>
           <Search
             localCategories={categories}
-            filters={filters}
-            setFilters={setFilters}
+            ref={listRef}
           />
-          <DrinkList drinks={filteredDrinks} />
+          <DrinkList 
+            drinks={drinks.data} 
+            page={page} 
+            totalDrinks={totalDrinks}
+            totalPages={drinks.pagination.totalPages}
+            onPageChange={goToPage}
+            showPagination={true}
+           />
         </div>
       )}
     </section>

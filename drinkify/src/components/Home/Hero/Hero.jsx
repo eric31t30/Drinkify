@@ -14,7 +14,7 @@ import scroll from "/icons/scroll.svg";
 function Hero() {
 
   const scrolldrinks = () => {
-    document.getElementById("drink-list")?.scrollIntoView({
+    document.getElementById("drink-search")?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
