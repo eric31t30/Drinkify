@@ -5,6 +5,8 @@ import DrinksSkeleton from "../common/DrinkSkeleton/DrinksSkeleton";
 
 import lemon from "/icons/lemon.svg";
 import arrow from "/icons/arrow.svg"
+import NoResults from "../common/NoResults/NoResults";
+import { useEffect } from "react";
 
 function DrinkList(
   { 
@@ -18,6 +20,12 @@ function DrinkList(
     onPageChange, 
   }
 ) {
+
+  useEffect(() => {
+    console.log(drinks);
+    
+  }, [drinks])
+  
 
   return (
     <section className={styles["drink-list"]}>
@@ -37,19 +45,23 @@ function DrinkList(
         </header>
       )}
 
-      <div className={styles["drink-list__cont"]}>
-        {loading
-          ? Array.from({ length: 8 }).map((_, i) => (
-              <DrinksSkeleton key={i}></DrinksSkeleton>
-            ))
-          : drinks.map((item) => <DrinkCard key={item.id} drink={item} />)}
-      </div>
+      {!loading && drinks.length === 0 ? (
+        <NoResults />
+      ) : (
+        <div className={styles["drink-list__cont"]}>
+          {loading
+            ? Array.from({ length: 8 }).map((_, i) => (
+                <DrinksSkeleton key={i}></DrinksSkeleton>
+              ))
+            : drinks.map((item) => <DrinkCard key={item.id} drink={item} />)}
+        </div>
+      )}
 
       {showPagination && (
         <div className={styles.pagination}>
           <button
             className={`${styles["pagination-button"]} ${styles["prev-button"]}`}
-            disabled={page === 1}
+            disabled={page === 1 || drinks.length === 0}
             onClick={() => onPageChange(page - 1)}
           >
             <img src={arrow} alt="previous button" />
@@ -59,7 +71,7 @@ function DrinkList(
 
           <button
             className={`${styles["pagination-button"]} ${styles["next-button"]}`}
-            disabled={page === totalPages}
+            disabled={page === totalPages || drinks.length === 0}
             onClick={() => onPageChange(page + 1)}
           >
             <img src={arrow} alt="next button" />
