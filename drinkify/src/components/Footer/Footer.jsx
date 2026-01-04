@@ -26,6 +26,7 @@ function Footer() {
             src={logo}
             alt="logo de drinkify"
             draggable="false"
+            loading='lazy'
           />
           <p className={styles["footer-copyright"]}>© 2025 Eric — Drinkify</p>
         </main>

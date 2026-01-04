@@ -1,25 +1,11 @@
 import styles from "./hero.module.css";
 
 import logo from "/illustrations/drinkify-logo.svg";
-import cocktail1 from "/illustrations/cocktail-1.svg";
-import cocktail2 from "/illustrations/cocktail-2.svg";
-
-import leaf1 from "/illustrations/leafs-3.svg";
-import leaf2 from "/illustrations/leafs-2.svg";
-import lemon from "/illustrations/lemon.svg";
-import ice from "/illustrations/ice.svg";
 
 import scroll from "/icons/scroll.svg";
 
-function Hero() {
-
-  const scrolldrinks = () => {
-    document.getElementById("drink-search")?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  };
-
+function Hero({ onScrollToSearch  }) {
+  
   return (
     <section className={`${styles.hero}`}>
       <div className={`${styles.background} bg-linear-color`}></div>
@@ -29,6 +15,9 @@ function Hero() {
             className={styles["hero-title"]}
             src={logo}
             alt="logo de drinkify"
+            width="200"
+            height="80"
+            fetchPriority="high"
           />
           <p className={styles["hero-slogan"]}>
             Encuentra el trago perfecto para cada momento.
@@ -39,18 +28,27 @@ function Hero() {
           className={styles.scroll}
           src={scroll}
           alt=""
-          onClick={() => scrolldrinks()}
+          onClick={() => onScrollToSearch()}
         />
       </div>
-      <img className={styles["leaf-1"]} src={leaf1} alt="" />
-      <img className={styles["leaf-2"]} src={leaf2} alt="" />
-      <img className={styles["cocktail-1"]} src={cocktail1} alt="" />
-      <img className={styles["cocktail-2"]} src={cocktail2} alt="" />
 
-      <img className={styles.lemon} src={lemon} alt="" />
+      <span
+        className={`${styles["leaf-1"]} ${styles["hero-deco"]}`}
+        aria-hidden="true"
+      ></span>
+      <span className={`${styles["leaf-2"]} ${styles["hero-deco"]}`}></span>
 
-      <img className={`${styles.ice} ${styles["ice-1"]}`} src={ice} alt="" />
-      <img className={`${styles.ice} ${styles["ice-2"]}`} src={ice} alt="" />
+      <span className={`${styles["cocktail-1"]} ${styles["hero-deco"]}`}></span>
+      <span className={`${styles["cocktail-2"]} ${styles["hero-deco"]}`}></span>
+
+      <span className={`${styles.lemon} ${styles["hero-deco"]}`}></span>
+
+      <span
+        className={`${styles.ice} ${styles["ice-1"]} ${styles["hero-deco"]}`}
+      ></span>
+      <span
+        className={`${styles.ice} ${styles["ice-2"]} ${styles["hero-deco"]}`}
+      ></span>
 
       <svg
         className={styles["hero-wave-1"]}
