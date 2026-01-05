@@ -6,7 +6,6 @@ import DrinksSkeleton from "../common/DrinkSkeleton/DrinksSkeleton";
 import lemon from "/icons/lemon.svg";
 import arrow from "/icons/arrow.svg"
 import NoResults from "../common/NoResults/NoResults";
-import { useEffect } from "react";
 
 function DrinkList(
   { 
@@ -20,12 +19,6 @@ function DrinkList(
     onPageChange, 
   }
 ) {
-
-  useEffect(() => {
-    console.log(drinks);
-    
-  }, [drinks])
-  
 
   return (
     <section className={styles["drink-list"]}>
