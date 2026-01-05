@@ -5,7 +5,8 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     overflow: hidden;
 }
@@ -28,8 +29,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
-    height: 220px;
+    width: 160px;
+    height: 160px;
     z-index: 10;
 }
 
@@ -38,34 +39,34 @@
     height: 100%;
     overflow: hidden;
     border-radius: 10px;
-    transition: transform .7s;
+    transition: transform .2s;
 }
 
-.wrapper-1{
+.wrapper-3{
     position: relative;
     z-index: 15;
 }
 
 .wrapper-2,
-.wrapper-3{
+.wrapper-1{
     position: absolute;
     width: 60%;
     height: 60%;
-    bottom: 0px;
+    bottom: 10px;
     z-index: 14;
 }
 
 .wrapper-2{
-    right: 150px;
+    right: 130px;
     transform: rotate(-10deg);
 }
 
-.wrapper-3{
-    left: 150px;
+.wrapper-1{
+    left: 130px;
     transform: rotate(10deg);
 }
 
-.wrapper-1:hover{
+.wrapper-3:hover{
     transform: translateY(-10px);
 }
 
@@ -73,7 +74,7 @@
     transform: rotate(-10deg) translate(-10px, -10px);
 }
 
-.wrapper-3:hover{
+.wrapper-1:hover{
     transform: rotate(10deg) translate(10px, -10px);
 }
 
@@ -85,10 +86,6 @@
     transition: transform .7s;
     z-index: 10;
     cursor: pointer;
-}
-
-.drink-image:hover{
-    transform: scale(1.05);
 }
 
 .image-loader{
@@ -166,68 +163,12 @@
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
     padding: 1px 10px;
-    transition: all .5s ease;
+    transition: transform .3s;
     cursor: pointer;
 }
 
 .tag:hover{
-    transform: translateY(-5px);
-}
-
-.drink-scroll-icon{
-    width: 30px;
-    cursor: pointer;
-    margin-top: 50px;
-}
-
-.back{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    gap: 2px;
-    top: 80px;
-    left: 15px;
-    font-size: var(--font-size-small);
-    color: white;
-    padding: 0px 10px;
-    border: 2px solid rgba(255, 255, 255, .6);
-    border-radius: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all .5s ease;
-    z-index: 20;
-}
-
-.back:hover{
-    gap: 7px;
-}
-
-.back:hover .back-icon{
-    width: .6rem;
-}
-
-.back-icon{
-    filter: invert(100%);
-    width: 0;
-    transition: all .5s ease;
-}
-
-.blobs{
-    position: absolute;
-    opacity: .1;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.blob-1{
-    top: 10%;
-    right: -20%;
-    width: 200px;
-}
-
-.blob-2{
-    display: none;
+    transform: translateY(-8px);
 }
 
 .shadow1{
@@ -252,13 +193,87 @@
     pointer-events: none;
 }
 
+.drink-scroll-icon{
+    width: 30px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    gap: 2px;
+    top: 80px;
+    left: 15px;
+    font-size: var(--font-size-small);
+    color: white;
+    padding: 0px 10px;
+    border: 2px solid rgba(255, 255, 255, .6);
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: gap .3s;
+    z-index: 20;
+}
+
+.back:hover{
+    gap: 7px;
+}
+
+.back:hover .back-icon{
+    width: .6rem;
+}
+
+.back-icon{
+    filter: invert(100%);
+    width: 0;
+    transition: width .3s;
+}
+
+.hero-decoration{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    aspect-ratio: 1 / 1;
+    pointer-events: none;
+}
+
+.blobs{
+    position: absolute;
+    opacity: .1;
+    z-index: 0;
+}
+
+.blob-1{
+    top: 10%;
+    right: -20%;
+    width: 200px;
+    background-image: url(/illustrations/blob-1.svg);
+}
+
+.blob-2{
+    display: none;
+    background-image: url(/illustrations/blob-2.svg);
+}
+
 .dots{
     position: absolute;
     width: 100px;
     left: 10px;
     top: 40%;
-    pointer-events: none;
     transform: rotateZ(90deg);
+    background-image: url(/illustrations/dots.svg);
+    aspect-ratio: 5 / 3;
+}
+
+.leafs{
+    position: absolute;
+    width: 200px;
+    left: -30px;
+    bottom: -20px;
+    background-image: url(/illustrations/leafs-1.svg);
 }
 
 .circle{
@@ -267,19 +282,9 @@
     height: 240px;
     right: -100px;
     bottom: 0px;
-    pointer-events: none;
     border-radius: 50%;
     border: 20px solid rgba(255, 255, 255, .5);
 }
-
-.leafs{
-    position: absolute;
-    width: 200px;
-    left: -30px;
-    bottom: 0px;
-    pointer-events: none;
-}
-
 
 @media (min-width: 700px){
 
@@ -288,12 +293,12 @@
     }
 
     .drink-image-cont{
-        width: 300px;
-        height: 350px;
+        width: 260px;
+        height: 300px;
     }
 
     .wrapper-2,
-    .wrapper-3{
+    .wrapper-1{
         width: 70%;
         height: 70%;
         bottom: 20px;
@@ -304,7 +309,7 @@
         transform: rotate(-15deg);
     }
 
-    .wrapper-3{
+    .wrapper-1{
         left: 200px;
         transform: rotate(15deg);
     }
@@ -313,7 +318,7 @@
         transform: rotate(-16deg) translate(-30px, -10px);
     }
 
-    .wrapper-3:hover{
+    .wrapper-1:hover{
         transform: rotate(16deg) translate(30px, -10px);
     }
 
@@ -394,8 +399,8 @@
 @media (min-width: 1024px){
 
     .drink-image-cont{
-        width: 400px;
-        height: 400px;
+        width: 340px;
+        height: 340px;
         border-radius: 25px;
     }
 
@@ -404,14 +409,14 @@
     }
 
     .wrapper-2{
-        right: 280px;
+        right: 260px;
     }
 
-    .wrapper-3{
-        left: 280px;
+    .wrapper-1{
+        left: 260px;
     }
 
-    .wrapper-1:hover{
+    .wrapper-3:hover{
         transform: translateY(-15px);
     }
 
@@ -419,7 +424,7 @@
         transform: rotate(-12deg) translate(-40px, -10px);
     }
 
-    .wrapper-3:hover{
+    .wrapper-1:hover{
         transform: rotate(12deg) translate(40px, -10px);
     }
 
@@ -483,7 +488,7 @@
     .leafs{
         transform: scale(2);
         left: 40px;
-        bottom: 80px;
+        bottom: 60px;
     }
     
 }
@@ -498,28 +503,28 @@
     }
 
     .drink-image-cont{
-        width: 300px;
-        height: 300px;
+        width: 260px;
+        height: 260px;
         margin-right: 120px;
     }
 
     .wrapper-2,
-    .wrapper-3{
+    .wrapper-1{
         width: 65%;
         height: 65%;
     }
 
     .wrapper-2{
-        right: 240px;
+        right: 220px;
         transform: rotate(-10deg);
     }
 
-    .wrapper-3{
-        left: 240px;
+    .wrapper-1{
+        left: 220px;
         transform: rotate(10deg);
     }
 
-    .wrapper-1:hover{
+    .wrapper-3:hover{
         transform: translateY(-20px);
     }
 
@@ -527,12 +532,8 @@
         transform: rotate(-12deg) translate(-30px, -15px);
     }
 
-    .wrapper-3:hover{
+    .wrapper-1:hover{
         transform: rotate(12deg) translate(30px, -15px);
-    }
-
-    .drink-image:hover{
-        transform: scale(1.03);
     }
 
     .drink-main-info{
@@ -611,8 +612,8 @@
 
     .leafs{
         transform: scale(1.5) rotateZ(15deg);
-        left: -10px;
-        bottom: 10px;
+        left: 0px;
+        bottom: -10px;
     }
 }
 
@@ -629,7 +630,7 @@
     }
 
     .wrapper-2,
-    .wrapper-3{
+    .wrapper-1{
         width: 70%;
         height: 70%;
     }
@@ -638,11 +639,11 @@
         right: 300px;
     }
 
-    .wrapper-3{
+    .wrapper-1{
         left: 300px;
     }
 
-    .wrapper-1:hover{
+    .wrapper-3:hover{
         transform: translateY(-20px);
     }
 
@@ -650,7 +651,7 @@
         transform: rotate(-12deg) translate(-30px, -15px);
     }
 
-    .wrapper-3:hover{
+    .wrapper-1:hover{
         transform: rotate(12deg) translate(30px, -15px);
     }
     
@@ -675,7 +676,7 @@
     .leafs{
         transform: scale(1.5) rotateZ(20deg);
         left: 0px;
-        bottom: 10px;
+        bottom: -10px;
     }
 
 } 

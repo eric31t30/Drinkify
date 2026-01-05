@@ -102,7 +102,10 @@ function DrinkInsights({ drink }) {
         >
           <img
             className={styles["tag-deco"]}
-            src={cloudinary(drink.images.full)}
+            src={cloudinary(
+              drink.images.full,
+              "c_fill,w_600,h_600,g_auto,f_auto,q_auto"
+            )}
             alt=""
           />
           <span className={styles.block}></span>

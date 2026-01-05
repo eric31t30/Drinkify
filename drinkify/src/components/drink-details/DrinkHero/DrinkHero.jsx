@@ -7,11 +7,6 @@ import { cloudinary } from "../../../utils/Cloudinary";
 import arrow from "/icons/arrow-2.svg";
 import scroll from "/icons/scroll.svg";
 
-import leafs from "/illustrations/leafs-1.svg";
-import dots from "/illustrations/dots.svg";
-import blob1 from "/illustrations/blob-1.svg";
-import blob2 from "/illustrations/blob-2.svg";
-
 function DrinkHero({ drink }) {
 
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -39,24 +34,62 @@ function DrinkHero({ drink }) {
               </div>
             )}
 
-            {drink.images.gallery.map((e, i) => (
-              <div key={e} className={`${styles["drink-image-wrapper"]} ${styles[`wrapper-${i + 1}`]}`}>
+            <div
+              className={`${styles["drink-image-wrapper"]} ${
+                styles[`wrapper-3`]
+              }`}
+            >
+              <img
+                className={styles["drink-image"]}
+                src={cloudinary(
+                  drink.images.full,
+                  "c_fill,w_600,h_600,f_auto,q_auto:eco"
+                )}
+                srcSet={`
+                  ${cloudinary(
+                    drink.images.full,
+                    "c_fill,w_400,h_400,f_auto,q_auto:eco"
+                  )} 400w,
+                  ${cloudinary(
+                    drink.images.full,
+                    "c_fill,w_600,h_600,f_auto,q_auto:eco"
+                  )} 600w,
+                  ${cloudinary(
+                    drink.images.full,
+                    "c_fill,w_800,h_800,f_auto,q_auto:eco"
+                  )} 800w
+                `}
+                sizes="(max-width: 768px) 90vw, 600px"
+                alt={drink.name}
+                width="400"
+                height="400"
+                fetchPriority="high"
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageLoaded(true)}
+
+              />
+            </div>
+
+            {drink.images.gallery.slice(1, 3).map((e, i) => (
+              <div
+                key={e}
+                className={`${styles["drink-image-wrapper"]} ${
+                  styles[`wrapper-${i + 1}`]
+                }`}
+              >
                 <img
-                  className={styles["drink-image"]}
-                  src={cloudinary(
-                    e,
-                    "c_fill,w_500,h_500,g_auto,f_auto,q_auto"
-                  )}
-                  alt={drink.name}
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageLoaded(true)}
-                  style={{
-                    opacity: imageLoaded ? 1 : 0,
-                  }}
+                  className={`${styles["drink-image"]} ${
+                    styles[`decor-${i + 1}`]
+                  }`}
+                  src={cloudinary(e, "c_fill,w_300,h_300,f_auto,q_auto:eco")}
+                  alt=""
+                  aria-hidden="true"
+                  width="300"
+                  height="300"
+                  loading="lazy"
                 />
               </div>
             ))}
-
           </figure>
 
           <article className={styles["drink-main-info"]}>
@@ -95,20 +128,16 @@ function DrinkHero({ drink }) {
           Volver
         </Link>
 
-        <img
-          className={`${styles["blobs"]} ${styles["blob-1"]}`}
-          src={blob1}
-          alt=""
-          draggable="false"
-        />
-        <img
-          className={`${styles["blobs"]} ${styles["blob-2"]}`}
-          src={blob2}
-          alt=""
-          draggable="false"
-        />
-        <img className={styles["dots"]} src={dots} alt="" draggable="false" />
-        <img className={styles["leafs"]} src={leafs} alt="" draggable="false" />
+        <span
+          className={`${styles["blobs"]} ${styles["blob-1"]} ${styles["hero-decoration"]}`}
+        ></span>
+        <span
+          className={`${styles["blobs"]} ${styles["blob-2"]} ${styles["hero-decoration"]}`}
+        ></span>
+
+        <span className={`${styles.dots} ${styles["hero-decoration"]}`}></span>
+        <span className={`${styles.leafs} ${styles["hero-decoration"]}`}></span>
+
         <div className={styles["circle"]}></div>
       </section>
     </div>
