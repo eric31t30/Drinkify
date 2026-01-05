@@ -35,12 +35,31 @@ function DrinkImages({ drink }) {
           }}
           speed={500}
         >
-          {gallery.map((i) => (
+          {gallery.map((i, index) => (
             <SwiperSlide className={styles["main-slides"]} key={i}>
               <img
                 className={styles["main-images"]}
-                src={cloudinary(i, "c_fill,ar_1:1,g_auto,w_1000")}
+                src={cloudinary(
+                  i,
+                  "c_fill,ar_1:1,g_auto,w_600,f_auto,q_auto:eco"
+                )}
+                srcSet={`
+                  ${cloudinary(
+                    i,
+                    "c_fill,ar_1:1,w_400,f_auto,q_auto:eco"
+                  )} 400w,
+                  ${cloudinary(
+                    i,
+                    "c_fill,ar_1:1,w_600,f_auto,q_auto:eco"
+                  )} 600w,
+                  ${cloudinary(i, "c_fill,ar_1:1,w_800,f_auto,q_auto:eco")} 800w
+                `}
+                sizes="(max-width: 768px) 90vw, 600px"
                 alt={`imagen de ${drink.name}`}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+                width="600"
+                height="600"
               />
             </SwiperSlide>
           ))}
@@ -73,8 +92,13 @@ function DrinkImages({ drink }) {
               <div className={styles["thumb-inner"]}>
                 <img
                   className={styles["thumb-image"]}
-                  src={cloudinary(i, "w_1000")}
-                  alt={`imagen de ${drink.name}`}
+                  src={cloudinary(i, "c_fill,ar_1:1,w_150,f_auto,q_auto:eco")}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width="150"
+                  height="150"
                 />
               </div>
             </SwiperSlide>

@@ -78,7 +78,13 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
     <section ref={ref} className={styles.search} id="drink-list">
       <h2 className={styles.title}>
         Explora la colección de bebidas
-        <img className={styles["title-icon"]} src={cocktail} alt="" />
+        <img
+          className={styles["title-icon"]}
+          width="28px"
+          height="28px"
+          src={cocktail}
+          alt=""
+        />
       </h2>
 
       <div className={styles["search-input-cont"]}>
@@ -97,7 +103,13 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
           className={`${styles["search-filter-cont"]} ${styles["search-filter-type"]}`}
         >
           <h2 className={styles["search-filter-title"]}>
-            <img className={styles["search-title-icon"]} src={drink} alt="" />
+            <img
+              className={styles["search-title-icon"]}
+              width="28px"
+              height="28px"
+              src={drink}
+              alt=""
+            />
             Category
           </h2>
 
@@ -127,7 +139,13 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
 
         <div className={styles["search-filter-cont"]}>
           <h2 className={styles["search-filter-title"]}>
-            <img className={styles["search-title-icon"]} src={bottle} alt="" />
+            <img
+              className={styles["search-title-icon"]}
+              width="28px"
+              height="28px"
+              src={bottle}
+              alt=""
+            />
             Nivel de alcohol
           </h2>
 

@@ -1,24 +1,29 @@
-import { Link } from 'react-router-dom';
+import { memo } from "react";
+import { Link } from "react-router-dom";
 import { cloudinary } from "../../utils/Cloudinary";
-import styles from './drink-card.module.css'
+import styles from "./drink-card.module.css";
 
-import arrow from '/icons/arrow.svg'
+import arrow from "/icons/arrow.svg";
 
 function DrinkCard({ drink }) {
   return (
     <article
       className={styles["drink-card"]}
-      style={{
-        background: `linear-gradient(180deg, transparent 50%, ${drink.color} 300%)`,
-        borderBottom: `2px solid ${drink.color}`,
-      }}
+      style={{ "--drink-color": drink.color }}
     >
       <figure className={styles["drink-image-cont"]}>
         <img
           className={styles["drink-image"]}
-          src={cloudinary(drink.images.full, "e_blur:100")}
-          alt=""
-          loading='lazy'
+          src={cloudinary(
+            drink.images.full,
+            "w_400,h_400,c_fill,f_auto,q_auto"
+          )}
+          alt={drink.name}
+          width="400"
+          height="400"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="high"
         />
         <span
           className={styles["drink-level"]}
@@ -145,36 +150,10 @@ function DrinkCard({ drink }) {
             <path d="M564.03456 500.36224h328.55552c-4.3264-89.41568-39.6032-170.50112-95.56992-232.9856l-232.9856 232.9856z" />
           </g>
         </svg>
+        
       </div>
     </article>
   );
 }
 
-export default DrinkCard
-
-{
-  /* <dl className={styles["drink-info"]}>
-          <div
-            className={`${styles["drink-info-cont"]} ${styles["drink-info-abv"]}`}
-          >
-            <dt className={styles["drink-info-title"]}>ABV</dt>
-            <dd className={styles["drink-info-text"]}>{drink.alcohol.abv}%</dd>
-          </div>
-
-          <div
-            className={`${styles["drink-info-cont"]} ${styles["drink-info-type"]}`}
-          >
-            <dt className={styles["drink-info-title"]}>Tipo</dt>
-            <dd className={styles["drink-info-text"]}>{drink.alcohol.type}</dd>
-          </div>
-
-          <div
-            className={`${styles["drink-info-cont"]} ${styles["drink-info-ingredients"]}`}
-          >
-            <dt className={styles["drink-info-title"]}>Ingredientes</dt>
-            <dd className={styles["drink-info-text"]}>
-              {drink.ingredients.length}
-            </dd>
-          </div>
-        </dl> */
-}
+export default memo(DrinkCard);
