@@ -20,6 +20,7 @@ function Home() {
   const search = searchParams.get("search") || "";
 
   const listRef = useRef(null);
+  const shouldScrollRef = useRef(false);
 
   const [drinks, setDrinks] = useState({
     data: [],
@@ -64,20 +65,26 @@ function Home() {
   }, [ page, category, level, search ]);
 
   const goToPage = (newPage) => {
+    shouldScrollRef.current = true;
+
     setSearchParams((prev) => {
       prev.set("page", newPage);
       return prev;
     });
   };
 
-
   useEffect(() => {
-    if (status === "success") {
+    if (status === "success" && shouldScrollRef.current) {
       requestAnimationFrame(() => {
-        listRef.current?.scrollIntoView({ block: "start" });
+        listRef.current?.scrollIntoView({
+          block: "start",
+        });
       });
+      
+      shouldScrollRef.current = false;
     }
   }, [page, status]);
+
 
   const scrollToSearch = () => {
     listRef.current?.scrollIntoView({

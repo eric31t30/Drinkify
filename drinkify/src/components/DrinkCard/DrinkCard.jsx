@@ -1,20 +1,15 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cloudinary } from "../../utils/Cloudinary";
 import styles from "./drink-card.module.css";
 
 import arrow from "/icons/arrow.svg";
-import { useEffect } from "react";
 
 function DrinkCard({ drink }) {
 
-  const location = useLocation();
+  const [loaded, setLoaded] = useState(false)
 
-  useEffect(() => {
-    console.log(location);
-    
-  }, [location])
-  
+  const location = useLocation();
 
   return (
     <article
@@ -22,8 +17,16 @@ function DrinkCard({ drink }) {
       style={{ "--drink-color": drink.color }}
     >
       <figure className={styles["drink-image-cont"]}>
+        {!loaded && (
+          <div className={styles["loader-cont"]}>
+            <div className={styles.loader} />
+          </div>
+        )}
+
         <img
-          className={styles["drink-image"]}
+          className={`${styles["drink-image"]} ${
+            loaded ? styles["loaded"] : styles["hidden"]
+          }`}
           src={cloudinary(
             drink.images.full,
             "w_400,h_400,c_fill,f_auto,q_auto"
@@ -34,13 +37,17 @@ function DrinkCard({ drink }) {
           loading="lazy"
           decoding="async"
           fetchPriority="high"
+          onLoad={() => setLoaded(true)}
         />
-        <span
-          className={styles["drink-level"]}
-          style={{ background: drink.color }}
-        >
-          {drink.alcohol.level}
-        </span>
+
+        {loaded && (
+          <span
+            className={styles["drink-level"]}
+            style={{ background: drink.color }}
+          >
+            {drink.alcohol.level}
+          </span>
+        )}
       </figure>
 
       <div className={styles["drink-text"]}>

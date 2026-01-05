@@ -112,7 +112,7 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
               src={drink}
               alt=""
             />
-            Category
+            Categorias
           </h2>
 
           <div className={styles["search-filter-buttons"]}>
