@@ -5,8 +5,8 @@ import DrinksSkeleton from "../common/DrinkSkeleton/DrinksSkeleton";
 
 import lemon from "/icons/lemon.svg";
 import arrow from "/icons/arrow.svg"
+import doubleArrow from "/icons/double-arrow.svg";
 import NoResults from "../common/NoResults/NoResults";
-import { useEffect } from "react";
 
 function DrinkList(
   { 
@@ -20,12 +20,6 @@ function DrinkList(
     onPageChange, 
   }
 ) {
-
-  useEffect(() => {
-    console.log(drinks);
-    
-  }, [drinks])
-  
 
   return (
     <section className={styles["drink-list"]}>
@@ -59,23 +53,42 @@ function DrinkList(
 
       {showPagination && (
         <div className={styles.pagination}>
-          <button
-            className={`${styles["pagination-button"]} ${styles["prev-button"]}`}
-            disabled={page === 1 || drinks.length === 0}
-            onClick={() => onPageChange(page - 1)}
-          >
-            <img src={arrow} alt="previous button" />
-          </button>
+          <div className={styles["buttons-cont"]}>
+            <button
+              className={`${styles["pagination-button"]} ${styles["prev-button"]}`}
+              disabled={page === 1 || drinks.length === 0}
+              onClick={() => onPageChange(1)}
+            >
+              <img src={doubleArrow} alt="previous button" />
+            </button>
+
+            <button
+              className={`${styles["pagination-button"]} ${styles["prev-button"]}`}
+              disabled={page === 1 || drinks.length === 0}
+              onClick={() => onPageChange(page - 1)}
+            >
+              <img src={arrow} alt="previous button" />
+            </button>
+          </div>
 
           <span className={styles["current-page"]}>{page}</span>
 
-          <button
-            className={`${styles["pagination-button"]} ${styles["next-button"]}`}
-            disabled={page === totalPages || drinks.length === 0}
-            onClick={() => onPageChange(page + 1)}
-          >
-            <img src={arrow} alt="next button" />
-          </button>
+          <div className={styles["buttons-cont"]}>
+            <button
+              className={`${styles["pagination-button"]} ${styles["next-button"]}`}
+              disabled={page === totalPages || drinks.length === 0}
+              onClick={() => onPageChange(page + 1)}
+            >
+              <img src={arrow} alt="next button" />
+            </button>
+            <button
+              className={`${styles["pagination-button"]} ${styles["next-button"]}`}
+              disabled={page === totalPages || drinks.length === 0}
+              onClick={() => onPageChange(totalPages)}
+            >
+              <img src={doubleArrow} alt="next button" />
+            </button>
+          </div>
         </div>
       )}
     </section>

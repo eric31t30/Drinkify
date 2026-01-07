@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import styles from "./drink-hero.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { cloudinary } from "../../../utils/Cloudinary";
 
 import arrow from "/icons/arrow-2.svg";
@@ -10,6 +10,9 @@ import scroll from "/icons/scroll.svg";
 function DrinkHero({ drink }) {
 
   const [imageLoaded, setImageLoaded] = useState(false);
+  const location = useLocation();
+
+  const backTo = location.state?.from ?? "/";
 
   const scrollinfo = ()=>{
     document.getElementById("drink-info-scroll")?.scrollIntoView({
@@ -66,7 +69,6 @@ function DrinkHero({ drink }) {
                 fetchPriority="high"
                 onLoad={() => setImageLoaded(true)}
                 onError={() => setImageLoaded(true)}
-
               />
             </div>
 
@@ -118,13 +120,8 @@ function DrinkHero({ drink }) {
         <div className={styles.shadow1}></div>
         <div className={styles.shadow2}></div>
 
-        <Link className={styles["back"]} to="/">
-          <img
-            className={styles["back-icon"]}
-            src={arrow}
-            alt="regresar"
-            draggable="false"
-          />
+        <Link className={styles.back} to={backTo}>
+          <img className={styles["back-icon"]} src={arrow} alt="regresar" />
           Volver
         </Link>
 

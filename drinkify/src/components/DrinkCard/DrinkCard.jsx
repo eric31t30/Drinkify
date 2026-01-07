@@ -1,19 +1,32 @@
-import { memo } from "react";
-import { Link } from "react-router-dom";
+import { memo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { cloudinary } from "../../utils/Cloudinary";
 import styles from "./drink-card.module.css";
 
 import arrow from "/icons/arrow.svg";
 
 function DrinkCard({ drink }) {
+
+  const [loaded, setLoaded] = useState(false)
+
+  const location = useLocation();
+
   return (
     <article
       className={styles["drink-card"]}
       style={{ "--drink-color": drink.color }}
     >
       <figure className={styles["drink-image-cont"]}>
+        {!loaded && (
+          <div className={styles["loader-cont"]}>
+            <div className={styles.loader} />
+          </div>
+        )}
+
         <img
-          className={styles["drink-image"]}
+          className={`${styles["drink-image"]} ${
+            loaded ? styles["loaded"] : styles["hidden"]
+          }`}
           src={cloudinary(
             drink.images.full,
             "w_400,h_400,c_fill,f_auto,q_auto"
@@ -24,13 +37,17 @@ function DrinkCard({ drink }) {
           loading="lazy"
           decoding="async"
           fetchPriority="high"
+          onLoad={() => setLoaded(true)}
         />
-        <span
-          className={styles["drink-level"]}
-          style={{ background: drink.color }}
-        >
-          {drink.alcohol.level}
-        </span>
+
+        {loaded && (
+          <span
+            className={styles["drink-level"]}
+            style={{ background: drink.color }}
+          >
+            {drink.alcohol.level}
+          </span>
+        )}
       </figure>
 
       <div className={styles["drink-text"]}>
@@ -44,6 +61,7 @@ function DrinkCard({ drink }) {
         <div className={styles["drink-button-cont"]}>
           <Link
             to={`/drink/${drink.id}`}
+            state={{ from: location.pathname + location.search }}
             className={styles["drink-button"]}
             style={{ background: drink.color }}
           >
@@ -150,7 +168,6 @@ function DrinkCard({ drink }) {
             <path d="M564.03456 500.36224h328.55552c-4.3264-89.41568-39.6032-170.50112-95.56992-232.9856l-232.9856 232.9856z" />
           </g>
         </svg>
-        
       </div>
     </article>
   );

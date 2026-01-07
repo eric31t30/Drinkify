@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState, useRef } from "react";
 import styles from './search.module.css'
 
 import search from '/icons/search.svg'
@@ -8,9 +8,13 @@ import bottle from "/icons/bottle.svg";
 import { useSearchParams } from 'react-router-dom';
 
 const Search = forwardRef(function Search({ localCategories }, ref) {
-  const [input, setInput] = useState("");
 
   const [searchParams, setSearchParams] = useSearchParams();
+  
+  const searchFromUrl = searchParams.get("search") || "";
+  const [input, setInput] = useState(searchFromUrl);
+
+  const isFirstRender = useRef(true);
 
   const filters = {
     category: searchParams.get("category") || "all",
@@ -33,38 +37,32 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
     { label: "Alto", value: "Alto" },
   ];
 
-  const updateParams = (updates) => {
-    setSearchParams((prev) => {
-      const next = new URLSearchParams(prev);
-
-      Object.entries(updates).forEach(([key, value]) => {
-        if (
-          value === "" ||
-          value === "all" ||
-          value === 1 ||
-          value === null ||
-          value === undefined
-        ) {
-          next.delete(key);
-        } else {
-          next.set(key, value);
-        }
-      });
-
-      return next;
-    });
-  };
-
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (input === searchFromUrl) return;
+
     const id = setTimeout(() => {
-      updateParams({
-        search: input,
-        page: 1,
+      setSearchParams((prev) => {
+        const next = new URLSearchParams(prev);
+
+        if (input) {
+          next.set("search", input);
+          next.set("page", "1");
+        } else {
+          next.delete("search");
+          next.delete("page");
+        }
+
+        return next;
       });
     }, 300);
 
     return () => clearTimeout(id);
-  }, [input]);
+  }, [input, searchFromUrl, setSearchParams]);
 
   const setFilter = (key, value) => {
     setSearchParams((prev) => {
@@ -73,6 +71,10 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
       return prev;
     });
   };
+
+  useEffect(() => {
+    setInput(searchFromUrl);
+  }, [searchFromUrl]);
 
   return (
     <section ref={ref} className={styles.search} id="drink-list">
@@ -110,7 +112,7 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
               src={drink}
               alt=""
             />
-            Category
+            Categorias
           </h2>
 
           <div className={styles["search-filter-buttons"]}>
@@ -137,7 +139,7 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
           </div>
         </div>
 
-        <div className={styles["search-filter-cont"]}>
+        <div className={`${styles["search-filter-cont"]} ${filters.category === "Sin alcohol" ? styles.hide : ""}`}>
           <h2 className={styles["search-filter-title"]}>
             <img
               className={styles["search-title-icon"]}

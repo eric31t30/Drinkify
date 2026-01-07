@@ -8,7 +8,6 @@ const DrinkDetails = lazy(() => import("./pages/DrinkDetails/DrinkDetails"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 import { applyThemeOnce } from './utils/SwitchColor'
-import Loader from "./components/common/Loader/Loader";
 
 function App() {
 
@@ -22,7 +21,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/drink/:id" element={<DrinkDetails />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/loader" element={<Loader />} />
       </Route>
     </Routes>
   );

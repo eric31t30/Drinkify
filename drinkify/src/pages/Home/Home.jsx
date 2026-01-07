@@ -20,6 +20,7 @@ function Home() {
   const search = searchParams.get("search") || "";
 
   const listRef = useRef(null);
+  const shouldScrollRef = useRef(false);
 
   const [drinks, setDrinks] = useState({
     data: [],
@@ -36,7 +37,7 @@ function Home() {
       try {
         const [drinksRes, categoriesRes] = await Promise.all([
           fetch(
-            `http://localhost:3000/api/drinks/fil?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
+            `http://localhost:3000/api/drinks?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
           ),
           fetch("http://localhost:3000/api/categories"),
         ]);
@@ -49,6 +50,8 @@ function Home() {
           drinksRes.json(),
           categoriesRes.json(),
         ]);
+        
+        console.log(drinksData);
         
         setDrinks(drinksData);
         setCategories(categoriesData);
@@ -64,20 +67,26 @@ function Home() {
   }, [ page, category, level, search ]);
 
   const goToPage = (newPage) => {
+    shouldScrollRef.current = true;
+
     setSearchParams((prev) => {
       prev.set("page", newPage);
       return prev;
     });
   };
 
-
   useEffect(() => {
-    if (status === "success") {
+    if (status === "success" && shouldScrollRef.current) {
       requestAnimationFrame(() => {
-        listRef.current?.scrollIntoView({ block: "start" });
+        listRef.current?.scrollIntoView({
+          block: "start",
+        });
       });
+      
+      shouldScrollRef.current = false;
     }
   }, [page, status]);
+
 
   const scrollToSearch = () => {
     listRef.current?.scrollIntoView({
@@ -90,24 +99,22 @@ function Home() {
     <section className={styles.home}>
       <Hero onScrollToSearch={scrollToSearch}  />
 
+      <div className={styles["home-content"]}>
+        <Search localCategories={categories} ref={listRef} />
+
+        <DrinkList
+          drinks={drinks.data}
+          page={page}
+          totalDrinks={totalDrinks}
+          totalPages={drinks.pagination?.totalPages}
+          onPageChange={goToPage}
+          showPagination={true}
+          loading={status === "loading"}
+        />
+      </div>
+
       {status === "loading" && <Loader />}
-
       {status === "error" && <NoData />}
-
-      {status === "success" && (
-        <div className={styles["home-content"]}>
-          <Search localCategories={categories} ref={listRef} />
-          <DrinkList
-            drinks={drinks.data}
-            page={page}
-            totalDrinks={totalDrinks}
-            totalPages={drinks.pagination.totalPages}
-            onPageChange={goToPage}
-            showPagination={true}
-            loading={status === "loading"}
-          />
-        </div>
-      )}
     </section>
   );
 }
