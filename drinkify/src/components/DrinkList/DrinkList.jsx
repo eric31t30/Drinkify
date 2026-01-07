@@ -44,7 +44,7 @@ function DrinkList(
       ) : (
         <div className={styles["drink-list__cont"]}>
           {loading
-            ? Array.from({ length: 8 }).map((_, i) => (
+            ? Array.from({ length: 12 }).map((_, i) => (
                 <DrinksSkeleton key={i}></DrinksSkeleton>
               ))
             : drinks.map((item) => <DrinkCard key={item.id} drink={item} />)}

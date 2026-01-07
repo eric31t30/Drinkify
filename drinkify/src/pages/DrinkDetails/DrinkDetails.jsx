@@ -32,9 +32,9 @@ function DrinkDetails() {
         const quantity = limit >= 1920 ? 3 : 4;
 
         const [drinkRes, recRes] = await Promise.all([
-          fetch(`http://localhost:3000/api/drinks/${id}`),
+          fetch(`/api/drinks/${id}`),
           fetch(
-            `http://localhost:3000/api/drinks/${id}/recommendations?limit=${quantity}`
+            `/api/drinks/${id}/recommendations?limit=${quantity}`
           ),
         ]);
 

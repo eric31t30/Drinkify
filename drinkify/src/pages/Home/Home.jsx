@@ -37,9 +37,9 @@ function Home() {
       try {
         const [drinksRes, categoriesRes] = await Promise.all([
           fetch(
-            `http://localhost:3000/api/drinks?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
+            `/api/drinks?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
           ),
-          fetch("http://localhost:3000/api/categories"),
+          fetch("/api/categories"),
         ]);
 
         if (!drinksRes.ok || !categoriesRes.ok) {
@@ -51,7 +51,9 @@ function Home() {
           categoriesRes.json(),
         ]);
         
+
         console.log(drinksData);
+        console.log("llegaron los datos");
         
         setDrinks(drinksData);
         setCategories(categoriesData);
