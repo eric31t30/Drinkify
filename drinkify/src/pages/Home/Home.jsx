@@ -37,7 +37,7 @@ function Home() {
       try {
         const [drinksRes, categoriesRes] = await Promise.all([
           fetch(
-            `http://localhost:3000/api/drinks/fil?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
+            `http://localhost:3000/api/drinks?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
           ),
           fetch("http://localhost:3000/api/categories"),
         ]);
@@ -50,6 +50,8 @@ function Home() {
           drinksRes.json(),
           categoriesRes.json(),
         ]);
+        
+        console.log(drinksData);
         
         setDrinks(drinksData);
         setCategories(categoriesData);

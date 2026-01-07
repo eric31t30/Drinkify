@@ -139,7 +139,7 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
           </div>
         </div>
 
-        <div className={styles["search-filter-cont"]}>
+        <div className={`${styles["search-filter-cont"]} ${filters.category === "Sin alcohol" ? styles.hide : ""}`}>
           <h2 className={styles["search-filter-title"]}>
             <img
               className={styles["search-title-icon"]}

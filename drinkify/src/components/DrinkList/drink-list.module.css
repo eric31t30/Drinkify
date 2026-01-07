@@ -53,8 +53,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     margin-top: 30px;
+}
+
+.buttons-cont{
+    display: flex;
+    gap: 10px;
 }
 
 .pagination-button{
@@ -85,7 +90,7 @@
 }
 
 .current-page{
-    font-size: var(--font-size-regular);
+    font-size: calc(var(--font-size-regular) + .2rem);
     font-weight: 700;
     color: var(--color-1);
 }
@@ -103,7 +108,11 @@
     }
 
     .pagination{
-        gap: 30px;
+        gap: 50px;
+    }
+
+    .buttons-cont{
+        gap: 20px;
     }
 
     .pagination-button{
@@ -111,7 +120,7 @@
     }
 
     .current-page{
-        font-size: calc(var(--font-size-regular) + .2rem);
+        font-size: calc(var(--font-size-regular) + .5rem);
     }
 }
 
@@ -142,7 +151,11 @@
     }
 
     .pagination{
-        gap: 40px;
+        gap: 50px;
+    }
+
+    .buttons-cont{
+        gap: 20px;
     }
 
     .pagination-button{

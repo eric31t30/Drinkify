@@ -197,6 +197,12 @@
     width: 30px;
     cursor: pointer;
     margin-top: 50px;
+    transition: transform .4s;
+    image-rendering: auto;
+}
+
+.drink-scroll-icon:hover{
+    transform: scale(1.08);
 }
 
 .back{
@@ -214,7 +220,7 @@
     border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
-    transition: gap .3s;
+    transition: gap .2s;
     z-index: 20;
 }
 
@@ -223,13 +229,13 @@
 }
 
 .back:hover .back-icon{
-    width: .6rem;
+    width: 10px;
 }
 
 .back-icon{
     filter: invert(100%);
-    width: 0;
-    transition: width .3s;
+    width: 0px;
+    transition: width .2s;
 }
 
 .hero-decoration{
@@ -366,7 +372,7 @@
     }
 
     .back:hover .back-icon{
-        width: .9rem;
+        width: 14px;
     }
 
     .blob-1{
@@ -456,7 +462,7 @@
     }
 
     .back:hover .back-icon{
-        width: 1rem;
+        width: 16px;
     }
 
     .blob-1{
@@ -576,13 +582,17 @@
         margin-top: 50px;
     }
 
+    .drink-scroll-icon:hover{
+        transform: translateX(-50%) scale(1.08);
+    }
+
     .back{
         font-size: calc(var(--font-size-regular) - .2rem);
         top: 120px;
     }
 
     .back:hover .back-icon{
-        width: .8rem;
+        width: 14px;
     }
 
     .blob-1{
