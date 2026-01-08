@@ -14,7 +14,8 @@
 
 .drink-list__cont{
     display: grid;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
 }
 
 .drink-list__title{

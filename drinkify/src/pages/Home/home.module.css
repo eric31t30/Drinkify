@@ -3,19 +3,22 @@
 }
 
 .home-content{
-    padding: 0px 40px;
+    padding: 0px 20px;
     padding-bottom: 40px;
 }
 
 @media (min-width: 700px){
     .home-content{
-        padding: 0px 60px;
+        padding: 0px 40px;
         padding-bottom: 50px;
     }
 }
 
 @media (min-width: 1024px){
-
+    .home-content{
+        padding: 0px 60px;
+        padding-bottom: 50px;
+    }
 }
 
 @media (min-width: 1280px){

@@ -22,8 +22,7 @@
     overflow: hidden;
     border-radius: 15px;
     width: 100%;
-    height: 260px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 2/3;
     contain: paint;
 }
 
@@ -46,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--font-size-regular);
+    font-size: calc(var(--font-size-regular) - .2rem);
     color: white;
     padding: 3px 25px;
     border-bottom-left-radius: 15px;
@@ -59,23 +58,23 @@
     align-items: start;
     flex-direction: column;
     width: 100%;
-    gap: 15px;
+    gap: 10px;
     padding: 15px 20px;
     padding-bottom: 30px;
     flex: 1;
 }
 
 .drink-name{
-    font-size: calc(var(--font-size-regular) + .3rem );
+    font-size: var(--font-size-regular);
 }
 
 .drink-category{
-    font-size: var(--font-size-small);
+    font-size: calc(var(--font-size-regular) - .2rem);
     opacity: .8;
 }
 
 .drink-description{
-    font-size: calc(var(--font-size-regular) - .1rem);
+    font-size: calc(var(--font-size-regular) - .2rem);
     font-weight: 400;
 }
 
@@ -107,15 +106,6 @@
     flex: .6;
 }
 
-.drink-info-title{
-    font-size: calc(var(--font-size-regular) - .2rem);
-}
-
-.drink-info-text{
-    font-size: calc(var(--font-size-regular) - .2rem);
-    font-weight: 500;
-}
-
 .drink-button-cont{
     width: 100%;
     display: flex;
@@ -131,7 +121,7 @@
     align-items: center;
     cursor: pointer;
     font-family: "Noto Sans", sans-serif;
-    font-size: calc(var(--font-size-regular) - .2rem);
+    font-size: calc(var(--font-size-regular) - .3rem);
     font-weight: 500;
     color: white;
     padding: 5px 10px;
@@ -212,30 +202,74 @@
     }
 
     .drink-image-cont{
-        height: 240px;
+        aspect-ratio: 2/2.7;
     }
-
+    
     .drink-text{
         gap: 20px;
         padding: 15px 20px;
         padding-bottom: 30px;
+    }
+
+    .drink-level{
+        font-size: var(--font-size-regular);
+        padding: 4px 25px;
+    }
+
+    .drink-name{
+        font-size: calc(var(--font-size-regular) + .2rem);
+    }
+
+    .drink-category{
+        font-size: var(--font-size-regular);
+    }
+
+    .drink-description{
+        font-size: var(--font-size-regular);
+    }
+
+    .drink-button{
+        font-size: var(--font-size-regular);
+    }
+
+    .drink-button:hover .drink-button-icon{
+        width: 30px;
     }
 }
 
 @media (min-width: 1024px){
 
     .drink-image-cont{
-        height: 300px;
+        aspect-ratio: 2/2.5;
     }
 
     .drink-text{
         padding: 15px 30px;
         padding-bottom: 40px;
+        gap: 30px;
     }
-    
+
+    .drink-level{
+        font-size: var(--font-size-regular);
+        padding: 4px 25px;
+    }
+
+    .drink-name{
+        font-size: calc(var(--font-size-regular) + .6rem);
+    }
+
     .drink-category{
-        font-size: calc(var(--font-size-small) + .1rem);
+        font-size: calc(var(--font-size-small) + .3rem);
         margin-top: 5px;
+    }
+
+    .drink-description{
+        font-size: calc(var(--font-size-small) + .4rem);
+        font-weight: 500;
+    }
+
+    .drink-button{
+        font-size: calc(var(--font-size-small) + .3rem);
     }
 
     .drink-button{
@@ -265,9 +299,6 @@
 
 @media (min-width: 1280px){
 
-    .drink-image-cont:hover .drink-image{
-        transform: scale(1.03);
-    }
 
     .drink-card{
         flex-direction: row;
@@ -277,12 +308,17 @@
         flex: 1;
         height: 100%;
         border-radius: 10px;
+        aspect-ratio: 4/4.5;
     }
 
     .drink-image{
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .drink-image-cont:hover .drink-image{
+        transform: scale(1.03);
     }
 
     .drink-level{
@@ -343,6 +379,10 @@
 
 @media (min-width: 1920px){
 
+    .drink-image-cont{
+        aspect-ratio: 4/4.7;
+    }
+
     .drink-text{
         gap: 20px;
         padding: 30px 20px;
@@ -355,8 +395,9 @@
     }
 
     .drink-description{
-        font-size: calc(var(--font-size-regular) - .4rem);
+        font-size: calc(var(--font-size-regular) - .3rem);
         opacity: .8;
+        font-weight: 400;
     }
 
     .drink-button-cont{

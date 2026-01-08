@@ -37,9 +37,9 @@ function Home() {
       try {
         const [drinksRes, categoriesRes] = await Promise.all([
           fetch(
-            `/api/drinks?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
+            `https://drinkify-eight.vercel.app/api/drinks?page=${page}&limit=12&search=${encodeURIComponent(search)}&category=${category}&level=${level}`
           ),
-          fetch("/api/categories"),
+          fetch("https://drinkify-eight.vercel.app/api/categories"),
         ]);
 
         if (!drinksRes.ok || !categoriesRes.ok) {
