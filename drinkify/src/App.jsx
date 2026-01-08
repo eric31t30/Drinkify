@@ -8,6 +8,7 @@ const DrinkDetails = lazy(() => import("./pages/DrinkDetails/DrinkDetails"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 import { applyThemeOnce } from './utils/SwitchColor'
+import ProjectInfo from "./pages/ProjectInfo/ProjectInfo";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/drink/:id" element={<DrinkDetails />} />
+        <Route path="/project" element={<ProjectInfo />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

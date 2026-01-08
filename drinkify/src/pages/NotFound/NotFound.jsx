@@ -5,7 +5,7 @@ import chalk from "/illustrations/chalk.svg"
 import drink1 from "/illustrations/menu-drink-1.svg"
 import drink2 from "/illustrations/menu-drink-2.svg";
 
-import corner1 from "/illustrations/leafs-corner.svg";
+import corner from "/illustrations/leafs-corner.svg";
 
 
 function NotFound() {
@@ -849,8 +849,8 @@ function NotFound() {
         <img className={styles.chalk} src={chalk} alt="" />
       </article>
 
-      <img className={`${styles.corner} ${styles["corner-1"]}`}  src={corner1} alt="" />
-      <img className={`${styles.corner} ${styles["corner-2"]}`}  src={corner1} alt="" />
+      <img className={`${styles.corner} ${styles["corner-1"]}`}  src={corner} alt="" />
+      <img className={`${styles.corner} ${styles["corner-2"]}`}  src={corner} alt="" />
     </section>
   );
 }
