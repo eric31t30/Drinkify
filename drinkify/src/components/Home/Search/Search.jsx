@@ -66,15 +66,24 @@ const Search = forwardRef(function Search({ localCategories }, ref) {
 
   const setFilter = (key, value) => {
     setSearchParams((prev) => {
-      prev.set(key, value);
-      prev.set("page", 1);
-      return prev;
+      const next = new URLSearchParams(prev);
+
+      if (key === "category" && value === "Sin alcohol") {
+        next.set("category", value);
+        next.set("level", "all");
+      } else {
+        next.set(key, value);
+      }
+
+      next.set("page", "1");
+      return next;
     });
   };
 
   useEffect(() => {
     setInput(searchFromUrl);
   }, [searchFromUrl]);
+
 
   return (
     <section ref={ref} className={styles.search} id="drink-list">
