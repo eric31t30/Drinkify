@@ -51,10 +51,7 @@ function Home() {
           categoriesRes.json(),
         ]);
         
-
-        console.log(drinksData);
-        console.log("llegaron los datos");
-        
+       
         setDrinks(drinksData);
         setCategories(categoriesData);
         setTotalDrinks(drinksData.pagination.total);
