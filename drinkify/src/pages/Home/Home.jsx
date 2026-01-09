@@ -99,24 +99,28 @@ function Home() {
 
   return (
     <section className={styles.home}>
-      <Hero onScrollToSearch={scrollToSearch}  />
-
-      <div className={styles["home-content"]}>
-        <Search localCategories={categories} ref={listRef} />
-
-        <DrinkList
-          drinks={drinks.data}
-          page={page}
-          totalDrinks={totalDrinks}
-          totalPages={drinks.pagination?.totalPages}
-          onPageChange={goToPage}
-          showPagination={true}
-          loading={status === "loading"}
-        />
-      </div>
+      <Hero onScrollToSearch={scrollToSearch} />
 
       {status === "loading" && <Loader />}
       {status === "error" && <NoData />}
+
+      {status !== "error" &&
+        (
+          <div className={styles["home-content"]}>
+            <Search localCategories={categories} ref={listRef} />
+          
+            <DrinkList
+              drinks={drinks.data}
+              page={page}
+              totalDrinks={totalDrinks}
+              totalPages={drinks.pagination?.totalPages}
+              onPageChange={goToPage}
+              showPagination={true}
+              loading={status === "loading"}
+            />
+          </div>
+        )
+      }
     </section>
   );
 }
