@@ -12,7 +12,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 16;
+    z-index: 12;
     pointer-events: none;
     transform: rotateX(180deg) translateY(1px);
 }
@@ -29,7 +29,7 @@ path{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 15;
+    z-index: 10;
 }
 
 .footer-main{
@@ -39,26 +39,12 @@ path{
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    z-index: 12;
+    z-index: 9;
 }
 
 .footer-logo{
     filter: invert(100%);
-    z-index: 12;
-}
-
-.bubbles{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-image: url(/illustrations/bubbles.svg);
-    background-size: contain;
-    background-repeat: repeat;
-    opacity: .2;
-    pointer-events: none;
-    z-index: 10;
+    z-index: 9;
 }
 
 .footer-copyright{
@@ -139,11 +125,6 @@ path{
 
     .footer-copyright{
         font-size: calc(var(--font-size-small) + .1rem);
-    }
-
-    .bubbles{
-        background-size: 30%;
-        opacity: .1;
     }
 }
 

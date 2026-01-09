@@ -5,7 +5,7 @@ import { loadSlim } from "@tsparticles/slim";
 
 import styles from './bubbles.module.css'
 
-export default function BubblesParticles() {
+export default function BubblesParticles({ id }) {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -58,10 +58,7 @@ export default function BubblesParticles() {
   if (init) {
     return (
       <div className={styles.bubbles}>
-        <Particles
-          id="tsparticles"
-          options={options}
-        />
+        <Particles id={id} options={options} />
       </div>
     );
   }

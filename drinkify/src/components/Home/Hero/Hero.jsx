@@ -3,6 +3,7 @@ import styles from "./hero.module.css";
 import logo from "/illustrations/drinkify-logo.svg";
 
 import scroll from "/icons/scroll.svg";
+import BubblesParticles from "../../../effects/BubblesParticles";
 
 function Hero({ onScrollToSearch  }) {
   
@@ -63,6 +64,8 @@ function Hero({ onScrollToSearch  }) {
           fill="white"
         />
       </svg>
+
+      <BubblesParticles id={"header"}/>
     </section>
   );
 }
