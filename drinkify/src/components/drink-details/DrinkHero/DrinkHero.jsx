@@ -46,20 +46,20 @@ function DrinkHero({ drink }) {
                 className={styles["drink-image"]}
                 src={cloudinary(
                   drink.images.full,
-                  "c_fill,w_600,h_600,f_auto,q_auto:eco"
+                  "w_400,h_400,c_fit,f_auto,q_auto:eco"
                 )}
                 srcSet={`
                   ${cloudinary(
                     drink.images.full,
-                    "c_fill,w_400,h_400,f_auto,q_auto:eco"
+                    "w_400,h_400,c_fit,f_auto,q_auto:eco"
                   )} 400w,
                   ${cloudinary(
                     drink.images.full,
-                    "c_fill,w_600,h_600,f_auto,q_auto:eco"
+                    "w_600,h_600,c_fit,f_auto,q_auto:eco"
                   )} 600w,
                   ${cloudinary(
                     drink.images.full,
-                    "c_fill,w_800,h_800,f_auto,q_auto:eco"
+                    "w_800,h_800,c_fit,f_auto,q_auto:eco"
                   )} 800w
                 `}
                 sizes="(max-width: 768px) 90vw, 600px"
@@ -83,11 +83,11 @@ function DrinkHero({ drink }) {
                   className={`${styles["drink-image"]} ${
                     styles[`decor-${i + 1}`]
                   }`}
-                  src={cloudinary(e, "c_fill,w_300,h_300,f_auto,q_auto:eco")}
+                  src={cloudinary(e, "w_600,h_600,c_fit,f_auto,q_auto:eco")}
                   alt=""
                   aria-hidden="true"
-                  width="300"
-                  height="300"
+                  width="600"
+                  height="600"
                   loading="lazy"
                 />
               </div>

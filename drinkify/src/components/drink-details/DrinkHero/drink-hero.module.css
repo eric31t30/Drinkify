@@ -30,7 +30,8 @@
     justify-content: center;
     align-items: center;
     width: 160px;
-    height: 160px;
+    height: 200px;
+    aspect-ratio: 2/3;
     z-index: 10;
 }
 
@@ -86,6 +87,7 @@
     transition: transform .7s;
     z-index: 10;
     cursor: pointer;
+    image-rendering: optimizeSpeed;
 }
 
 .image-loader{
@@ -300,7 +302,7 @@
 
     .drink-image-cont{
         width: 260px;
-        height: 300px;
+        height: 320px;
     }
 
     .wrapper-2,
@@ -405,8 +407,8 @@
 @media (min-width: 1024px){
 
     .drink-image-cont{
-        width: 340px;
-        height: 340px;
+        width: 300px;
+        height: 360px;
         border-radius: 25px;
     }
 
@@ -509,8 +511,8 @@
     }
 
     .drink-image-cont{
-        width: 260px;
-        height: 260px;
+        width: 240px;
+        height: 300px;
         margin-right: 120px;
     }
 
@@ -535,11 +537,11 @@
     }
 
     .wrapper-2:hover{
-        transform: rotate(-12deg) translate(-30px, -15px);
+        transform: rotate(-12deg) translate(-20px, -15px);
     }
 
     .wrapper-1:hover{
-        transform: rotate(12deg) translate(30px, -15px);
+        transform: rotate(12deg) translate(20px, -15px);
     }
 
     .drink-main-info{
@@ -634,7 +636,7 @@
     }
     
     .drink-image-cont{
-        width: 360px;
+        width: 280px;
         height: 360px;
         margin-right: 400px;
     }
@@ -646,11 +648,11 @@
     }
 
     .wrapper-2{
-        right: 300px;
+        right: 260px;
     }
 
     .wrapper-1{
-        left: 300px;
+        left: 260px;
     }
 
     .wrapper-3:hover{

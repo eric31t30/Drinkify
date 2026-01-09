@@ -29,7 +29,7 @@ function DrinkCard({ drink }) {
           }`}
           src={cloudinary(
             drink.images.full,
-            "w_400,h_400,c_fill,f_auto,q_auto"
+            "w_400,h_400,c_fit,f_auto,q_auto"
           )}
           alt={drink.name}
           width="400"
