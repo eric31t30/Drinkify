@@ -1,3 +1,4 @@
+import BubblesParticles from '../../effects/BubblesParticles';
 import styles from './footer.module.css'
 
 import logo from '/illustrations/drinkify-logo.svg'
@@ -35,8 +36,10 @@ function Footer() {
 
         <div className={`${styles.background} bg-linear-color`}></div>
 
-        <div className={styles.bubbles}></div>
+        
       </div>
+
+      <BubblesParticles id={"footer"} />
     </footer>
   );
 }
