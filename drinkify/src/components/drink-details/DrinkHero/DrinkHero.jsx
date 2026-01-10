@@ -17,7 +17,7 @@ function DrinkHero({ drink }) {
   const scrollinfo = ()=>{
     document.getElementById("drink-info-scroll")?.scrollIntoView({
       behavior: "smooth",
-      block: "center",
+      block: "start",
     });
   }
 

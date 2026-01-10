@@ -82,13 +82,13 @@ function DrinkImages({ drink }) {
               <div className={styles["thumb-inner"]}>
                 <img
                   className={styles["thumb-image"]}
-                  src={cloudinary(i, "w_400,h_400,c_fit,f_auto,q_auto:eco")}
+                  src={cloudinary(i, "w_600,h_600,c_fit,f_auto,q_auto:eco")}
                   alt=""
                   aria-hidden="true"
                   loading="lazy"
                   decoding="async"
-                  width="400"
-                  height="400"
+                  width="600"
+                  height="600"
                 />
               </div>
             </SwiperSlide>
