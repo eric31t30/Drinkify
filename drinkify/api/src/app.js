@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 app.use("/api", drinkRoutes);
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   console.error(err);
   res.status(500).json({ message: "Internal server error" });
 });
