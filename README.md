@@ -51,7 +51,6 @@ Drinkify incluye una **API REST personalizada** desarrollada con **Express**, en
 - `category` – filtrar por categoría
 - `level` – filtrar por nivel de alcohol
 - `search` – búsqueda por nombre
-
 - `GET /api/drinks/:id` – Detalle de una bebida  
 - `GET /api/drinks/:id/recommendations` – Recomendaciones relacionadas  
 - `GET /api/categories` – Categorías disponibles  
@@ -63,9 +62,8 @@ La API está integrada dentro del proyecto y desplegada junto al frontend en **V
 ## Demo
 
 Puedes ver la aplicación en funcionamiento aquí:  
-👉 **[Drinkify – Live Demo](https://drinkify-eight.vercel.app/)**
+👉 **[Drinkify – Live Demo](https://drinkify-ten.vercel.app/)**
 
----
 
 <div align="center">
   <img src="/public/drinkify.png" alt="Captura de pantalla del sitio Drinkify">
