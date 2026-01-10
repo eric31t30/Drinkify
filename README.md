@@ -68,5 +68,5 @@ Puedes ver la aplicación en funcionamiento aquí:
 ---
 
 <div align="center">
-  <img src="/drinkify.png" alt="Captura de pantalla del sitio Drinkify">
+  <img src="/public/drinkify.png" alt="Captura de pantalla del sitio Drinkify">
 </div>
