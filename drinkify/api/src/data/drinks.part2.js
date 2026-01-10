@@ -165,8 +165,8 @@ export const drinksPart2 = [
     prepTime: "2 min",
     tags: ["cítrico", "refrescante", "clásico"],
     images: {
-      full: "main_immqkc",
-      gallery: ["main_immqkc", "gallery-1_tfinve", "gallery-2_o8hmiw"],
+      full: "main_wd2tsw",
+      gallery: ["main_wd2tsw", "gallery-1_tfinve", "gallery-2_o8hmiw"],
     },
   },
   {
@@ -211,8 +211,8 @@ export const drinksPart2 = [
     prepTime: "3 min",
     tags: ["refrescante", "cítrico", "clásico"],
     images: {
-      full: "main_vtlclq",
-      gallery: ["main_vtlclq", "gallery-1_lmp8fw", "gallery-2_uqimvc"],
+      full: "main_nbumns",
+      gallery: ["main_nbumns", "gallery-1_xxejj9", "gallery-2_uqimvc"],
     },
   },
   {
