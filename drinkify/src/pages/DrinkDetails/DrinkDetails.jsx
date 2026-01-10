@@ -13,6 +13,7 @@ import DrinkImages from "../../components/drink-details/DrinkImages/DrinkImages"
 import DrinkInsights from "../../components/drink-details/DrinkInsights/DrinkInsights";
 import Loader from "../../components/common/Loader/Loader";
 import NoData from "../../components/common/NoData/NoData";
+import ScrollButton from "../../components/common/ScrollButton/ScrollButton";
 
 function DrinkDetails() {
 
@@ -116,6 +117,8 @@ function DrinkDetails() {
           />
         </section>
       </div>
+
+      <ScrollButton />
     </section>
   );
 }
