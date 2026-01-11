@@ -33,9 +33,9 @@ function DrinkDetails() {
         const quantity = limit >= 1920 ? 3 : 4;
 
         const [drinkRes, recRes] = await Promise.all([
-          fetch(`/api/drinks/${id}`),
+          fetch(`https://drinkify-ten.vercel.app/api/drinks/${id}`),
           fetch(
-            `/api/drinks/${id}/recommendations?limit=${quantity}`
+            `https://drinkify-ten.vercel.app/api/drinks/${id}/recommendations?limit=${quantity}`
           ),
         ]);
 
